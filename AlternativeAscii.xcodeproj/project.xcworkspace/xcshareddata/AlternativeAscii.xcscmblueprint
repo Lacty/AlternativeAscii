@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "AF934DCB71EDC0D823B3629A63FB27E6274B501B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "BE41B3DE0FF0FF4F57B31528753B88E2762363AE" : 0,
+    "AF934DCB71EDC0D823B3629A63FB27E6274B501B" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "682CC28D-2BDE-49FC-AAD9-C60A57ED4C4F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "BE41B3DE0FF0FF4F57B31528753B88E2762363AE" : "..\/addons\/ofxJoystick",
+    "AF934DCB71EDC0D823B3629A63FB27E6274B501B" : "AlternativeAscii\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "AlternativeAscii",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "AlternativeAscii.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Lacty\/AlternativeAscii.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "AF934DCB71EDC0D823B3629A63FB27E6274B501B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Lacty\/ofxJoystick.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BE41B3DE0FF0FF4F57B31528753B88E2762363AE"
+    }
+  ]
+}
