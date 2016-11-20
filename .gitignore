@@ -24,6 +24,7 @@
 *.aps
 *.vs
 *.VC.db
+*.VC.VC.opendb
 ipch/
 
 # OSX
