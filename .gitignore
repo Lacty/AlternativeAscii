@@ -23,6 +23,7 @@
 *.ilk
 *.aps
 *.vs
+*.VC.db
 ipch/
 
 # OSX
@@ -38,4 +39,3 @@ examples/ios/**/mediaAssets
 Thumbs.db
 # Folder config file
 Desktop.ini
-
