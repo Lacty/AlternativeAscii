@@ -1,0 +1,7 @@
+
+<Window>
+  <Width>460</Width>
+  <Height>300</Height>
+  <FullScreen>0</FullScreen>
+  <FrameRate>60</FrameRate>
+</Window>
