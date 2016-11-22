@@ -1,14 +1,14 @@
-ï»¿
+
 #include "playerState.h"
 #include "player.h"
 
 
-// æ³¨æ„ ã‚¹ãƒ†ãƒ¼ã‚¸ã®ãƒ‘ãƒ©ãƒ¼ãƒ¡ãƒ¼ã‚¿ã¯åˆ¥ã§ã¡ã‚ƒã‚“ã¨ç”¨æ„ã™ã‚‹ã“ã¨
+// ’ˆÓ ƒXƒe[ƒW‚Ìƒpƒ‰[ƒ[ƒ^‚Í•Ê‚Å‚¿‚á‚ñ‚Æ—pˆÓ‚·‚é‚±‚Æ
 const int FLOOR = 0;
 
 shared_ptr<PlayerState> JumpingState::handleInput(Player& player, ofxJoystick& input) {
   if (player.getPos().y <= FLOOR) {
-    // ç€åœ°ã—ã¦ã„ãŸã‚‰å‰ã®çŠ¶æ…‹ã«ç¹Šç¶­ã•ã›ã‚‹
+    // ’…’n‚µ‚Ä‚¢‚½‚ç‘O‚Ìó‘Ô‚É‘@ˆÛ‚³‚¹‚é
     return PlayerState::finish;
   }
   
@@ -16,10 +16,10 @@ shared_ptr<PlayerState> JumpingState::handleInput(Player& player, ofxJoystick& i
 }
 
 void JumpingState::update(Player& player, ofxJoystick& input) {
-  // ã‚¸ãƒ£ãƒ³ãƒ—ä¸­ã§ã‚‚ç§»å‹•çŠ¶æ…‹ã‚’æ›´æ–°ã™ã‚‹
+  // ƒWƒƒƒ“ƒv’†‚Å‚àˆÚ“®ó‘Ô‚ğXV‚·‚é
   MovingState::update(player, input);
   
-  // æš«å®š ãƒ™ã‚¯ãƒˆãƒ«ã‚’ä½¿ç”¨ã—ãŸã‚¸ãƒ£ãƒ³ãƒ—ã®å‡¦ç†
+  // b’è ƒxƒNƒgƒ‹‚ğg—p‚µ‚½ƒWƒƒƒ“ƒv‚Ìˆ—
   ofVec2f newVel = player.getVel();
   
   newVel.y -= 0.8;
