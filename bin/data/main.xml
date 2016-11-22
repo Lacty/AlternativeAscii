@@ -1,7 +1,17 @@
 
 <Window>
+  <!-- ウィンドウサイズの指定 -->
   <Width>460</Width>
   <Height>300</Height>
-  <FullScreen>0</FullScreen>
+
+  <!-- フルスクリーンにするかどうか -->
+  <FullScreen>1</FullScreen>
+
+  <!-- フレームレートの指定 -->
   <FrameRate>60</FrameRate>
 </Window>
+
+<Input>
+  <!-- 使う入力デバイスのxmlを設定 -->
+  <Path>joystick.xml</Path>
+</Input>

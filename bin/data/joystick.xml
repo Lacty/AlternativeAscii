@@ -1,0 +1,16 @@
+
+<!-- Elecom Wired Controller -->
+<!-- ボタン名は 箱コン準拠 -->
+
+<Left>15</Left>
+<Right>13</Right>
+
+<!-- 未定 -->
+<Up>0</Up>
+<Down>0</Down>
+
+
+<X>0</X>
+<Y>1</Y>
+<A>2</A>
+<B>3</B>
