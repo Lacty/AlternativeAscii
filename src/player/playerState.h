@@ -1,4 +1,4 @@
-
+﻿
 #pragma once
 #include "ofxJoystick.h"
 #include "input.h"
@@ -10,7 +10,7 @@ class PlayerState {
 public:
   virtual ~PlayerState() {};
   
-  virtual shared_ptr<PlayerState> handleInput(Player& player, ofxJoystick& input) {};
+  virtual shared_ptr<PlayerState> handleInput(Player& player, ofxJoystick& input) { return nullptr; }
   
   virtual void update(Player& player, ofxJoystick& input) {};
   virtual void entry(Player& player) {};

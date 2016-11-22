@@ -7,11 +7,29 @@
 		<ClCompile Include="src\main.cpp">
 			<Filter>src</Filter>
 		</ClCompile>
+		<ClCompile Include="src\input.cpp">
+			<Filter>src</Filter>
+		</ClCompile>
 		<ClCompile Include="src\main.cpp">
 			<Filter>src</Filter>
 		</ClCompile>
 		<ClCompile Include="src\ofApp.cpp">
 			<Filter>src</Filter>
+		</ClCompile>
+		<ClCompile Include="src\player\jumpingState.cpp">
+			<Filter>src\player</Filter>
+		</ClCompile>
+		<ClCompile Include="src\player\movingState.cpp">
+			<Filter>src\player</Filter>
+		</ClCompile>
+		<ClCompile Include="src\player\player.cpp">
+			<Filter>src\player</Filter>
+		</ClCompile>
+		<ClCompile Include="src\player\playerState.cpp">
+			<Filter>src\player</Filter>
+		</ClCompile>
+		<ClCompile Include="src\player\standingState.cpp">
+			<Filter>src\player</Filter>
 		</ClCompile>
 		<ClCompile Include="..\..\addons\ofxGui\src\ofxBaseGui.cpp">
 			<Filter>addons\ofxGui\src</Filter>
@@ -57,6 +75,9 @@
 		<Filter Include="src">
 			<UniqueIdentifier>{d8376475-7454-4a24-b08a-aac121d3ad6f}</UniqueIdentifier>
 		</Filter>
+		<Filter Include="src\player">
+			<UniqueIdentifier>{8B40E44D-58FD-3A86-EDC4-47C6}</UniqueIdentifier>
+		</Filter>
 		<Filter Include="addons">
 			<UniqueIdentifier>{71834F65-F3A9-211E-73B8-DC85}</UniqueIdentifier>
 		</Filter>
@@ -86,8 +107,17 @@
 		<ClInclude Include="src\ofApp.h">
 			<Filter>src</Filter>
 		</ClInclude>
+		<ClInclude Include="src\input.h">
+			<Filter>src</Filter>
+		</ClInclude>
 		<ClInclude Include="src\ofApp.h">
 			<Filter>src</Filter>
+		</ClInclude>
+		<ClInclude Include="src\player\player.h">
+			<Filter>src\player</Filter>
+		</ClInclude>
+		<ClInclude Include="src\player\playerState.h">
+			<Filter>src\player</Filter>
 		</ClInclude>
 		<ClInclude Include="..\..\addons\ofxGui\src\ofxBaseGui.h">
 			<Filter>addons\ofxGui\src</Filter>

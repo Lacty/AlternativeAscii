@@ -95,7 +95,7 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\addons\ofxGui\src;..\..\addons\ofxJoystick\src;..\..\addons\ofxXmlSettings\libs;..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\player;..\..\addons\ofxGui\src;..\..\addons\ofxJoystick\src;..\..\addons\ofxXmlSettings\libs;..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
 			<CompileAs>CompileAsCpp</CompileAs>
 		</ClCompile>
 		<Link>
@@ -114,7 +114,7 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\addons\ofxGui\src;..\..\addons\ofxJoystick\src;..\..\addons\ofxXmlSettings\libs;..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\player;..\..\addons\ofxGui\src;..\..\addons\ofxJoystick\src;..\..\addons\ofxXmlSettings\libs;..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
 			<CompileAs>CompileAsCpp</CompileAs>
 			<MultiProcessorCompilation>true</MultiProcessorCompilation>
 		</ClCompile>
@@ -133,7 +133,7 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\addons\ofxGui\src;..\..\addons\ofxJoystick\src;..\..\addons\ofxXmlSettings\libs;..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\player;..\..\addons\ofxGui\src;..\..\addons\ofxJoystick\src;..\..\addons\ofxXmlSettings\libs;..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
 			<CompileAs>CompileAsCpp</CompileAs>
 			<MultiProcessorCompilation>true</MultiProcessorCompilation>
 		</ClCompile>
@@ -155,7 +155,7 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\addons\ofxGui\src;..\..\addons\ofxJoystick\src;..\..\addons\ofxXmlSettings\libs;..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\player;..\..\addons\ofxGui\src;..\..\addons\ofxJoystick\src;..\..\addons\ofxXmlSettings\libs;..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
 			<CompileAs>CompileAsCpp</CompileAs>
 		</ClCompile>
 		<Link>
@@ -173,6 +173,12 @@
 	<ItemGroup>
 		<ClCompile Include="src\main.cpp" />
 		<ClCompile Include="src\ofApp.cpp" />
+		<ClCompile Include="src\input.cpp" />
+		<ClCompile Include="src\player\jumpingState.cpp" />
+		<ClCompile Include="src\player\movingState.cpp" />
+		<ClCompile Include="src\player\player.cpp" />
+		<ClCompile Include="src\player\playerState.cpp" />
+		<ClCompile Include="src\player\standingState.cpp" />
 		<ClCompile Include="..\..\addons\ofxGui\src\ofxBaseGui.cpp" />
 		<ClCompile Include="..\..\addons\ofxGui\src\ofxButton.cpp" />
 		<ClCompile Include="..\..\addons\ofxGui\src\ofxGuiGroup.cpp" />
@@ -189,6 +195,9 @@
 	</ItemGroup>
 	<ItemGroup>
 		<ClInclude Include="src\ofApp.h" />
+		<ClInclude Include="src\input.h" />
+		<ClInclude Include="src\player\player.h" />
+		<ClInclude Include="src\player\playerState.h" />
 		<ClInclude Include="..\..\addons\ofxGui\src\ofxBaseGui.h" />
 		<ClInclude Include="..\..\addons\ofxGui\src\ofxButton.h" />
 		<ClInclude Include="..\..\addons\ofxGui\src\ofxGui.h" />
