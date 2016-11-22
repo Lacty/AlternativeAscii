@@ -1,8 +1,8 @@
-﻿
+
 #include "playerState.h"
 #include "player.h"
 
-// ほげ
+
 // 注意 ステージのパラーメータは別でちゃんと用意すること
 const int FLOOR = 0;
 
