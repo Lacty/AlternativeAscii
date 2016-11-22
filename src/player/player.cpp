@@ -2,8 +2,9 @@
 #include "player.h"
 
 
-void Player::setup(int num) {
-  joy_.setup(num);
+void Player::setup(int ID) {
+  id_ = ID;
+  joy_.setup(id_);
   jumpPow_.set(0, 10);
   state_.push_back(make_shared<StandingState>());
 }
@@ -46,6 +47,8 @@ void Player::draw() {
 const ofVec2f& Player::getPos() const { return pos_; }
 const ofVec2f& Player::getVel() const { return vel_; }
 const ofVec2f& Player::getJumpPow() const { return jumpPow_; }
+
+const int Player::getID() const { return id_; }
 
 void Player::setPos(const ofVec2f& pos) { pos_.set(pos); }
 void Player::setVel(const ofVec2f& vel) { vel_.set(vel); }

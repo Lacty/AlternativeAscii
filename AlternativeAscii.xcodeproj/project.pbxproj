@@ -22,6 +22,7 @@
 		ACFD88E91DE45B7700C8A52B /* standingState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACFD88E71DE45B7700C8A52B /* standingState.cpp */; };
 		ACFD88EB1DE45BEA00C8A52B /* movingState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACFD88EA1DE45BEA00C8A52B /* movingState.cpp */; };
 		ACFD88ED1DE45C4E00C8A52B /* jumpingState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACFD88EC1DE45C4E00C8A52B /* jumpingState.cpp */; };
+		ACFD88F01DE466FF00C8A52B /* input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACFD88EF1DE466FF00C8A52B /* input.cpp */; };
 		B38AE0704C26620B0B1F72E4 /* ofxLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0939545FB9EE4C7784F4342A /* ofxLabel.cpp */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
@@ -85,6 +86,8 @@
 		ACFD88E71DE45B7700C8A52B /* standingState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = standingState.cpp; sourceTree = "<group>"; };
 		ACFD88EA1DE45BEA00C8A52B /* movingState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = movingState.cpp; sourceTree = "<group>"; };
 		ACFD88EC1DE45C4E00C8A52B /* jumpingState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = jumpingState.cpp; sourceTree = "<group>"; };
+		ACFD88EE1DE4654A00C8A52B /* input.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = input.h; sourceTree = "<group>"; };
+		ACFD88EF1DE466FF00C8A52B /* input.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = input.cpp; sourceTree = "<group>"; };
 		B63793AAC401CFEE868708F2 /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxXmlSettings.cpp; path = ../../addons/ofxXmlSettings/src/ofxXmlSettings.cpp; sourceTree = SOURCE_ROOT; };
 		C846292EE0D139BE5E0C7E7F /* ofxButton.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxButton.cpp; path = ../../addons/ofxGui/src/ofxButton.cpp; sourceTree = SOURCE_ROOT; };
 		CF6CA69CDA4F0401FEE918D8 /* ofxPanel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxPanel.h; path = ../../addons/ofxGui/src/ofxPanel.h; sourceTree = SOURCE_ROOT; };
@@ -251,6 +254,8 @@
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
+				ACFD88EE1DE4654A00C8A52B /* input.h */,
+				ACFD88EF1DE466FF00C8A52B /* input.cpp */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -365,6 +370,7 @@
 				9F74DFA8C0F57500C92936C8 /* ofxSlider.cpp in Sources */,
 				ACFD88E51DE44AF000C8A52B /* player.cpp in Sources */,
 				A3C6983F8768ECD6DBA89E0F /* ofxSliderGroup.cpp in Sources */,
+				ACFD88F01DE466FF00C8A52B /* input.cpp in Sources */,
 				413A3F52C6AC90B4F28A6A1C /* ofxToggle.cpp in Sources */,
 				6B1CA8C98EA80149EBCD25F2 /* ofxJoystick.cpp in Sources */,
 				0C626D3D484EA5FB87A6AD23 /* ofxXmlSettings.cpp in Sources */,

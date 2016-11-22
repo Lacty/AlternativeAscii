@@ -13,6 +13,9 @@ private:
   ofVec2f jumpPow_;
   ofVec2f vel_;
   
+  // ID 1p,2pを仕分けする変数
+  int id_;
+  
   // プレイヤーの状態をスタックするdeque
   deque<shared_ptr<PlayerState>> state_;
   
@@ -23,8 +26,8 @@ public:
   Player() = default;
   
   // プレイヤーを生成する時に呼ぶ
-  // numは0~の整数
-  void setup(int num);
+  // IDは1p 2pを示す 0~1を指定
+  void setup(int ID);
   
   void update();
   void draw();
@@ -32,6 +35,9 @@ public:
   const ofVec2f& getPos() const;
   const ofVec2f& getVel() const;
   const ofVec2f& getJumpPow() const;
+  
+  // 1pなのか2pなのかを返す 0 ~ 1
+  const int getID() const;
   
   void setPos(const ofVec2f& pos);
   void setVel(const ofVec2f& vel);

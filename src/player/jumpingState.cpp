@@ -3,6 +3,7 @@
 #include "player.h"
 
 
+// 注意 ステージのパラーメータは別でちゃんと用意すること
 const int FLOOR = 0;
 
 shared_ptr<PlayerState> JumpingState::handleInput(Player& player, ofxJoystick& input) {

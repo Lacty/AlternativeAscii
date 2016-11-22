@@ -4,14 +4,14 @@
 
 
 shared_ptr<PlayerState> MovingState::handleInput(Player& player, ofxJoystick& input) {
-  if (!input.isPushing(15) &&
-      !input.isPushing(13))
+  if (!input.isPushing(Input::Left) &&
+      !input.isPushing(Input::Right))
   {
     // 移動ボタンが押されてなければ前の状態に繊維
     return PlayerState::finish;
   }
   
-  if (input.isPressed(2)) {
+  if (input.isPressed(Input::A)) {
     // ジャンプ状態に繊維
     return make_shared<JumpingState>();
   }
@@ -21,7 +21,7 @@ shared_ptr<PlayerState> MovingState::handleInput(Player& player, ofxJoystick& in
 
 void MovingState::update(Player& player, ofxJoystick& input) {
   // 移動ボタンに応じてプレイヤーを移動させる
-  if (input.isPushing(15)) {
+  if (input.isPushing(Input::Left)) {
     // 注意 プレイヤーの位置を直接いじるのではなく
     // ベクトルを使用して移動させるのが望ましい
     ofVec2f newLocation = player.getPos();
@@ -29,7 +29,7 @@ void MovingState::update(Player& player, ofxJoystick& input) {
     player.setPos(newLocation);
   }
   else
-  if (input.isPushing(13)) {
+  if (input.isPushing(Input::Right)) {
     ofVec2f newLocation = player.getPos();
     newLocation.x += ofGetLastFrameTime() * 50;
     player.setPos(newLocation);
