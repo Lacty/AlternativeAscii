@@ -9,11 +9,13 @@ class Player {
 private:
   ofxJoystick joy_;
 
+  int currentHP_;
+  int maxHP_;
+  
   ofVec2f pos_;
   ofVec2f jumpPow_;
   ofVec2f vel_;
   
-  // ID 1p,2pを仕分けする変数
   int id_;
   
   // プレイヤーの状態をスタックするdeque
@@ -32,11 +34,13 @@ public:
   void update();
   void draw();
   
+  const int getMaxHP() const;
+  const int getCurrentHP() const;
+  
   const ofVec2f& getPos() const;
   const ofVec2f& getVel() const;
   const ofVec2f& getJumpPow() const;
   
-  // 1pなのか2pなのかを返す 0 ~ 1
   const int getID() const;
   
   void setPos(const ofVec2f& pos);

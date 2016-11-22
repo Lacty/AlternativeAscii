@@ -2,9 +2,12 @@
 #include "player.h"
 
 
+// 暫定 ペラーメータなどは適当なので後で修正すること
 void Player::setup(int ID) {
   id_ = ID;
   joy_.setup(id_);
+  maxHP_ = 100;
+  currentHP_ = maxHP_;
   jumpPow_.set(0, 10);
   state_.push_back(make_shared<StandingState>());
 }
@@ -43,6 +46,9 @@ void Player::draw() {
   // 状態にに合わせて描画を更新させるなら変更する
   // state_.back()->draw();
 }
+
+const int Player::getMaxHP()     const { return maxHP_;     }
+const int Player::getCurrentHP() const { return currentHP_; }
 
 const ofVec2f& Player::getPos() const { return pos_; }
 const ofVec2f& Player::getVel() const { return vel_; }
