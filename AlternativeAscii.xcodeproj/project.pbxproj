@@ -17,6 +17,11 @@
 		92A50AF72101624C3A8E6446 /* ofxButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C846292EE0D139BE5E0C7E7F /* ofxButton.cpp */; };
 		9F74DFA8C0F57500C92936C8 /* ofxSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CFCAA4D953378BD89C6667D4 /* ofxSlider.cpp */; };
 		A3C6983F8768ECD6DBA89E0F /* ofxSliderGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70AAD97154A7F3A7E07DD2E8 /* ofxSliderGroup.cpp */; };
+		ACFD88E51DE44AF000C8A52B /* player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACFD88E11DE44AF000C8A52B /* player.cpp */; };
+		ACFD88E61DE44AF000C8A52B /* playerState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACFD88E31DE44AF000C8A52B /* playerState.cpp */; };
+		ACFD88E91DE45B7700C8A52B /* standingState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACFD88E71DE45B7700C8A52B /* standingState.cpp */; };
+		ACFD88EB1DE45BEA00C8A52B /* movingState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACFD88EA1DE45BEA00C8A52B /* movingState.cpp */; };
+		ACFD88ED1DE45C4E00C8A52B /* jumpingState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACFD88EC1DE45C4E00C8A52B /* jumpingState.cpp */; };
 		B38AE0704C26620B0B1F72E4 /* ofxLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0939545FB9EE4C7784F4342A /* ofxLabel.cpp */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
@@ -73,6 +78,13 @@
 		8FD1797ECDDC571B75C21646 /* ofxLabel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxLabel.h; path = ../../addons/ofxGui/src/ofxLabel.h; sourceTree = SOURCE_ROOT; };
 		97E9772CB5B04FB62A872480 /* tinyxml.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = tinyxml.cpp; path = ../../addons/ofxXmlSettings/libs/tinyxml.cpp; sourceTree = SOURCE_ROOT; };
 		A4E16B7E3CCB45B9EA4AD4A5 /* ofxGui.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxGui.h; path = ../../addons/ofxGui/src/ofxGui.h; sourceTree = SOURCE_ROOT; };
+		ACFD88E11DE44AF000C8A52B /* player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = player.cpp; sourceTree = "<group>"; };
+		ACFD88E21DE44AF000C8A52B /* player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = player.h; sourceTree = "<group>"; };
+		ACFD88E31DE44AF000C8A52B /* playerState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = playerState.cpp; sourceTree = "<group>"; };
+		ACFD88E41DE44AF000C8A52B /* playerState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = playerState.h; sourceTree = "<group>"; };
+		ACFD88E71DE45B7700C8A52B /* standingState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = standingState.cpp; sourceTree = "<group>"; };
+		ACFD88EA1DE45BEA00C8A52B /* movingState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = movingState.cpp; sourceTree = "<group>"; };
+		ACFD88EC1DE45C4E00C8A52B /* jumpingState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = jumpingState.cpp; sourceTree = "<group>"; };
 		B63793AAC401CFEE868708F2 /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxXmlSettings.cpp; path = ../../addons/ofxXmlSettings/src/ofxXmlSettings.cpp; sourceTree = SOURCE_ROOT; };
 		C846292EE0D139BE5E0C7E7F /* ofxButton.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxButton.cpp; path = ../../addons/ofxGui/src/ofxButton.cpp; sourceTree = SOURCE_ROOT; };
 		CF6CA69CDA4F0401FEE918D8 /* ofxPanel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxPanel.h; path = ../../addons/ofxGui/src/ofxPanel.h; sourceTree = SOURCE_ROOT; };
@@ -83,7 +95,7 @@
 		E4B69B5B0A3A1756003C02F2 /* AlternativeAsciiDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlternativeAsciiDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B69E1D0A3A1BDC003C02F2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
 		E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofApp.cpp; path = src/ofApp.cpp; sourceTree = SOURCE_ROOT; };
-		E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = ofApp.h; path = src/ofApp.h; sourceTree = SOURCE_ROOT; };
+		E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofApp.h; path = src/ofApp.h; sourceTree = SOURCE_ROOT; };
 		E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
 		E4EB691F138AFCF100A09F29 /* CoreOF.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = CoreOF.xcconfig; path = ../../libs/openFrameworksCompiled/project/osx/CoreOF.xcconfig; sourceTree = SOURCE_ROOT; };
 		E4EB6923138AFD0F00A09F29 /* Project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
@@ -179,6 +191,20 @@
 			name = src;
 			sourceTree = "<group>";
 		};
+		ACFD88E01DE44AF000C8A52B /* player */ = {
+			isa = PBXGroup;
+			children = (
+				ACFD88E11DE44AF000C8A52B /* player.cpp */,
+				ACFD88E21DE44AF000C8A52B /* player.h */,
+				ACFD88E31DE44AF000C8A52B /* playerState.cpp */,
+				ACFD88E41DE44AF000C8A52B /* playerState.h */,
+				ACFD88E71DE45B7700C8A52B /* standingState.cpp */,
+				ACFD88EA1DE45BEA00C8A52B /* movingState.cpp */,
+				ACFD88EC1DE45C4E00C8A52B /* jumpingState.cpp */,
+			);
+			path = player;
+			sourceTree = "<group>";
+		};
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +247,7 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				ACFD88E01DE44AF000C8A52B /* player */,
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
@@ -325,13 +352,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
+				ACFD88EB1DE45BEA00C8A52B /* movingState.cpp in Sources */,
+				ACFD88E91DE45B7700C8A52B /* standingState.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
+				ACFD88ED1DE45C4E00C8A52B /* jumpingState.cpp in Sources */,
 				FA0D4902FAA63D187EA61B31 /* ofxBaseGui.cpp in Sources */,
 				92A50AF72101624C3A8E6446 /* ofxButton.cpp in Sources */,
 				3A47706C1DF9A0D4045568C0 /* ofxGuiGroup.cpp in Sources */,
 				B38AE0704C26620B0B1F72E4 /* ofxLabel.cpp in Sources */,
 				0E459598E225E56585AC1CD9 /* ofxPanel.cpp in Sources */,
+				ACFD88E61DE44AF000C8A52B /* playerState.cpp in Sources */,
 				9F74DFA8C0F57500C92936C8 /* ofxSlider.cpp in Sources */,
+				ACFD88E51DE44AF000C8A52B /* player.cpp in Sources */,
 				A3C6983F8768ECD6DBA89E0F /* ofxSliderGroup.cpp in Sources */,
 				413A3F52C6AC90B4F28A6A1C /* ofxToggle.cpp in Sources */,
 				6B1CA8C98EA80149EBCD25F2 /* ofxJoystick.cpp in Sources */,
