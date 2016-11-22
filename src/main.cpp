@@ -6,7 +6,7 @@
 
 int main( ){
   ofxXmlSettings xml;
-  xml.loadFile("user.xml");
+  xml.loadFile("main.xml");
   xml.pushTag("Window");
   
   int  w      = xml.getValue("Width", 1024);
