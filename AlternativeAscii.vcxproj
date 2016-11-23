@@ -173,7 +173,9 @@
 	<ItemGroup>
 		<ClCompile Include="src\main.cpp" />
 		<ClCompile Include="src\ofApp.cpp" />
+		<ClCompile Include="src\gui.cpp" />
 		<ClCompile Include="src\input.cpp" />
+		<ClCompile Include="src\player\attackingState.cpp" />
 		<ClCompile Include="src\player\jumpingState.cpp" />
 		<ClCompile Include="src\player\movingState.cpp" />
 		<ClCompile Include="src\player\player.cpp" />
@@ -195,6 +197,7 @@
 	</ItemGroup>
 	<ItemGroup>
 		<ClInclude Include="src\ofApp.h" />
+		<ClInclude Include="src\gui.h" />
 		<ClInclude Include="src\input.h" />
 		<ClInclude Include="src\player\player.h" />
 		<ClInclude Include="src\player\playerState.h" />
