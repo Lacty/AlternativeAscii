@@ -38,3 +38,10 @@ public:
   void update(Player& player, ofxJoystick& input) override;
   void entry(Player& player) override;
 };
+
+class AttackingState : public PlayerState {
+public:
+  shared_ptr<PlayerState> handleInput(Player& player, ofxJoystick& input) override;
+  void update(Player& player, ofxJoystick& input) override;
+  void entry(Player& player) override;
+};

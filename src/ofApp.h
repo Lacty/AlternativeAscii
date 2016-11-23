@@ -1,6 +1,7 @@
 ﻿
 #pragma once
 #include "ofMain.h"
+#include "gui.h"
 #include "player/player.h"
 
 
