@@ -22,17 +22,15 @@ shared_ptr<PlayerState> MovingState::handleInput(Player& player, ofxJoystick& in
 void MovingState::update(Player& player, ofxJoystick& input) {
   // 移動ボタンに応じてプレイヤーを移動させる
   if (input.isPushing(Input::Left)) {
-    // 注意 プレイヤーの位置を直接いじるのではなく
-    // ベクトルを使用して移動させるのが望ましい
-    ofVec2f newLocation = player.getPos();
-    newLocation.x -= ofGetLastFrameTime() * 50;
-    player.setPos(newLocation);
+    ofVec2f newVel = player.getVel();
+    newVel.x = -(player.getSpeed() * ofGetLastFrameTime());
+    player.setVel(newVel);
   }
   else
   if (input.isPushing(Input::Right)) {
-    ofVec2f newLocation = player.getPos();
-    newLocation.x += ofGetLastFrameTime() * 50;
-    player.setPos(newLocation);
+    ofVec2f newVel = player.getVel();
+    newVel.x = player.getSpeed() * ofGetLastFrameTime();
+    player.setVel(newVel);
   }
 }
 

@@ -13,6 +13,7 @@ private:
   int id_;
 
   ofxPanel gui_;
+  ofxLabel label_;
 
   ofxIntSlider HP_;
   ofxIntSlider maxHP_;
@@ -20,6 +21,8 @@ private:
   ofxVec2Slider pos_;
   ofxVec2Slider vel_;
   ofxVec2Slider jumpPow_;
+  
+  ofxFloatSlider speed_;
   
   
   void setupGui();
@@ -29,6 +32,8 @@ private:
   
   // 入力に対してプレイヤーの状態を変更させる
   void handleInput();
+  
+  void move();
   
 public:
   Player() = default;
@@ -48,6 +53,8 @@ public:
   const ofVec2f& getPos();
   const ofVec2f& getVel();
   const ofVec2f& getJumpPow();
+  
+  const float getSpeed();
   
   void setPos(const ofVec2f& pos);
   void setVel(const ofVec2f& vel);

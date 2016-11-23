@@ -4,28 +4,33 @@
 
 // 暫定 ペラーメータなどは適当なので後で修正すること
 void Player::setup(int ID) {
+  // パラメータの初期化
   id_ = ID;
   joy_.setup(id_);
   maxHP_ = 100;
   HP_ = maxHP_;
   jumpPow_ = ofVec2f(0, 10);
+  speed_ = 100.0f;
   
   setupGui();
-  GUI::get()->add("Player" + ofToString(id_), gui_);
   
+  // 基底の立ち状態を追加
   state_.push_back(make_shared<StandingState>());
 }
 
 void Player::setupGui() {
   gui_.setup();
-  ofxLabel label;
   
-  //gui_.add(label.setup("Player :", ofToString(id_) + "p"));
+  // guiへパラメータを追加
+  gui_.add(label_.setup("Player :", ofToString(id_)));
   gui_.add(HP_.setup("HP", HP_, 0, maxHP_));
   gui_.add(maxHP_.setup("MaxHP", maxHP_, 0, 1000));
   gui_.add(pos_.setup("Position", pos_, ofVec2f(-1000, -1000), ofVec2f(1000, 1000)));
   gui_.add(vel_.setup("Velocity", vel_, ofVec2f(-100, -100), ofVec2f(100, 100)));
   gui_.add(jumpPow_.setup("JumpPower", jumpPow_, ofVec2f(0, 0), ofVec2f(0, 100)));
+  
+  // GUIへ登録
+  GUI::get()->add("Player" + ofToString(id_), gui_);
 }
 
 void Player::handleInput() {
@@ -47,12 +52,19 @@ void Player::handleInput() {
   }
 }
 
+void Player::move() {
+  // 加速度分移動させる
+  pos_ = ofVec2f(pos_) + ofVec2f(vel_);
+}
+
 void Player::update() {
   // 入力に対して状態を変化させる
   handleInput();
-  
+
   // 現在の状態を更新する
   state_.back()->update(*this, joy_);
+  
+  move();
 }
 
 void Player::draw() {
@@ -71,6 +83,8 @@ const int Player::getHP()    { return HP_;    }
 const ofVec2f& Player::getPos() { return pos_; }
 const ofVec2f& Player::getVel() { return vel_; }
 const ofVec2f& Player::getJumpPow() { return jumpPow_; }
+
+const float Player::getSpeed() { return speed_; }
 
 void Player::setPos(const ofVec2f& pos) { pos_ = pos; }
 void Player::setVel(const ofVec2f& vel) { vel_ = vel; }

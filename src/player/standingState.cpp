@@ -24,6 +24,16 @@ shared_ptr<PlayerState> StandingState::handleInput(Player& player, ofxJoystick& 
   return nullptr;
 }
 
-void StandingState::update(Player& player, ofxJoystick& input) {}
+void StandingState::update(Player& player, ofxJoystick& input) {
+  ofVec2f newVel = player.getVel();
+  
+  // 加速度が一定以下になったら加速度を0にする
+  if (newVel.x <= 0.1 && newVel.x >= -0.1) {
+    newVel.x = 0;
+  }
+
+  // 加速度を減速させる
+  player.setVel(newVel * 0.8f);
+}
 
 void StandingState::entry(Player& player) {}
