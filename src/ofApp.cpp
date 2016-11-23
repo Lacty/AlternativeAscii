@@ -3,6 +3,7 @@
 
 
 void ofApp::setup() {
+  GUI::get()->setup();
   cam_.setPosition(0, 0, 300);
   player_.setup(0);
 }
@@ -20,4 +21,5 @@ void ofApp::draw() {
   cam_.end();
   
   // カメラの影響を受けないuiなどの描画はここから
+  GUI::get()->draw();
 }
