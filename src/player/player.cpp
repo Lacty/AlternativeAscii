@@ -22,7 +22,7 @@ void Player::setupGui() {
   gui_.setup();
   
   // guiへパラメータを追加
-  gui_.add(label_.setup("Player :", ofToString(id_)));
+  gui_.add(label_.setup("Player", ofToString(id_)));
   gui_.add(HP_.setup("HP", HP_, 0, maxHP_));
   gui_.add(maxHP_.setup("MaxHP", maxHP_, 0, 1000));
   gui_.add(pos_.setup("Position", pos_, ofVec2f(-1000, -1000), ofVec2f(1000, 1000)));
