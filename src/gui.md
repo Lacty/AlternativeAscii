@@ -16,5 +16,6 @@ GUIはシングルトンクラスで
 >guiの描画をします
 
 ``void add(const string& name, ofxPanel& panel)``
->GUIクラスにofxPanelを追加し管理させます
+>GUIクラスにofxPanelを追加し管理させます    
 >``GUI::get()->add("Player", gui);``
+>player.cpp Player::setupGui() 参照
