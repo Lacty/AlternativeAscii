@@ -6,6 +6,14 @@
 #include "playerState.h"
 
 
+struct Collision {
+  // パッシブ :攻撃を受ける側の判定
+  list<ofRectangle> passive_;
+  
+  // アタック :攻撃の判定
+  list<ofRectangle> attack_;
+};
+
 class Player {
 private:
   ofxJoystick joy_;
@@ -24,6 +32,8 @@ private:
   
   ofxFloatSlider speed_;
   
+  ofxToggle show_col_;
+  Collision col_;
   
   void setupGui();
   
@@ -34,6 +44,7 @@ private:
   void handleInput();
   
   void move();
+  void drawCollision();
   
 public:
   Player() = default;
@@ -55,6 +66,8 @@ public:
   const ofVec2f& getJumpPow();
   
   const float getSpeed();
+  
+  Collision* getCollision();
   
   void setPos(const ofVec2f& pos);
   void setVel(const ofVec2f& vel);

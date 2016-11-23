@@ -12,6 +12,10 @@ void Player::setup(int ID) {
   jumpPow_ = ofVec2f(0, 10);
   speed_ = 100.0f;
   
+  // 判定の描画テスト用にrectangleを作成
+  col_.passive_.push_back(ofRectangle(-25, -25, 50, 50));
+  col_.attack_.push_back(ofRectangle(10, 0, 30, 10));
+  
   setupGui();
   
   // 基底の立ち状態を追加
@@ -28,6 +32,7 @@ void Player::setupGui() {
   gui_.add(pos_.setup("Position", pos_, ofVec2f(-1000, -1000), ofVec2f(1000, 1000)));
   gui_.add(vel_.setup("Velocity", vel_, ofVec2f(-100, -100), ofVec2f(100, 100)));
   gui_.add(jumpPow_.setup("JumpPower", jumpPow_, ofVec2f(0, 0), ofVec2f(0, 100)));
+  gui_.add(show_col_.setup("ShowCollision", false));
   
   // GUIへ登録
   GUI::get()->add("Player" + ofToString(id_), gui_);
@@ -57,6 +62,19 @@ void Player::move() {
   pos_ = ofVec2f(pos_) + ofVec2f(vel_);
 }
 
+void Player::drawCollision() {
+  ofNoFill();
+  for (const auto& col : col_.passive_) {
+    ofSetColor(60, 240, 60);
+    ofDrawRectangle(col);
+  }
+  for (const auto& col : col_.attack_) {
+    ofSetColor(240, 60, 60);
+    ofDrawRectangle(col);
+  }
+  ofFill();
+}
+
 void Player::update() {
   // 入力に対して状態を変化させる
   handleInput();
@@ -69,10 +87,14 @@ void Player::update() {
 
 void Player::draw() {
   // 暫定
+  ofSetColor(255, 255, 255);
   ofDrawBox(static_cast<ofPoint>(pos_), 50);
   
   // 状態にに合わせて描画を更新させるなら変更する
   // state_.back()->draw();
+  if (show_col_) {
+    drawCollision();
+  }
 }
 
 const int Player::getID() { return id_; }
@@ -85,6 +107,8 @@ const ofVec2f& Player::getVel() { return vel_; }
 const ofVec2f& Player::getJumpPow() { return jumpPow_; }
 
 const float Player::getSpeed() { return speed_; }
+
+Collision* Player::getCollision() { return &col_; }
 
 void Player::setPos(const ofVec2f& pos) { pos_ = pos; }
 void Player::setVel(const ofVec2f& vel) { vel_ = vel; }
