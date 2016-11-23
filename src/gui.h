@@ -1,4 +1,4 @@
-﻿
+
 #pragma once
 #include "ofMain.h"
 #include "ofxGui.h"
@@ -22,5 +22,6 @@ public:
   void setup();
   void draw();
   
+  // GUIへ登録
   void add(const string& name, ofxPanel& panel);
 };
