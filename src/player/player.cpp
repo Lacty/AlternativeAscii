@@ -7,9 +7,25 @@ void Player::setup(int ID) {
   id_ = ID;
   joy_.setup(id_);
   maxHP_ = 100;
-  currentHP_ = maxHP_;
-  jumpPow_.set(0, 10);
+  HP_ = maxHP_;
+  jumpPow_ = ofVec2f(0, 10);
+  
+  setupGui();
+  GUI::get()->add("Player" + ofToString(id_), gui_);
+  
   state_.push_back(make_shared<StandingState>());
+}
+
+void Player::setupGui() {
+  gui_.setup();
+  ofxLabel label;
+  
+  //gui_.add(label.setup("Player :", ofToString(id_) + "p"));
+  gui_.add(HP_.setup("HP", HP_, 0, maxHP_));
+  gui_.add(maxHP_.setup("MaxHP", maxHP_, 0, 1000));
+  gui_.add(pos_.setup("Position", pos_, ofVec2f(-1000, -1000), ofVec2f(1000, 1000)));
+  gui_.add(vel_.setup("Velocity", vel_, ofVec2f(-100, -100), ofVec2f(100, 100)));
+  gui_.add(jumpPow_.setup("JumpPower", jumpPow_, ofVec2f(0, 0), ofVec2f(0, 100)));
 }
 
 void Player::handleInput() {
@@ -41,23 +57,23 @@ void Player::update() {
 
 void Player::draw() {
   // 暫定
-  ofDrawBox(pos_, 50);
+  ofDrawBox(static_cast<ofPoint>(pos_), 50);
   
   // 状態にに合わせて描画を更新させるなら変更する
   // state_.back()->draw();
 }
 
-const int Player::getMaxHP()     const { return maxHP_;     }
-const int Player::getCurrentHP() const { return currentHP_; }
+const int Player::getID() { return id_; }
 
-const ofVec2f& Player::getPos() const { return pos_; }
-const ofVec2f& Player::getVel() const { return vel_; }
-const ofVec2f& Player::getJumpPow() const { return jumpPow_; }
+const int Player::getMaxHP() { return maxHP_; }
+const int Player::getHP()    { return HP_;    }
 
-const int Player::getID() const { return id_; }
+const ofVec2f& Player::getPos() { return pos_; }
+const ofVec2f& Player::getVel() { return vel_; }
+const ofVec2f& Player::getJumpPow() { return jumpPow_; }
 
-void Player::setPos(const ofVec2f& pos) { pos_.set(pos); }
-void Player::setVel(const ofVec2f& vel) { vel_.set(vel); }
+void Player::setPos(const ofVec2f& pos) { pos_ = pos; }
+void Player::setVel(const ofVec2f& vel) { vel_ = vel; }
 
 void Player::addState(const shared_ptr<PlayerState>& state) {
   state_.push_back(state);

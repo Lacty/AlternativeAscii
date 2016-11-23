@@ -2,21 +2,27 @@
 #pragma once
 #include "ofMain.h"
 #include "ofxJoystick.h"
+#include "gui.h"
 #include "playerState.h"
 
 
 class Player {
 private:
   ofxJoystick joy_;
-
-  int currentHP_;
-  int maxHP_;
-  
-  ofVec2f pos_;
-  ofVec2f jumpPow_;
-  ofVec2f vel_;
   
   int id_;
+
+  ofxPanel gui_;
+
+  ofxIntSlider HP_;
+  ofxIntSlider maxHP_;
+  
+  ofxVec2Slider pos_;
+  ofxVec2Slider vel_;
+  ofxVec2Slider jumpPow_;
+  
+  
+  void setupGui();
   
   // プレイヤーの状態をスタックするdeque
   deque<shared_ptr<PlayerState>> state_;
@@ -34,14 +40,14 @@ public:
   void update();
   void draw();
   
-  const int getMaxHP() const;
-  const int getCurrentHP() const;
+  const int getID();
   
-  const ofVec2f& getPos() const;
-  const ofVec2f& getVel() const;
-  const ofVec2f& getJumpPow() const;
+  const int getMaxHP();
+  const int getHP();
   
-  const int getID() const;
+  const ofVec2f& getPos();
+  const ofVec2f& getVel();
+  const ofVec2f& getJumpPow();
   
   void setPos(const ofVec2f& pos);
   void setVel(const ofVec2f& vel);
