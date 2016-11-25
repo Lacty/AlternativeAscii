@@ -5,6 +5,7 @@
 void ofApp::setup() {
   GUI::get()->setup();
   cam_.setPosition(0, 0, 300);
+  
   player_.setup(0);
 }
 

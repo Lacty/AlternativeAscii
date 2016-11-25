@@ -21,6 +21,11 @@ shared_ptr<PlayerState> StandingState::handleInput(Player& player, ofxJoystick& 
     return make_shared<MovingState>();
   }
   
+  // 攻撃
+  if (input.isPressed(Input::X)) {
+    return make_shared<AttackingState>();
+  }
+  
   return nullptr;
 }
 

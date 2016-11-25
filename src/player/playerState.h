@@ -40,6 +40,12 @@ public:
 };
 
 class AttackingState : public PlayerState {
+private:
+  float start_;
+  float end_;
+  
+  bool finish();
+
 public:
   shared_ptr<PlayerState> handleInput(Player& player, ofxJoystick& input) override;
   void update(Player& player, ofxJoystick& input) override;

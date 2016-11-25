@@ -13,6 +13,8 @@ struct Collision {
 
 class Player {
 private:
+  Player* opponent_;
+
   ofxJoystick joy_;
   
   int id_;
@@ -50,6 +52,7 @@ public:
   // プレイヤーを生成する時に呼ぶ
   // IDは1p 2pを示す 0~1を指定
   void setup(int ID);
+  void setOpponent(Player* opp);
   
   void update();
   void draw();

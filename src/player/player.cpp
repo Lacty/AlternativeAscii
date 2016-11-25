@@ -12,13 +12,21 @@ void Player::setup(int ID) {
   jumpPow_ = ofVec2f(0, 10);
   speed_ = 100.0f;
   
-  // 判定の描画テスト用にrectangleを作成
-  
+  // 当たり判定用判定を作成
+  ofVec2f size(50, 50);
+  passiveCol_.push_back({ofVec2f::zero(), size});
   
   setupGui();
   
   // 基底の立ち状態を追加
   state_.push_back(make_shared<StandingState>());
+}
+
+void Player::setOpponent(Player* opp) {
+  opponent_ = opp;
+  
+  // 対戦相手が登録されませんでした
+  assert(opponent_ != nullptr);
 }
 
 void Player::setupGui() {
@@ -65,11 +73,13 @@ void Player::drawCollision() {
   ofNoFill();
   for (const auto& col : passiveCol_) {
     ofSetColor(60, 240, 60);
-    ofDrawRectangle(ofRectangle(ofVec2f(pos_) + col.offset_, col.size_));
+    ofVec2f pos = ofVec2f(pos_) + col.offset_ - (col.size_ / 2);
+    ofDrawRectangle(ofRectangle(pos, pos + col.size_));
   }
   for (const auto& col : attackCol_) {
     ofSetColor(240, 60, 60);
-    ofDrawRectangle(ofRectangle(ofVec2f(pos_) + col.offset_, col.size_));
+    ofVec2f pos = ofVec2f(pos_) + col.offset_ - (col.size_ / 2);
+    ofDrawRectangle(ofRectangle(pos, pos + col.size_));
   }
   ofFill();
 }
@@ -87,7 +97,7 @@ void Player::update() {
 void Player::draw() {
   // 暫定
   ofSetColor(255, 255, 255);
-  ofDrawBox(static_cast<ofPoint>(pos_), 50);
+  ofDrawBox(static_cast<ofPoint>(pos_), 50, 50, 0);
   
   // 状態にに合わせて描画を更新させるなら変更する
   // state_.back()->draw();
