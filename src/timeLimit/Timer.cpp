@@ -1,4 +1,4 @@
-
+ï»¿
 #include "Timer.h"
 
 
@@ -11,7 +11,7 @@ int Timer::getLimit() { return limit_; }
 void Timer::setFontSize(int fontSize) { fontSize_ = fontSize; }
 int Timer::getFontSize() { return fontSize_; }
 
-// Œo‰ßŠÔ‚É§ŒÀŠÔ‚ÌÅ‘å’l‚ğ‘ã“ü(–ˆ‡Å‰‚ÉŒÄ‚Ño‚·‘z’è)
+// çµŒéæ™‚é–“ã«åˆ¶é™æ™‚é–“ã®æœ€å¤§å€¤ã‚’ä»£å…¥(æ¯è©¦åˆæœ€åˆã«å‘¼ã³å‡ºã™æƒ³å®š)
 void Timer::resetElapsed() { ofResetElapsedTimeCounter(); }
 
 void  Timer::setup() {
@@ -22,7 +22,7 @@ void  Timer::setup() {
 }
 
 void Timer::update(ofEventArgs &args) {
-  // Å‘åŠÔ - Œo‰ßŠÔ‚ğ•\¦—p•Ï”‚É‘ã“ü
+  // æœ€å¤§æ™‚é–“ - çµŒéæ™‚é–“ã‚’è¡¨ç¤ºç”¨å¤‰æ•°ã«ä»£å…¥
   limit_ = maxTime_ - (ofGetElapsedTimef() - startTime_);
 }
 
@@ -51,39 +51,39 @@ void Timer::guiSetup() {
   gui_.add(reset_.setup("Time_Reset!"));
   gui_.add(save_.setup("Save_To_File"));
   gui_.add(load_.setup("Loda_From_File"));
-  // xml‚ÉƒZ[ƒu‚µ‚Ä‚ ‚é’l‚ğÅ‰‚ÉŒÄ‚Ño‚µ‚Ä‚¨‚­
+  // xmlã«ã‚»ãƒ¼ãƒ–ã—ã¦ã‚ã‚‹å€¤ã‚’æœ€åˆã«å‘¼ã³å‡ºã—ã¦ãŠã
   gui_.loadFromFile("Game/TimerSettings.xml");
 }
 
-// ƒtƒHƒ“ƒg“Ç‚İ‚İ
+// ãƒ•ã‚©ãƒ³ãƒˆèª­ã¿è¾¼ã¿
 void Timer::fontSetup() {
   loadFontSize();
   font_.loadFont("consolab.ttf", fontSize_);
 }
 
-// xmlƒtƒ@ƒCƒ‹‚©‚ç§ŒÀŠÔ‚ÌÅ‘å’l‚ğƒ[ƒh
+// xmlãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰åˆ¶é™æ™‚é–“ã®æœ€å¤§å€¤ã‚’ãƒ­ãƒ¼ãƒ‰
 void Timer::loadMaxTime() {
   if (xml_.loadFile("Game/TimerSettings.xml")) {
     setMaxTime(xml_.getValue("group:MaxTime", 0));
-    setLimit(maxTime_); // Å‘å’l‚Ìƒ[ƒh‚Æ“¯‚É§ŒÀŠÔ‚É“¯‚¶’l‚ğ‘ã“ü
+    setLimit(maxTime_); // æœ€å¤§å€¤ã®ãƒ­ãƒ¼ãƒ‰ã¨åŒæ™‚ã«åˆ¶é™æ™‚é–“ã«åŒã˜å€¤ã‚’ä»£å…¥
   }
 }
 
-// xmlƒtƒ@ƒCƒ‹‚©‚çƒtƒHƒ“ƒgƒTƒCƒY‚Ìƒ[ƒh
+// xmlãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºã®ãƒ­ãƒ¼ãƒ‰
 void Timer::loadFontSize() {
   if (xml_.loadFile("Game/TimerSettings.xml")) {
     setFontSize(xml_.getValue("group:FontSize", 0));
   }
 }
 
-// ‰æ–Êã•”AƒZƒ“ƒ^[‚É•\¦
+// ç”»é¢ä¸Šéƒ¨ã€ã‚»ãƒ³ã‚¿ãƒ¼ã«è¡¨ç¤º
 void Timer::drawTimer() {
   ofPushMatrix();
   ofPushStyle();
 
   ofSetColor(255, 255, 0);
   string text;
-  // •\¦‚·‚étext‚Ì’†g‚ğc‚èŠÔ‚ÅØ‚è‘Ö‚¦‚é
+  // è¡¨ç¤ºã™ã‚‹textã®ä¸­èº«ã‚’æ®‹ã‚Šæ™‚é–“ã§åˆ‡ã‚Šæ›¿ãˆã‚‹
   if (!isTimeup()) { text = ofToString((int)limit_);  }
   else { text = ofToString(0); }
   float fontWidth = font_.stringWidth(text);
@@ -91,7 +91,7 @@ void Timer::drawTimer() {
 
   ofTranslate(ofGetWidth() / 2, 0);
   ofScale((ofGetWidth() / fontScale_), (ofGetHeight() / fontScale_), 1);
-  font_.drawString(text, -fontWidth / 2, fontHeight); // ƒ^ƒCƒ}[‚Ì•`‰æ
+  font_.drawString(text, -fontWidth / 2, fontHeight); // ã‚¿ã‚¤ãƒãƒ¼ã®æç”»
 
   ofPopStyle();
   ofPopMatrix();

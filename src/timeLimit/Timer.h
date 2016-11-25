@@ -1,4 +1,4 @@
-
+ï»¿
 #pragma once
 #include "ofMain.h"
 #include "ofxGui.h"
@@ -8,13 +8,13 @@
 
 class Timer {
 private:
-  int limit_;  // •\¦‚³‚ê‚éc‚èŠÔ
-  float startTime_; // Œv‘ªŠJn‚ÌŠÔ‚ğ•Û‘¶
+  int limit_;  // è¡¨ç¤ºã•ã‚Œã‚‹æ®‹ã‚Šæ™‚é–“
+  float startTime_; // è¨ˆæ¸¬é–‹å§‹æ™‚ã®æ™‚é–“ã‚’ä¿å­˜
   float fontSize_;
-  ofTrueTypeFont font_; // •\¦‚·‚éÛ‚ÌƒtƒHƒ“ƒg‚ÆƒTƒCƒY‚ğ“ü‚ê‚é” 
+  ofTrueTypeFont font_; // è¡¨ç¤ºã™ã‚‹éš›ã®ãƒ•ã‚©ãƒ³ãƒˆã¨ã‚µã‚¤ã‚ºã‚’å…¥ã‚Œã‚‹ç®±
   ofxXmlSettings xml_;
 
-  // ˆÈ‰ºgui—p
+  // ä»¥ä¸‹guiç”¨
   ofxPanel gui_;
   ofxFloatSlider fontScale_;
   ofxIntSlider maxTime_;
@@ -39,7 +39,7 @@ public:
   void setFontSize(int fontSize);
   int getFontSize();
 
-  void resetElapsed();  // ƒ^ƒCƒ}[ƒŠƒZƒbƒg
+  void resetElapsed();  // ã‚¿ã‚¤ãƒãƒ¼ãƒªã‚»ãƒƒãƒˆ
   void setup();
   void update(ofEventArgs &args);
   void draw();
