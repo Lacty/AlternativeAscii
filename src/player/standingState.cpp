@@ -30,6 +30,8 @@ shared_ptr<PlayerState> StandingState::handleInput(Player& player, ofxJoystick& 
 }
 
 void StandingState::update(Player& player, ofxJoystick& input) {
+  PassiveState::update(player, input);
+
   ofVec2f newVel = player.getVel();
   
   // 加速度が一定以下になったら加速度を0にする

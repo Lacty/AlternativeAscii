@@ -20,6 +20,8 @@ shared_ptr<PlayerState> MovingState::handleInput(Player& player, ofxJoystick& in
 }
 
 void MovingState::update(Player& player, ofxJoystick& input) {
+  PassiveState::update(player, input);
+
   // 移動ボタンに応じてプレイヤーを移動させる
   if (input.isPushing(Input::Left)) {
     ofVec2f newVel = player.getVel();

@@ -18,14 +18,22 @@ public:
   static shared_ptr<PlayerState> finish;
 };
 
-class StandingState : public PlayerState {
+// 攻撃を受けることが可能な状態
+class PassiveState : public PlayerState {
 public:
   shared_ptr<PlayerState> handleInput(Player& player, ofxJoystick& input) override;
   void update(Player& player, ofxJoystick& input) override;
   void entry(Player& player) override;
 };
 
-class MovingState : public PlayerState {
+class StandingState : public PassiveState {
+public:
+  shared_ptr<PlayerState> handleInput(Player& player, ofxJoystick& input) override;
+  void update(Player& player, ofxJoystick& input) override;
+  void entry(Player& player) override;
+};
+
+class MovingState : public PassiveState {
 public:
   shared_ptr<PlayerState> handleInput(Player& player, ofxJoystick& input) override;
   void update(Player& player, ofxJoystick& input) override;
