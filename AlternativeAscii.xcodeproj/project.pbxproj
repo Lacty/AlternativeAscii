@@ -24,6 +24,7 @@
 		A3C6983F8768ECD6DBA89E0F /* ofxSliderGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70AAD97154A7F3A7E07DD2E8 /* ofxSliderGroup.cpp */; };
 		ACE62E9D1DE57332002A27A1 /* attackingState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACE62E9C1DE57332002A27A1 /* attackingState.cpp */; };
 		ACE62EA31DE587EF002A27A1 /* gui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACE62EA11DE587EF002A27A1 /* gui.cpp */; };
+		ACE62EB11DE88A8D002A27A1 /* passiveState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACE62EB01DE88A8D002A27A1 /* passiveState.cpp */; };
 		B38AE0704C26620B0B1F72E4 /* ofxLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0939545FB9EE4C7784F4342A /* ofxLabel.cpp */; };
 		BF4934AC9A8DAF70C1AB410D /* input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E15C832BB3890D55A12FC5AD /* input.cpp */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
@@ -90,6 +91,7 @@
 		ACE62E9C1DE57332002A27A1 /* attackingState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = attackingState.cpp; path = player/attackingState.cpp; sourceTree = "<group>"; };
 		ACE62EA11DE587EF002A27A1 /* gui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gui.cpp; sourceTree = "<group>"; };
 		ACE62EA21DE587EF002A27A1 /* gui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gui.h; sourceTree = "<group>"; };
+		ACE62EB01DE88A8D002A27A1 /* passiveState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = passiveState.cpp; path = player/passiveState.cpp; sourceTree = "<group>"; };
 		B63793AAC401CFEE868708F2 /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxXmlSettings.cpp; path = ../../addons/ofxXmlSettings/src/ofxXmlSettings.cpp; sourceTree = SOURCE_ROOT; };
 		BB95707AED850DEA6B7CF648 /* playerState.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = playerState.h; path = src/player/playerState.h; sourceTree = SOURCE_ROOT; };
 		C846292EE0D139BE5E0C7E7F /* ofxButton.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxButton.cpp; path = ../../addons/ofxGui/src/ofxButton.cpp; sourceTree = SOURCE_ROOT; };
@@ -210,6 +212,7 @@
 				BB95707AED850DEA6B7CF648 /* playerState.h */,
 				8A9376F3AAD216026CA5CC1A /* standingState.cpp */,
 				ACE62E9C1DE57332002A27A1 /* attackingState.cpp */,
+				ACE62EB01DE88A8D002A27A1 /* passiveState.cpp */,
 			);
 			name = player;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				6B1CA8C98EA80149EBCD25F2 /* ofxJoystick.cpp in Sources */,
 				0C626D3D484EA5FB87A6AD23 /* ofxXmlSettings.cpp in Sources */,
 				28DC652211D4AF8CC023D568 /* tinyxml.cpp in Sources */,
+				ACE62EB11DE88A8D002A27A1 /* passiveState.cpp in Sources */,
 				F877D69532909AE487E0EF22 /* tinyxmlerror.cpp in Sources */,
 				32E2318B89B6217AE6052155 /* tinyxmlparser.cpp in Sources */,
 			);
