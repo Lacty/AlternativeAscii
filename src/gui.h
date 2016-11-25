@@ -10,11 +10,8 @@ private:
   
   ofxPanel gui_;
   
-  struct Panel {
-    ofxToggle show;
-    ofxPanel  panel;
-  };
-  vector<Panel> panels_;
+  deque<ofxToggle> show_;
+  deque<ofxPanel>  panels_;
   
 public:
   static GUI* get();

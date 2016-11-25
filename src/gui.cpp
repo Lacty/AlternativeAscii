@@ -15,21 +15,23 @@ void GUI::setup() {
 }
 
 void GUI::add(const string &name, ofxPanel &panel) {
-  // 配列に空のPanelを追加
-  panels_.emplace_back(Panel());
+  // 配列Panelを追加
+  panels_.push_back(ofxPanel());
+  panels_.back().setup();
+  panels_.back() = panel;
+  
+  show_.push_back(ofxToggle());
   
   // 与えられた名前でトグルを追加
-  panels_.back().panel.setup();
-  gui_.add(panels_.back().show.setup(name, false));
-  panels_.back().panel = panel;
+  gui_.add(show_.back().setup(name, false));
 }
 
 void GUI::draw() {
   gui_.draw();
   
-  for (auto& panel : panels_) {
-    if (panel.show) {
-      panel.panel.draw();
+  for (int i = 0; i < show_.size(); i++) {
+    if (show_[i]) {
+      panels_[i].draw();
     }
   }
 }
