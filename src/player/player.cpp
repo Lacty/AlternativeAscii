@@ -22,11 +22,11 @@ void Player::setup(int ID) {
   state_.push_back(make_shared<StandingState>());
 }
 
-void Player::setOpponent(Player* opp) {
-  opponent_ = opp;
+void Player::setOther(Player* other) {
+  other_ = other;
   
   // 対戦相手が登録されませんでした
-  assert(opponent_ != nullptr);
+  assert(other_ != nullptr);
 }
 
 void Player::setupGui() {
@@ -69,21 +69,6 @@ void Player::move() {
   pos_ = ofVec2f(pos_) + ofVec2f(vel_);
 }
 
-void Player::drawCollision() {
-  ofNoFill();
-  for (const auto& col : passiveCol_) {
-    ofSetColor(60, 240, 60);
-    ofVec2f pos = ofVec2f(pos_) + col.offset_ - (col.size_ / 2);
-    ofDrawRectangle(ofRectangle(pos, pos + col.size_));
-  }
-  for (const auto& col : attackCol_) {
-    ofSetColor(240, 60, 60);
-    ofVec2f pos = ofVec2f(pos_) + col.offset_ - (col.size_ / 2);
-    ofDrawRectangle(ofRectangle(pos, pos + col.size_));
-  }
-  ofFill();
-}
-
 void Player::update() {
   // 入力に対して状態を変化させる
   handleInput();
@@ -101,9 +86,35 @@ void Player::draw() {
   
   // 状態にに合わせて描画を更新させるなら変更する
   // state_.back()->draw();
-  if (showCol_) {
-    drawCollision();
+}
+
+void Player::drawCollision() {
+  if (!showCol_) { return; }
+  
+  ofNoFill();
+  for (const auto& col : passiveCol_) {
+    ofSetColor(60, 240, 60);
+    ofVec2f pos = ofVec2f(pos_) + col.offset_ - (col.size_ / 2);
+    ofDrawRectangle(ofRectangle(pos, pos + col.size_));
   }
+  for (const auto& col : attackCol_) {
+    ofSetColor(240, 60, 60);
+    ofVec2f pos = ofVec2f(pos_) + col.offset_ - (col.size_ / 2);
+    ofDrawRectangle(ofRectangle(pos, pos + col.size_));
+  }
+  ofFill();
+}
+
+int Player::damage(int damage) {
+  HP_ = int(HP_) - damage;
+}
+
+
+Player* Player::getOther() {
+  // other_(対戦相手)がぬるぽです
+  // setOtherを使って対戦相手を設定してください
+  assert(other_ != nullptr);
+  return other_;
 }
 
 const int Player::getID() { return id_; }

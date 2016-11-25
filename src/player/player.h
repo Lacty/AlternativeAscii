@@ -13,7 +13,7 @@ struct Collision {
 
 class Player {
 private:
-  Player* opponent_;
+  Player* other_;
 
   ofxJoystick joy_;
   
@@ -44,7 +44,6 @@ private:
   void handleInput();
   
   void move();
-  void drawCollision();
   
 public:
   Player() = default;
@@ -52,10 +51,18 @@ public:
   // プレイヤーを生成する時に呼ぶ
   // IDは1p 2pを示す 0~1を指定
   void setup(int ID);
-  void setOpponent(Player* opp);
+  void setOther(Player* other);
   
   void update();
   void draw();
+  void drawCollision();
+  
+  // ダメージを食らう場合この関数を通してダメージを受ける
+  // 受けたダメージ量を返す
+  int damage(int damage);
+  
+  
+  Player* getOther();
   
   const int getID();
   
