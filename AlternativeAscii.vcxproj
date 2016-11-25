@@ -178,6 +178,7 @@
 		<ClCompile Include="src\player\attackingState.cpp" />
 		<ClCompile Include="src\player\jumpingState.cpp" />
 		<ClCompile Include="src\player\movingState.cpp" />
+		<ClCompile Include="src\player\passiveState.cpp" />
 		<ClCompile Include="src\player\player.cpp" />
 		<ClCompile Include="src\player\playerState.cpp" />
 		<ClCompile Include="src\player\standingState.cpp" />

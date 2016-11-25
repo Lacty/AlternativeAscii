@@ -28,6 +28,9 @@
 		<ClCompile Include="src\player\movingState.cpp">
 			<Filter>src\player</Filter>
 		</ClCompile>
+		<ClCompile Include="src\player\passiveState.cpp">
+			<Filter>src\player</Filter>
+		</ClCompile>
 		<ClCompile Include="src\player\player.cpp">
 			<Filter>src\player</Filter>
 		</ClCompile>
