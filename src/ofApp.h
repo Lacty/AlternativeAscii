@@ -8,7 +8,8 @@
 class ofApp : public ofBaseApp {
 private:
   ofCamera cam_;
-  Player player_;
+  Player p1_;
+  Player p2_;
   
 public:
   void setup();
