@@ -107,6 +107,7 @@ void Player::drawCollision() {
 
 int Player::damage(int damage) {
   HP_ = int(HP_) - damage;
+  return damage;
 }
 
 
