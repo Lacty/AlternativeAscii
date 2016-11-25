@@ -7,11 +7,8 @@
 
 
 struct Collision {
-  // パッシブ :攻撃を受ける側の判定
-  list<ofRectangle> passive_;
-  
-  // アタック :攻撃の判定
-  list<ofRectangle> attack_;
+  ofVec2f offset_;
+  ofVec2f size_;
 };
 
 class Player {
@@ -32,8 +29,9 @@ private:
   
   ofxFloatSlider speed_;
   
-  ofxToggle show_col_;
-  Collision col_;
+  ofxToggle showCol_;
+  list<Collision> passiveCol_;
+  list<Collision> attackCol_;
   
   void setupGui();
   
@@ -67,7 +65,8 @@ public:
   
   const float getSpeed();
   
-  Collision* getCollision();
+  list<Collision>& getPassiveCol();
+  list<Collision>& getAttackCol();
   
   void setPos(const ofVec2f& pos);
   void setVel(const ofVec2f& vel);

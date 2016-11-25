@@ -13,8 +13,7 @@ void Player::setup(int ID) {
   speed_ = 100.0f;
   
   // 判定の描画テスト用にrectangleを作成
-  col_.passive_.push_back(ofRectangle(-25, -25, 50, 50));
-  col_.attack_.push_back(ofRectangle(10, 0, 30, 10));
+  
   
   setupGui();
   
@@ -32,7 +31,7 @@ void Player::setupGui() {
   gui_.add(pos_.setup("Position", pos_, ofVec2f(-1000, -1000), ofVec2f(1000, 1000)));
   gui_.add(vel_.setup("Velocity", vel_, ofVec2f(-100, -100), ofVec2f(100, 100)));
   gui_.add(jumpPow_.setup("JumpPower", jumpPow_, ofVec2f(0, 0), ofVec2f(0, 100)));
-  gui_.add(show_col_.setup("ShowCollision", false));
+  gui_.add(showCol_.setup("ShowCollision", false));
   
   // GUIへ登録
   GUI::get()->add("Player" + ofToString(id_), gui_);
@@ -64,13 +63,13 @@ void Player::move() {
 
 void Player::drawCollision() {
   ofNoFill();
-  for (const auto& col : col_.passive_) {
+  for (const auto& col : passiveCol_) {
     ofSetColor(60, 240, 60);
-    ofDrawRectangle(col);
+    ofDrawRectangle(ofRectangle(ofVec2f(pos_) + col.offset_, col.size_));
   }
-  for (const auto& col : col_.attack_) {
+  for (const auto& col : attackCol_) {
     ofSetColor(240, 60, 60);
-    ofDrawRectangle(col);
+    ofDrawRectangle(ofRectangle(ofVec2f(pos_) + col.offset_, col.size_));
   }
   ofFill();
 }
@@ -92,7 +91,7 @@ void Player::draw() {
   
   // 状態にに合わせて描画を更新させるなら変更する
   // state_.back()->draw();
-  if (show_col_) {
+  if (showCol_) {
     drawCollision();
   }
 }
@@ -108,7 +107,8 @@ const ofVec2f& Player::getJumpPow() { return jumpPow_; }
 
 const float Player::getSpeed() { return speed_; }
 
-Collision* Player::getCollision() { return &col_; }
+list<Collision>& Player::getPassiveCol() { return passiveCol_; }
+list<Collision>& Player::getAttackCol()  { return attackCol_;  }
 
 void Player::setPos(const ofVec2f& pos) { pos_ = pos; }
 void Player::setVel(const ofVec2f& vel) { vel_ = vel; }
