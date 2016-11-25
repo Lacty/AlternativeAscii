@@ -3,7 +3,9 @@
 #include "player.h"
 
 
-shared_ptr<PlayerState> PassiveState::handleInput(Player& player, ofxJoystick& input) {}
+shared_ptr<PlayerState> PassiveState::handleInput(Player& player, ofxJoystick& input) {
+  return nullptr;
+}
 
 void PassiveState::update(Player& player, ofxJoystick& input) {
   Player* other = player.getOther();
