@@ -25,6 +25,7 @@ private:
   void loadFontScale();
   void saveFontScale();
   void drawTimer();
+  void drawParam();
 public:
   void setLimit(float time);
   int getLimit();

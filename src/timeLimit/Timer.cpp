@@ -32,20 +32,9 @@ void Timer::update(ofEventArgs &args) {
 
 void Timer::draw() {
   drawTimer();
-
-  ImGui::Begin("TimerState");
-  ImGui::SetWindowSize(ofVec2f(200, 200));
-  ImGui::SliderFloat("Scale", &fontScale_, 0, 500);
-  if (ImGui::Button("Time_Reset")) {
-    reset();
-  }
-  if (ImGui::Button("Save")) {
-    saveFontScale();
-  }
-  if (ImGui::Button("Load")) {
-    loadFontScale();
-  }
-  ImGui::End();
+#ifdef DEBUG
+  drawParam();
+#endif
 }
 
 bool Timer::isTimeup() {
@@ -117,4 +106,20 @@ void Timer::drawTimer() {
 
   ofPopStyle();
   ofPopMatrix();
+}
+
+void Timer::drawParam() {
+  ImGui::Begin("TimerState");
+  ImGui::SetWindowSize(ofVec2f(200, 200));
+  ImGui::SliderFloat("Scale", &fontScale_, 0, 500);
+  if (ImGui::Button("Time_Reset")) {
+    reset();
+  }
+  if (ImGui::Button("Save")) {
+    saveFontScale();
+  }
+  if (ImGui::Button("Load")) {
+    loadFontScale();
+  }
+  ImGui::End();
 }
