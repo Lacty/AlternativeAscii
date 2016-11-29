@@ -5,30 +5,43 @@
 void Timer::setMaxTime(int maxTime) { maxTime_ = maxTime; }
 int Timer::getMaxTime() { return maxTime_; }
 
-void Timer::setLimit(int limit) { limit_ = limit; }
+void Timer::setLimit(float limit) { limit_ = limit; }
 int Timer::getLimit() { return limit_; }
 
 void Timer::setFontSize(int fontSize) { fontSize_ = fontSize; }
 int Timer::getFontSize() { return fontSize_; }
 
+<<<<<<< HEAD
 // 経過時間に制限時間の最大値を代入(毎試合最初に呼び出す想定)
 void Timer::resetElapsed() { ofResetElapsedTimeCounter(); }
+=======
+void Timer::setFontScale(int fontScale) { fontScale_ = fontScale; }
+int Timer::getFontScale() { return fontScale_; }
+
+void Timer::reset() { startTime_ = currentTime_; }
+>>>>>>> wem-branch
 
 void  Timer::setup() {
+  guiSetup();
   fontSetup();
   loadMaxTime();
-  guiSetup();
+  reset();
   ofAddListener(ofEvents().update, this, &Timer::update);
 }
 
 void Timer::update(ofEventArgs &args) {
+<<<<<<< HEAD
   // 最大時間 - 経過時間を表示用変数に代入
   limit_ = maxTime_ - (ofGetElapsedTimef() - startTime_);
+=======
+  currentTime_ = ofGetElapsedTimef();
+  limit_ = maxTime_ - (currentTime_ - startTime_);
+  ofLog() << ofGetElapsedTimef();
+>>>>>>> wem-branch
 }
 
 void Timer::draw() {
   drawTimer();
-  gui_.draw();
 }
 
 bool Timer::isTimeup() {
@@ -41,6 +54,7 @@ bool Timer::isTimeup() {
 }
 
 void Timer::guiSetup() {
+<<<<<<< HEAD
   reset_.addListener(this, &Timer::resetElapsed);
   save_.addListener(this, &Timer::saveFile);
   load_.addListener(this, &Timer::loadFile);
@@ -53,10 +67,15 @@ void Timer::guiSetup() {
   gui_.add(load_.setup("Loda_From_File"));
   // xmlにセーブしてある値を最初に呼び出しておく
   gui_.loadFromFile("Game/TimerSettings.xml");
+=======
+  startTime_ = 0;
+  ImGui::GetIO().MouseDrawCursor = false;
+>>>>>>> wem-branch
 }
 
 // フォント読み込み
 void Timer::fontSetup() {
+  loadFontScale();
   loadFontSize();
   font_.loadFont("consolab.ttf", fontSize_);
 }
@@ -76,15 +95,38 @@ void Timer::loadFontSize() {
   }
 }
 
+<<<<<<< HEAD
 // 画面上部、センターに表示
+=======
+// xml�t�@�C������`��T�C�Y�̃��[�h
+void Timer::loadFontScale() {
+  if (xml_.loadFile("Game/TimerSettings.xml")) {
+    setFontScale(xml_.getValue("group:FontScale", 0));
+  }
+}
+
+void Timer::saveFontScale() {
+  if (xml_.saveFile("Game/TimerSettings.xml")) {
+    xml_.setValue("group:FontScale", fontScale_);
+    xml_.save("Game/TimerSettings.xml");
+  }
+}
+
+// ��ʏ㕔�A�Z���^�[�ɕ\��
+>>>>>>> wem-branch
 void Timer::drawTimer() {
   ofPushMatrix();
   ofPushStyle();
 
   ofSetColor(255, 255, 0);
   string text;
+<<<<<<< HEAD
   // 表示するtextの中身を残り時間で切り替える
   if (!isTimeup()) { text = ofToString((int)limit_);  }
+=======
+  // �\������text�̒��g���c�莞�ԂŐ؂�ւ���
+  if (!isTimeup()) { text = ofToString((int)limit_); }
+>>>>>>> wem-branch
   else { text = ofToString(0); }
   float fontWidth = font_.stringWidth(text);
   float fontHeight = font_.stringHeight(text);
@@ -97,10 +139,18 @@ void Timer::drawTimer() {
   ofPopMatrix();
 }
 
-void Timer::saveFile() {
-  gui_.saveToFile("Game/TimerSettings.xml");
-}
-
-void Timer::loadFile() {
-  gui_.loadFromFile("Game/TimerSettings.xml");
+void Timer::drawParam() {
+  ImGui::Begin("TimerState");
+  ImGui::SetWindowSize(ofVec2f(200, 200));
+  ImGui::SliderFloat("Scale", &fontScale_, 0, 500);
+  if (ImGui::Button("Time_Reset")) {
+    reset();
+  }
+  if (ImGui::Button("Save")) {
+    saveFontScale();
+  }
+  if (ImGui::Button("Load")) {
+    loadFontScale();
+  }
+  ImGui::End();
 }
