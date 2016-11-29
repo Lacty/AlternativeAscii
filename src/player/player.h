@@ -2,7 +2,7 @@
 #pragma once
 #include "ofMain.h"
 #include "ofxJoystick.h"
-#include "gui.h"
+#include "ofxImGui.h"
 #include "playerState.h"
 
 
@@ -18,24 +18,19 @@ private:
   ofxJoystick joy_;
   
   int id_;
-
-  ofxPanel gui_;
-  ofxLabel label_;
-
-  ofxIntSlider HP_;
-  ofxIntSlider maxHP_;
   
-  ofxVec2Slider pos_;
-  ofxVec2Slider vel_;
-  ofxVec2Slider jumpPow_;
+  int HP_;
+  int maxHP_;
   
-  ofxFloatSlider speed_;
+  ofVec2f pos_;
+  ofVec2f vel_;
+  ofVec2f jumpPow_;
   
-  ofxToggle showCol_;
+  float speed_;
+  
+  bool showCol_;
   list<Collision> passiveCol_;
   list<Collision> attackCol_;
-  
-  void setupGui();
   
   // プレイヤーの状態をスタックするdeque
   deque<shared_ptr<PlayerState>> state_;
@@ -56,6 +51,7 @@ public:
   void update();
   void draw();
   void drawCollision();
+  void drawParam();
   
   // ダメージを食らう場合この関数を通してダメージを受ける
   // 受けたダメージ量を返す
@@ -64,16 +60,16 @@ public:
   
   Player* getOther();
   
-  const int getID();
+  const int getID() const;
   
-  const int getMaxHP();
-  const int getHP();
+  const int getMaxHP() const;
+  const int getHP() const;
+
+  const ofVec2f& getPos() const;
+  const ofVec2f& getVel() const;
+  const ofVec2f& getJumpPow() const;
   
-  const ofVec2f& getPos();
-  const ofVec2f& getVel();
-  const ofVec2f& getJumpPow();
-  
-  const float getSpeed();
+  const float getSpeed() const;
   
   list<Collision>& getPassiveCol();
   list<Collision>& getAttackCol();

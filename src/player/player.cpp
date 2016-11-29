@@ -9,14 +9,12 @@ void Player::setup(int ID) {
   joy_.setup(id_);
   maxHP_ = 100;
   HP_ = maxHP_;
-  jumpPow_ = ofVec2f(0, 10);
+  jumpPow_.set(0, 10);
   speed_ = 100.0f;
   
   // 当たり判定用判定を作成
   ofVec2f size(50, 50);
   passiveCol_.push_back({ofVec2f::zero(), size});
-  
-  setupGui();
   
   // 基底の立ち状態を追加
   state_.push_back(make_shared<StandingState>());
@@ -27,22 +25,6 @@ void Player::setOther(Player* other) {
   
   // 対戦相手が登録されませんでした
   assert(other_ != nullptr);
-}
-
-void Player::setupGui() {
-  gui_.setup();
-  
-  // guiへパラメータを追加
-  gui_.add(label_.setup("Player", ofToString(id_)));
-  gui_.add(HP_.setup("HP", HP_, 0, maxHP_));
-  gui_.add(maxHP_.setup("MaxHP", maxHP_, 0, 1000));
-  gui_.add(pos_.setup("Position", pos_, ofVec2f(-1000, -1000), ofVec2f(1000, 1000)));
-  gui_.add(vel_.setup("Velocity", vel_, ofVec2f(-100, -100), ofVec2f(100, 100)));
-  gui_.add(jumpPow_.setup("JumpPower", jumpPow_, ofVec2f(0, 0), ofVec2f(0, 100)));
-  gui_.add(showCol_.setup("ShowCollision", false));
-  
-  // GUIへ登録
-  GUI::get()->add("Player" + ofToString(id_), gui_);
 }
 
 void Player::handleInput() {
@@ -66,7 +48,7 @@ void Player::handleInput() {
 
 void Player::move() {
   // 加速度分移動させる
-  pos_ = ofVec2f(pos_) + ofVec2f(vel_);
+  pos_ += vel_;
 }
 
 void Player::update() {
@@ -82,7 +64,7 @@ void Player::update() {
 void Player::draw() {
   // 暫定
   ofSetColor(255, 255, 255);
-  ofDrawBox(static_cast<ofPoint>(pos_), 50, 50, 0);
+  ofDrawBox(pos_, 50, 50, 0);
   
   // 状態にに合わせて描画を更新させるなら変更する
   // state_.back()->draw();
@@ -94,19 +76,36 @@ void Player::drawCollision() {
   ofNoFill();
   for (const auto& col : passiveCol_) {
     ofSetColor(60, 240, 60);
-    ofVec2f pos = ofVec2f(pos_) + col.offset_ - (col.size_ / 2);
+    ofVec2f pos = pos_ + col.offset_ - (col.size_ / 2);
     ofDrawRectangle(ofRectangle(pos, pos + col.size_));
   }
   for (const auto& col : attackCol_) {
     ofSetColor(240, 60, 60);
-    ofVec2f pos = ofVec2f(pos_) + col.offset_ - (col.size_ / 2);
+    ofVec2f pos = pos_ + col.offset_ - (col.size_ / 2);
     ofDrawRectangle(ofRectangle(pos, pos + col.size_));
   }
   ofFill();
 }
 
+void Player::drawParam() {
+  string title = "Player :" + ofToString(id_);
+  ImGui::Begin(title.c_str());
+  
+  ImGui::SliderInt("HP", &HP_, 0, maxHP_);
+  ImGui::DragInt("Max HP", &maxHP_);
+  
+  ImGui::DragFloat2("Position", pos_.getPtr());
+  ImGui::DragFloat2("Velocity", vel_.getPtr());
+  ImGui::DragFloat2("Jump Power", jumpPow_.getPtr());
+  
+  ImGui::DragFloat("Speed", &speed_);
+  ImGui::Checkbox("Show Collision", &showCol_);
+  
+  ImGui::End();
+}
+
 int Player::damage(int damage) {
-  HP_ = int(HP_) - damage;
+  HP_ = HP_ - damage;
   if (HP_ < 0) { HP_ = 0; }
   return damage;
 }
@@ -119,16 +118,16 @@ Player* Player::getOther() {
   return other_;
 }
 
-const int Player::getID() { return id_; }
+const int Player::getID() const { return id_; }
 
-const int Player::getMaxHP() { return maxHP_; }
-const int Player::getHP()    { return HP_;    }
+const int Player::getMaxHP() const { return maxHP_; }
+const int Player::getHP()    const { return HP_;    }
 
-const ofVec2f& Player::getPos() { return pos_; }
-const ofVec2f& Player::getVel() { return vel_; }
-const ofVec2f& Player::getJumpPow() { return jumpPow_; }
+const ofVec2f& Player::getPos() const { return pos_; }
+const ofVec2f& Player::getVel() const { return vel_; }
+const ofVec2f& Player::getJumpPow() const { return jumpPow_; }
 
-const float Player::getSpeed() { return speed_; }
+const float Player::getSpeed() const { return speed_; }
 
 list<Collision>& Player::getPassiveCol() { return passiveCol_; }
 list<Collision>& Player::getAttackCol()  { return attackCol_;  }

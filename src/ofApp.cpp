@@ -3,7 +3,7 @@
 
 
 void ofApp::setup() {
-  GUI::get()->setup();
+  gui_.setup();
   cam_.setPosition(0, 0, 300);
   
   p1_.setup(0);
@@ -20,7 +20,6 @@ void ofApp::update() {
 
 void ofApp::draw() {
   cam_.begin();
-  
   // カメラの影響を受けるものを描画
   p1_.draw();
   p2_.draw();
@@ -30,6 +29,12 @@ void ofApp::draw() {
   
   cam_.end();
   
+  // --
+  
+  gui_.begin();
   // カメラの影響を受けないuiなどの描画はここから
-  GUI::get()->draw();
+  p1_.drawParam();
+  p2_.drawParam();
+  
+  gui_.end();
 }
