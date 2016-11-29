@@ -32,9 +32,6 @@ void Timer::update(ofEventArgs &args) {
 
 void Timer::draw() {
   drawTimer();
-#ifdef DEBUG
-  drawParam();
-#endif
 }
 
 bool Timer::isTimeup() {

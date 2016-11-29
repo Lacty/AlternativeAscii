@@ -25,7 +25,6 @@ private:
   void loadFontScale();
   void saveFontScale();
   void drawTimer();
-  void drawParam();
 public:
   void setLimit(float time);
   int getLimit();
@@ -44,4 +43,5 @@ public:
   void update(ofEventArgs &args);
   void draw();
   bool isTimeup();
+  void drawParam();
 };
