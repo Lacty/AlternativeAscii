@@ -9,16 +9,16 @@ void HealthBar::setBarScale(float x, float y) {
 
 // １Ｒ毎に呼び出して下さい
 void HealthBar::setup(Player &player) {
-  loadParam(); // デフォルトの設定を最初に読み込む
-  tempHealth_ = player.getMaxHP();  // 比較用ＨＰに最大値を代入
-  currentScale_ = scaleX_; // バーの元の長さをロードして代入
+  loadFile(); // デフォルトの設定を最初に読み込む
+  tempHealth = player.getMaxHP();  // 比較用ＨＰに最大値を代入
+  currentScale = scaleX_; // バーの元の長さをロードして代入
   ofAddListener(ofEvents().update, this, &HealthBar::update);
 }
 
 void HealthBar::update(ofEventArgs &args) {
-  if (damageScale_ != 0) {
+  if (damageScale != 0) {
     for (int i = 0; i < ofGetFrameRate()/4; i++) {
-      damageScale_ = damageScale_ - (damageScale_ / ofGetFrameRate()/4);
+      damageScale = damageScale - (damageScale / ofGetFrameRate()/4);
     }
   }
 }
@@ -28,7 +28,7 @@ void HealthBar::draw(Player &player) {
   switch (player.getID()) {
   case 0:
     drawLeft();
-    if (player.getHP() != tempHealth_) {
+    if (player.getHP() != tempHealth) {
       setDamageScale(player);
     }
     updateLeft(player);
@@ -36,7 +36,7 @@ void HealthBar::draw(Player &player) {
 
   case 1:
     drawRight();
-    if (player.getHP() != tempHealth_) {
+    if (player.getHP() != tempHealth) {
       setDamageScale(player);
     }
     updateRight(player);
@@ -44,7 +44,7 @@ void HealthBar::draw(Player &player) {
 
   default:  // 例外の数字が入力された場合は１Ｐ側を表示
     drawLeft();
-    if (player.getHP() != tempHealth_) {
+    if (player.getHP() != tempHealth) {
       setDamageScale(player);
     }
     updateLeft(player);
@@ -52,46 +52,24 @@ void HealthBar::draw(Player &player) {
   }
 }
 
-void HealthBar::drawParam() {
-  ImGui::Begin("HealthBar_State");
-
-  ImGui::SetWindowSize(ofVec2f(200, 200));
-  ImGui::SliderFloat("Scale_X", &scaleX_, 0.0f, 1.0f);
-  currentScale_ = scaleX_;
-  ImGui::SliderFloat("Scale_Y", &scaleY_, 0.0f, 1.0f);
-  if (ImGui::Button("Save")) { saveParam(); }
-  if (ImGui::Button("Load")) { loadParam(); }
-
-  ImGui::End();
-}
-
 // 1Pなら
 void HealthBar::drawLeft() {
   ofRect(0, 0,
-    (ofGetWidth() / 2) * currentScale_,
+    (ofGetWidth() / 2) * currentScale,
     (ofGetHeight() / 2) * scaleY_);
 }
 
 // 2Pなら
 void HealthBar::drawRight() {
-  ofRect(ofGetWidth() - ((ofGetWidth() / 2) * currentScale_), 0,
-    (ofGetWidth() / 2) * currentScale_,
+  ofRect(ofGetWidth() - ((ofGetWidth() / 2) * currentScale), 0,
+    (ofGetWidth() / 2) * currentScale,
     (ofGetHeight() / 2) * scaleY_);
 }
 
-void HealthBar::saveParam() {
-  if (xml_.saveFile("Game/HealthBarSettings.xml")) {
-    xml_.setValue("group:ScaleX", scaleX_);
-    xml_.setValue("group:ScaleY", scaleY_);
-    xml_.save("Game/HealthBarSettings.xml");
-    ofLog() << "Save_Success";
-  }
-}
-
-void HealthBar::loadParam() {
+void HealthBar::loadFile() {
   if (xml_.loadFile("Game/HealthBarSettings.xml")) {
-    setBarScale(xml_.getValue("group:ScaleX", 0.0f),
-                xml_.getValue("group:ScaleY", 0.0f));
+    setBarScale(xml_.getValue("group:ScaleX", 0.0),
+                xml_.getValue("group:ScaleY", 0.0));
   }
 }
 
@@ -103,9 +81,9 @@ float HealthBar::remnant(Player &player) {
 }
 
 void HealthBar::setDamageScale(Player &player) {
-  float damageCurrent = currentScale_ - remnant(player); // 赤ゲージの長さ(現在の長さ - 被ダメ計算後の長さ)
-  currentScale_ = remnant(player); // ＨＰバーの長さを更新
-  damageScale_ = damageCurrent;
+  float damageCurrent = currentScale - remnant(player); // 赤ゲージの長さ(現在の長さ - 被ダメ計算後の長さ)
+  currentScale = remnant(player); // ＨＰバーの長さを更新
+  damageScale = damageCurrent;
 }
 
 // １ＰのＨＰ減少時
@@ -113,11 +91,11 @@ void HealthBar::updateLeft(Player &player) {
   // ダメージの赤いバーの表示
   ofPushStyle();
   ofSetColor(255, 0, 0);
-  ofRect((ofGetWidth() / 2) * currentScale_, 0,
-    (ofGetWidth() / 2) * damageScale_,
+  ofRect((ofGetWidth() / 2) * currentScale, 0,
+    (ofGetWidth() / 2) * damageScale,
     (ofGetHeight() / 2) * scaleY_);
   ofPopStyle();
-  tempHealth_ = player.getHP();  // 現在ＨＰの更新
+  tempHealth = player.getHP();  // 現在ＨＰの更新
 }
 
 // ２ＰのＨＰ減少時
@@ -125,9 +103,9 @@ void HealthBar::updateRight(Player &player) {
   // ダメージの赤いバーの表示
   ofPushStyle();
   ofSetColor(255, 0, 0);
-  ofRect(ofGetWidth() - ((ofGetWidth() / 2) * (currentScale_ + damageScale_)), 0,
-    (ofGetWidth() / 2) * damageScale_,
+  ofRect(ofGetWidth() - ((ofGetWidth() / 2) * (currentScale + damageScale)), 0,
+    (ofGetWidth() / 2) * damageScale,
     (ofGetHeight() / 2) * scaleY_);
   ofPopStyle();
-  tempHealth_ = player.getHP();  // 現在ＨＰの更新
+  tempHealth = player.getHP();  // 現在ＨＰの更新
 }
