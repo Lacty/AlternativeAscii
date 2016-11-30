@@ -67,14 +67,14 @@ void HealthBar::drawParam() {
 
 // 1Pなら
 void HealthBar::drawLeft() {
-  ofRect(0, 0,
+  ofDrawRectangle(0, 0,
     (ofGetWidth() / 2) * currentScale_,
     (ofGetHeight() / 2) * scaleY_);
 }
 
 // 2Pなら
 void HealthBar::drawRight() {
-  ofRect(ofGetWidth() - ((ofGetWidth() / 2) * currentScale_), 0,
+  ofDrawRectangle(ofGetWidth() - ((ofGetWidth() / 2) * currentScale_), 0,
     (ofGetWidth() / 2) * currentScale_,
     (ofGetHeight() / 2) * scaleY_);
 }
@@ -113,7 +113,7 @@ void HealthBar::updateLeft(Player &player) {
   // ダメージの赤いバーの表示
   ofPushStyle();
   ofSetColor(255, 0, 0);
-  ofRect((ofGetWidth() / 2) * currentScale_, 0,
+  ofDrawRectangle((ofGetWidth() / 2) * currentScale_, 0,
     (ofGetWidth() / 2) * damageScale_,
     (ofGetHeight() / 2) * scaleY_);
   ofPopStyle();
@@ -125,7 +125,7 @@ void HealthBar::updateRight(Player &player) {
   // ダメージの赤いバーの表示
   ofPushStyle();
   ofSetColor(255, 0, 0);
-  ofRect(ofGetWidth() - ((ofGetWidth() / 2) * (currentScale_ + damageScale_)), 0,
+  ofDrawRectangle(ofGetWidth() - ((ofGetWidth() / 2) * (currentScale_ + damageScale_)), 0,
     (ofGetWidth() / 2) * damageScale_,
     (ofGetHeight() / 2) * scaleY_);
   ofPopStyle();
