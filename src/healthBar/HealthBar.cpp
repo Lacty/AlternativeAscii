@@ -9,6 +9,7 @@ void HealthBar::setBarScale(float x, float y) {
 
 // １Ｒ毎に呼び出して下さい
 void HealthBar::setup(Player &player) {
+  guiSetup();
   loadParam(); // デフォルトの設定を最初に読み込む
   tempHealth_ = player.getMaxHP();  // 比較用ＨＰに最大値を代入
   currentScale_ = scaleX_; // バーの元の長さをロードして代入
@@ -17,13 +18,14 @@ void HealthBar::setup(Player &player) {
 
 void HealthBar::update(ofEventArgs &args) {
   if (damageScale_ != 0) {
-    for (int i = 0; i < ofGetFrameRate()/4; i++) {
-      damageScale_ = damageScale_ - (damageScale_ / ofGetFrameRate()/4);
+    for (int i = 0; i < ofGetFrameRate() / 4; i++) {
+      damageScale_ = damageScale_ - (damageScale_ / ofGetFrameRate() / 4);
     }
   }
 }
 
 void HealthBar::draw(Player &player) {
+  drawParam();
   // プレイヤー番号に応じて表示位置をズラす
   switch (player.getID()) {
   case 0:
@@ -57,7 +59,9 @@ void HealthBar::drawParam() {
 
   ImGui::SetWindowSize(ofVec2f(200, 200));
   ImGui::SliderFloat("Scale_X", &scaleX_, 0.0f, 1.0f);
-  currentScale_ = scaleX_;
+  if (scaleX_ != xml_.getValue("group:ScaleX", 0)) {
+    currentScale_ = scaleX_;
+  }
   ImGui::SliderFloat("Scale_Y", &scaleY_, 0.0f, 1.0f);
   if (ImGui::Button("Save")) { saveParam(); }
   if (ImGui::Button("Load")) { loadParam(); }
@@ -79,20 +83,25 @@ void HealthBar::drawRight() {
     (ofGetHeight() / 2) * scaleY_);
 }
 
+void HealthBar::guiSetup() {
+  ImGui::GetIO().MouseDrawCursor = false;
+  xmlSetting(); // 変数:xml_ のアクセスするファイルを指定
+}
+
+void HealthBar::xmlSetting() {
+  xml_.loadFile("Game/HealthBarSettings.xml");
+  xml_.saveFile("Game/HealthBarSettings.xml");
+}
+
 void HealthBar::saveParam() {
-  if (xml_.saveFile("Game/HealthBarSettings.xml")) {
-    xml_.setValue("group:ScaleX", scaleX_);
-    xml_.setValue("group:ScaleY", scaleY_);
-    xml_.save("Game/HealthBarSettings.xml");
-    ofLog() << "Save_Success";
-  }
+  xml_.setValue("group:ScaleX", scaleX_);
+  xml_.setValue("group:ScaleY", scaleY_);
+  xml_.save("Game/HealthBarSettings.xml");
 }
 
 void HealthBar::loadParam() {
-  if (xml_.loadFile("Game/HealthBarSettings.xml")) {
-    setBarScale(xml_.getValue("group:ScaleX", 0.0f),
-                xml_.getValue("group:ScaleY", 0.0f));
-  }
+  setBarScale(xml_.getValue("group:ScaleX", 0.0f),
+    xml_.getValue("group:ScaleY", 0.0f));
 }
 
 // 減少後のＨＰバーの長さを求める

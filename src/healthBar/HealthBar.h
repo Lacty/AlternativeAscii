@@ -22,6 +22,8 @@ private:
   void updateLeft(Player &player);
   void updateRight(Player &player);
   void setBarScale(float x, float y);
+  void guiSetup();
+  void xmlSetting();
   void saveParam();
   void loadParam();
 public:
