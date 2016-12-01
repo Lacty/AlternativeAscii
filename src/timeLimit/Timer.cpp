@@ -46,42 +46,38 @@ bool Timer::isTimeup() {
 void Timer::guiSetup() {
   startTime_ = 0;
   ImGui::GetIO().MouseDrawCursor = false;
+
+  // セーブファイルとロードファイルの設定
+  xml_.loadFile("Game/TimerSettings.xml");
+  xml_.saveFile("Game/TimerSettings.xml");
 }
 
 // フォント読み込み
 void Timer::fontSetup() {
   loadFontScale();
   loadFontSize();
-  font_.load("consolab.ttf", fontSize_);
+  font_.load("Game/consolab.ttf", fontSize_);
 }
 
 // xmlファイルから制限時間の最大値をロード
 void Timer::loadMaxTime() {
-  if (xml_.loadFile("Game/TimerSettings.xml")) {
-    setMaxTime(xml_.getValue("group:MaxTime", 0));
-    setLimit(maxTime_); // 最大値のロードと同時に制限時間に同じ値を代入
-  }
+  setMaxTime(xml_.getValue("group:MaxTime", 0));
+  setLimit(maxTime_); // 最大値のロードと同時に制限時間に同じ値を代入
 }
 
 // xmlファイルからフォントサイズのロード
 void Timer::loadFontSize() {
-  if (xml_.loadFile("Game/TimerSettings.xml")) {
-    setFontSize(xml_.getValue("group:FontSize", 0));
-  }
+  setFontSize(xml_.getValue("group:FontSize", 0));
 }
 
 // xmlファイルから描画サイズのロード
 void Timer::loadFontScale() {
-  if (xml_.loadFile("Game/TimerSettings.xml")) {
-    setFontScale(xml_.getValue("group:FontScale", 0));
-  }
+  setFontScale(xml_.getValue("group:FontScale", 0));
 }
 
 void Timer::saveFontScale() {
-  if (xml_.saveFile("Game/TimerSettings.xml")) {
-    xml_.setValue("group:FontScale", fontScale_);
-    xml_.save("Game/TimerSettings.xml");
-  }
+  xml_.setValue("group:FontScale", fontScale_);
+  xml_.save("Game/TimerSettings.xml");
 }
 
 // 画面上部、センターに表示
