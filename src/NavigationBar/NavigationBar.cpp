@@ -106,7 +106,7 @@ void NavigationBar::draw() {
 	sideBarImage_.draw(ofVec2f(barPos_), ofGetWindowWidth() / ofVec2f(barSize_).x, ofGetWindowHeight() / ofVec2f(barSize_).y);
 }
 
-void NavigationBar::drawGUI() {
+void NavigationBar::drawGui() {
 	ImGui::Begin("NavigationBar");
 	if (ImGui::Button("Save")) {
 		saveXml();
