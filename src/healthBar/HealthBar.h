@@ -2,13 +2,14 @@
 #pragma once
 #include "ofMain.h"
 #include "ofxXmlSettings.h"
+#include "ofxImGui.h"
 #include "player.h"
 
 class HealthBar {
 private:
-  float currentScale_; // ・ｽ・ｽ・ｽﾝＨ・ｽo・ｽo・ｽ[・ｽﾌ抵ｿｽ・ｽ・ｽ
-  float tempHealth_; // ・ｽ・ｽ・ｽe・ｽO・ｽﾌＨ・ｽo・ｽ・ｽ・ｽ齊橸ｿｽﾛ托ｿｽ・ｽ・ｽ・ｽﾄゑｿｽ・ｽ・ｽ・ｽ・ｽ
-  float damageScale_;  // ・ｽ_・ｽ・ｽ・ｽ[・ｽW・ｽo・ｽ[・ｽﾌ抵ｿｽ・ｽ・ｽ・ｽ・ｽ・ｽ齊橸ｿｽﾛ托ｿｽ・ｽ・ｽ・ｽﾄゑｿｽ・ｽ・ｽ・ｽ・ｽ
+  float currentScale_; // 現在ＨＰバーの長さ
+  float tempHealth_; // 被弾前のＨＰを一時保存しておく箱
+  float damageScale_;  // ダメージバーの長さを一時保存しておく箱
   ofxXmlSettings xml_;
 
   float scaleX_;
@@ -16,7 +17,6 @@ private:
 
   void drawLeft();
   void drawRight();
-  void loadFile();
   float remnant(Player &player);
   void setDamageScale(Player &player);
   void updateLeft(Player &player);
@@ -30,4 +30,5 @@ public:
   void setup(Player &player);
   void update(ofEventArgs &args);
   void draw(Player &player);
+  void drawParam();
 };

@@ -1,5 +1,5 @@
 
-#include "HealthBar.h"
+#include "healthBar.h"
 
 
 void HealthBar::setBarScale(float x, float y) {
@@ -7,12 +7,12 @@ void HealthBar::setBarScale(float x, float y) {
   scaleY_ = y;
 }
 
-// ï¿½Pï¿½qï¿½ï¿½ï¿½ÉŒÄ‚Ñoï¿½ï¿½ï¿½Ä‰ï¿½ï¿½ï¿½ï¿½ï¿½
+// ‚P‚q–ˆ‚ÉŒÄ‚Ño‚µ‚Ä‰º‚³‚¢
 void HealthBar::setup(Player &player) {
   guiSetup();
-  loadParam(); // ï¿½fï¿½tï¿½Hï¿½ï¿½ï¿½gï¿½Ìİ’ï¿½ï¿½ï¿½ï¿½Åï¿½ï¿½É“Ç‚İï¿½ï¿½ï¿½
-  tempHealth_ = player.getMaxHP();  // ï¿½ï¿½ï¿½rï¿½pï¿½gï¿½oï¿½ÉÅ‘ï¿½ï¿½lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-  currentScale_ = scaleX_; // ï¿½oï¿½[ï¿½ÌŒï¿½ï¿½Ì’ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½hï¿½ï¿½ï¿½Ä‘ï¿½ï¿½ï¿½
+  loadParam(); // ƒfƒtƒHƒ‹ƒg‚Ìİ’è‚ğÅ‰‚É“Ç‚İ‚Ş
+  tempHealth_ = player.getMaxHP();  // ”äŠr—p‚g‚o‚ÉÅ‘å’l‚ğ‘ã“ü
+  currentScale_ = scaleX_; // ƒo[‚ÌŒ³‚Ì’·‚³‚ğƒ[ƒh‚µ‚Ä‘ã“ü
   ofAddListener(ofEvents().update, this, &HealthBar::update);
 }
 
@@ -25,12 +25,11 @@ void HealthBar::update(ofEventArgs &args) {
 }
 
 void HealthBar::draw(Player &player) {
-  drawParam();
-  // ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½Ôï¿½ï¿½É‰ï¿½ï¿½ï¿½ï¿½Ä•\ï¿½ï¿½ï¿½Ê’uï¿½ï¿½ï¿½Yï¿½ï¿½ï¿½ï¿½
+  // ƒvƒŒƒCƒ„[”Ô†‚É‰‚¶‚Ä•\¦ˆÊ’u‚ğƒYƒ‰‚·
   switch (player.getID()) {
   case 0:
     drawLeft();
-    if (player.getHP() != tempHealth) {
+    if (player.getHP() != tempHealth_) {
       setDamageScale(player);
     }
     updateLeft(player);
@@ -38,15 +37,15 @@ void HealthBar::draw(Player &player) {
 
   case 1:
     drawRight();
-    if (player.getHP() != tempHealth) {
+    if (player.getHP() != tempHealth_) {
       setDamageScale(player);
     }
     updateRight(player);
     break;
 
-  default:  // ï¿½ï¿½ï¿½Oï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í‚ï¿½ï¿½ê‚½ï¿½ê‡ï¿½Í‚Pï¿½oï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½
+  default:  // —áŠO‚Ì”š‚ª“ü—Í‚³‚ê‚½ê‡‚Í‚P‚o‘¤‚ğ•\¦
     drawLeft();
-    if (player.getHP() != tempHealth) {
+    if (player.getHP() != tempHealth_) {
       setDamageScale(player);
     }
     updateLeft(player);
@@ -59,9 +58,6 @@ void HealthBar::drawParam() {
 
   ImGui::SetWindowSize(ofVec2f(200, 200));
   ImGui::SliderFloat("Scale_X", &scaleX_, 0.0f, 1.0f);
-  if (scaleX_ != xml_.getValue("group:ScaleX", 0)) {
-    currentScale_ = scaleX_;
-  }
   ImGui::SliderFloat("Scale_Y", &scaleY_, 0.0f, 1.0f);
   if (ImGui::Button("Save")) { saveParam(); }
   if (ImGui::Button("Load")) { loadParam(); }
@@ -69,14 +65,14 @@ void HealthBar::drawParam() {
   ImGui::End();
 }
 
-// 1Pï¿½È‚ï¿½
+// 1P‚È‚ç
 void HealthBar::drawLeft() {
   ofDrawRectangle(0, 0,
     (ofGetWidth() / 2) * currentScale_,
     (ofGetHeight() / 2) * scaleY_);
 }
 
-// 2Pï¿½È‚ï¿½
+// 2P‚È‚ç
 void HealthBar::drawRight() {
   ofDrawRectangle(ofGetWidth() - ((ofGetWidth() / 2) * currentScale_), 0,
     (ofGetWidth() / 2) * currentScale_,
@@ -85,7 +81,7 @@ void HealthBar::drawRight() {
 
 void HealthBar::guiSetup() {
   ImGui::GetIO().MouseDrawCursor = false;
-  xmlSetting(); // ï¿½Ïï¿½:xml_ ï¿½ÌƒAï¿½Nï¿½Zï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½wï¿½ï¿½
+  xmlSetting(); // •Ï”:xml_ ‚ÌƒAƒNƒZƒX‚·‚éƒtƒ@ƒCƒ‹‚ğw’è
 }
 
 void HealthBar::xmlSetting() {
@@ -104,39 +100,39 @@ void HealthBar::loadParam() {
     xml_.getValue("group:ScaleY", 0.0f));
 }
 
-// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚gï¿½oï¿½oï¿½[ï¿½Ì’ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß‚ï¿½
+// Œ¸­Œã‚Ì‚g‚oƒo[‚Ì’·‚³‚ğ‹‚ß‚é
 float HealthBar::remnant(Player &player) {
-  float restHealth = (float)player.getHP() / (float)player.getMaxHP();  // ï¿½ï¿½ï¿½İ‚gï¿½oï¿½ï¿½ï¿½Å‘ï¿½ï¿½gï¿½oï¿½Ì‰ï¿½ï¿½ï¿½ï¿½É‚È‚ï¿½ï¿½ï¿½ï¿½ï¿½
-  float newBarScale = scaleX_ * restHealth;  // ï¿½ï¿½ï¿½Ìƒoï¿½[ï¿½Ì’ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ç“¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Zï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  float restHealth = (float)player.getHP() / (float)player.getMaxHP();  // Œ»İ‚g‚o‚ªÅ‘å‚g‚o‚Ì‰½“‚É‚È‚Á‚½‚©
+  float newBarScale = scaleX_ * restHealth;  // Œ³‚Ìƒo[‚Ì’·‚³‚©‚ç“¯‚¶“•ª‚¾‚¯’·‚³‚ğ’Z‚­‚·‚é
   return newBarScale;
 }
 
 void HealthBar::setDamageScale(Player &player) {
-  float damageCurrent = currentScale - remnant(player); // ï¿½ÔƒQï¿½[ï¿½Wï¿½Ì’ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½İ‚Ì’ï¿½ï¿½ï¿½ - ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½vï¿½Zï¿½ï¿½ï¿½Ì’ï¿½ï¿½ï¿½)
-  currentScale = remnant(player); // ï¿½gï¿½oï¿½oï¿½[ï¿½Ì’ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½V
-  damageScale = damageCurrent;
+  float damageCurrent = currentScale_ - remnant(player); // ÔƒQ[ƒW‚Ì’·‚³(Œ»İ‚Ì’·‚³ - ”íƒ_ƒŒvZŒã‚Ì’·‚³)
+  currentScale_ = remnant(player); // ‚g‚oƒo[‚Ì’·‚³‚ğXV
+  damageScale_ = damageCurrent;
 }
 
-// ï¿½Pï¿½oï¿½Ì‚gï¿½oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+// ‚P‚o‚Ì‚g‚oŒ¸­
 void HealthBar::updateLeft(Player &player) {
-  // ï¿½_ï¿½ï¿½ï¿½[ï¿½Wï¿½ÌÔ‚ï¿½ï¿½oï¿½[ï¿½Ì•\ï¿½ï¿½
+  // ƒ_ƒ[ƒW‚ÌÔ‚¢ƒo[‚Ì•\¦
   ofPushStyle();
   ofSetColor(255, 0, 0);
   ofDrawRectangle((ofGetWidth() / 2) * currentScale_, 0,
     (ofGetWidth() / 2) * damageScale_,
     (ofGetHeight() / 2) * scaleY_);
   ofPopStyle();
-  tempHealth = player.getHP();  // ï¿½ï¿½ï¿½İ‚gï¿½oï¿½ÌXï¿½V
+  tempHealth_ = player.getHP();  // Œ»İ‚g‚o‚ÌXV
 }
 
-// ï¿½Qï¿½oï¿½Ì‚gï¿½oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+// ‚Q‚o‚Ì‚g‚oŒ¸­
 void HealthBar::updateRight(Player &player) {
-  // ï¿½_ï¿½ï¿½ï¿½[ï¿½Wï¿½ÌÔ‚ï¿½ï¿½oï¿½[ï¿½Ì•\ï¿½ï¿½
+  // ƒ_ƒ[ƒW‚ÌÔ‚¢ƒo[‚Ì•\¦
   ofPushStyle();
   ofSetColor(255, 0, 0);
   ofDrawRectangle(ofGetWidth() - ((ofGetWidth() / 2) * (currentScale_ + damageScale_)), 0,
     (ofGetWidth() / 2) * damageScale_,
     (ofGetHeight() / 2) * scaleY_);
   ofPopStyle();
-  tempHealth = player.getHP();  // ï¿½ï¿½ï¿½İ‚gï¿½oï¿½ÌXï¿½V
+  tempHealth_ = player.getHP();  // Œ»İ‚g‚o‚ÌXV
 }
