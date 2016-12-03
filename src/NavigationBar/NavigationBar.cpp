@@ -25,7 +25,7 @@ void NavigationBar::loadFiles() {
 }
 
 void NavigationBar::loadXml() {
-	xml_.load("settings.xml");
+	xml_.load("Select/NaviSettings.xml");
 	xml_.pushTag("group");
 	int textValue_ = xml_.getNumTags("Navi");
 	for (int i = 0; i < textValue_; i++) {
