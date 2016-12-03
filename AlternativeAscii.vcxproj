@@ -95,7 +95,7 @@
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\player;..\..\addons\ofxGui\src;..\..\addons\ofxJoystick\src;..\..\addons\ofxXmlSettings\libs;..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\NavigationBar;src\healthBar;src\player;src\timeLimit;..\..\addons\ofxGui\src;..\..\addons\ofxImGui\libs;..\..\addons\ofxImGui\libs\imgui;..\..\addons\ofxImGui\libs\imgui\src;..\..\addons\ofxImGui\src;..\..\addons\ofxJoystick\src;..\..\addons\ofxXmlSettings\libs;..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
     </ClCompile>
     <Link>
@@ -114,7 +114,7 @@
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\player;..\..\addons\ofxGui\src;..\..\addons\ofxJoystick\src;..\..\addons\ofxXmlSettings\libs;..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\NavigationBar;src\healthBar;src\player;src\timeLimit;..\..\addons\ofxGui\src;..\..\addons\ofxImGui\libs;..\..\addons\ofxImGui\libs\imgui;..\..\addons\ofxImGui\libs\imgui\src;..\..\addons\ofxImGui\src;..\..\addons\ofxJoystick\src;..\..\addons\ofxXmlSettings\libs;..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
@@ -133,7 +133,7 @@
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\player;..\..\addons\ofxGui\src;..\..\addons\ofxJoystick\src;..\..\addons\ofxXmlSettings\libs;..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\NavigationBar;src\healthBar;src\player;src\timeLimit;..\..\addons\ofxGui\src;..\..\addons\ofxImGui\libs;..\..\addons\ofxImGui\libs\imgui;..\..\addons\ofxImGui\libs\imgui\src;..\..\addons\ofxImGui\src;..\..\addons\ofxJoystick\src;..\..\addons\ofxXmlSettings\libs;..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
@@ -155,7 +155,7 @@
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\player;..\..\addons\ofxGui\src;..\..\addons\ofxJoystick\src;..\..\addons\ofxXmlSettings\libs;..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\NavigationBar;src\healthBar;src\player;src\timeLimit;..\..\addons\ofxGui\src;..\..\addons\ofxImGui\libs;..\..\addons\ofxImGui\libs\imgui;..\..\addons\ofxImGui\libs\imgui\src;..\..\addons\ofxImGui\src;..\..\addons\ofxJoystick\src;..\..\addons\ofxXmlSettings\libs;..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
     </ClCompile>
     <Link>
@@ -171,10 +171,12 @@
     <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\healthBar\healthBar.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
     <ClCompile Include="src\gui.cpp" />
     <ClCompile Include="src\input.cpp" />
+    <ClCompile Include="src\NavigationBar\NavigationBar.cpp" />
     <ClCompile Include="src\player\attackingState.cpp" />
     <ClCompile Include="src\player\jumpingState.cpp" />
     <ClCompile Include="src\player\movingState.cpp" />
@@ -190,17 +192,27 @@
     <ClCompile Include="..\..\addons\ofxGui\src\ofxSlider.cpp" />
     <ClCompile Include="..\..\addons\ofxGui\src\ofxSliderGroup.cpp" />
     <ClCompile Include="..\..\addons\ofxGui\src\ofxToggle.cpp" />
+    <ClCompile Include="..\..\addons\ofxImGui\src\BaseEngine.cpp" />
+    <ClCompile Include="..\..\addons\ofxImGui\src\BaseTheme.cpp" />
+    <ClCompile Include="..\..\addons\ofxImGui\src\EngineGLFW.cpp" />
+    <ClCompile Include="..\..\addons\ofxImGui\src\EngineOpenGLES.cpp" />
+    <ClCompile Include="..\..\addons\ofxImGui\src\ofxImGui.cpp" />
+    <ClCompile Include="..\..\addons\ofxImGui\libs\imgui\src\imgui.cpp" />
+    <ClCompile Include="..\..\addons\ofxImGui\libs\imgui\src\imgui_demo.cpp" />
+    <ClCompile Include="..\..\addons\ofxImGui\libs\imgui\src\imgui_draw.cpp" />
     <ClCompile Include="..\..\addons\ofxJoystick\src\ofxJoystick.cpp" />
     <ClCompile Include="..\..\addons\ofxXmlSettings\src\ofxXmlSettings.cpp" />
     <ClCompile Include="..\..\addons\ofxXmlSettings\libs\tinyxml.cpp" />
     <ClCompile Include="..\..\addons\ofxXmlSettings\libs\tinyxmlerror.cpp" />
     <ClCompile Include="..\..\addons\ofxXmlSettings\libs\tinyxmlparser.cpp" />
-    <ClCompile Include="src\timeLimit\Timer.cpp" />
+    <ClCompile Include="src\timeLimit\timer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\healthBar\healthBar.h" />
     <ClInclude Include="src\ofApp.h" />
     <ClInclude Include="src\gui.h" />
     <ClInclude Include="src\input.h" />
+    <ClInclude Include="src\NavigationBar\NavigationBar.h" />
     <ClInclude Include="src\player\player.h" />
     <ClInclude Include="src\player\playerState.h" />
     <ClInclude Include="..\..\addons\ofxGui\src\ofxBaseGui.h" />
@@ -212,10 +224,22 @@
     <ClInclude Include="..\..\addons\ofxGui\src\ofxSlider.h" />
     <ClInclude Include="..\..\addons\ofxGui\src\ofxSliderGroup.h" />
     <ClInclude Include="..\..\addons\ofxGui\src\ofxToggle.h" />
+    <ClInclude Include="..\..\addons\ofxImGui\src\BaseEngine.h" />
+    <ClInclude Include="..\..\addons\ofxImGui\src\BaseTheme.h" />
+    <ClInclude Include="..\..\addons\ofxImGui\src\EngineGLFW.h" />
+    <ClInclude Include="..\..\addons\ofxImGui\src\EngineOpenGLES.h" />
+    <ClInclude Include="..\..\addons\ofxImGui\src\imconfig.h" />
+    <ClInclude Include="..\..\addons\ofxImGui\src\ofxImGui.h" />
+    <ClInclude Include="..\..\addons\ofxImGui\src\ThemeTest.h" />
+    <ClInclude Include="..\..\addons\ofxImGui\libs\imgui\src\imgui.h" />
+    <ClInclude Include="..\..\addons\ofxImGui\libs\imgui\src\imgui_internal.h" />
+    <ClInclude Include="..\..\addons\ofxImGui\libs\imgui\src\stb_rect_pack.h" />
+    <ClInclude Include="..\..\addons\ofxImGui\libs\imgui\src\stb_textedit.h" />
+    <ClInclude Include="..\..\addons\ofxImGui\libs\imgui\src\stb_truetype.h" />
     <ClInclude Include="..\..\addons\ofxJoystick\src\ofxJoystick.h" />
     <ClInclude Include="..\..\addons\ofxXmlSettings\src\ofxXmlSettings.h" />
     <ClInclude Include="..\..\addons\ofxXmlSettings\libs\tinyxml.h" />
-    <ClInclude Include="src\timeLimit\Timer.h" />
+    <ClInclude Include="src\timeLimit\timer.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">
