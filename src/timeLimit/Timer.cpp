@@ -47,30 +47,30 @@ void Timer::guiSetup() {
   startTime_ = 0;
   ImGui::GetIO().MouseDrawCursor = false;
 
-  // ƒZ[ƒuƒtƒ@ƒCƒ‹‚Æƒ[ƒhƒtƒ@ƒCƒ‹‚Ìİ’è
+  // ã‚»ãƒ¼ãƒ–ãƒ•ã‚¡ã‚¤ãƒ«ã¨ãƒ­ãƒ¼ãƒ‰ãƒ•ã‚¡ã‚¤ãƒ«ã®è¨­å®š
   xml_.loadFile("Game/TimerSettings.xml");
   xml_.saveFile("Game/TimerSettings.xml");
 }
 
-// ƒtƒHƒ“ƒg“Ç‚İ‚İ
+// ãƒ•ã‚©ãƒ³ãƒˆèª­ã¿è¾¼ã¿
 void Timer::fontSetup() {
   loadFontScale();
   loadFontSize();
   font_.load("Game/consolab.ttf", fontSize_);
 }
 
-// xmlƒtƒ@ƒCƒ‹‚©‚ç§ŒÀŠÔ‚ÌÅ‘å’l‚ğƒ[ƒh
+// xmlãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰åˆ¶é™æ™‚é–“ã®æœ€å¤§å€¤ã‚’ãƒ­ãƒ¼ãƒ‰
 void Timer::loadMaxTime() {
   setMaxTime(xml_.getValue("group:MaxTime", 0));
-  setLimit(maxTime_); // Å‘å’l‚Ìƒ[ƒh‚Æ“¯‚É§ŒÀŠÔ‚É“¯‚¶’l‚ğ‘ã“ü
+  setLimit(maxTime_); // æœ€å¤§å€¤ã®ãƒ­ãƒ¼ãƒ‰ã¨åŒæ™‚ã«åˆ¶é™æ™‚é–“ã«åŒã˜å€¤ã‚’ä»£å…¥
 }
 
-// xmlƒtƒ@ƒCƒ‹‚©‚çƒtƒHƒ“ƒgƒTƒCƒY‚Ìƒ[ƒh
+// xmlãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºã®ãƒ­ãƒ¼ãƒ‰
 void Timer::loadFontSize() {
   setFontSize(xml_.getValue("group:FontSize", 0));
 }
 
-// xmlƒtƒ@ƒCƒ‹‚©‚ç•`‰æƒTƒCƒY‚Ìƒ[ƒh
+// xmlãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰æç”»ã‚µã‚¤ã‚ºã®ãƒ­ãƒ¼ãƒ‰
 void Timer::loadFontScale() {
   setFontScale(xml_.getValue("group:FontScale", 0));
 }
@@ -80,14 +80,14 @@ void Timer::saveFontScale() {
   xml_.save("Game/TimerSettings.xml");
 }
 
-// ‰æ–Êã•”AƒZƒ“ƒ^[‚É•\¦
+// ç”»é¢ä¸Šéƒ¨ã€ã‚»ãƒ³ã‚¿ãƒ¼ã«è¡¨ç¤º
 void Timer::drawTimer() {
   ofPushMatrix();
   ofPushStyle();
 
   ofSetColor(255, 255, 0);
   string text;
-  // •\¦‚·‚étext‚Ì’†g‚ğc‚èŠÔ‚ÅØ‚è‘Ö‚¦‚é
+  // è¡¨ç¤ºã™ã‚‹textã®ä¸­èº«ã‚’æ®‹ã‚Šæ™‚é–“ã§åˆ‡ã‚Šæ›¿ãˆã‚‹
   if (!isTimeup()) { text = ofToString((int)limit_); }
   else { text = ofToString(0); }
   float fontWidth = font_.stringWidth(text);
@@ -95,7 +95,7 @@ void Timer::drawTimer() {
 
   ofTranslate(ofGetWidth() / 2, 0);
   ofScale((ofGetWidth() / fontScale_), (ofGetHeight() / fontScale_), 1);
-  font_.drawString(text, -fontWidth / 2, fontHeight); // ƒ^ƒCƒ}[‚Ì•`‰æ
+  font_.drawString(text, -fontWidth / 2, fontHeight); // ã‚¿ã‚¤ãƒãƒ¼ã®æç”»
 
   ofPopStyle();
   ofPopMatrix();
