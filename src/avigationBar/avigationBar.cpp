@@ -27,10 +27,12 @@ void NavigationBar::loadFiles() {
 void NavigationBar::loadXml() {
 	xml_.load("Select/NaviSettings.xml");
 	xml_.pushTag("group");
+
 	int textValue_ = xml_.getNumTags("Navi");
 	for (int i = 0; i < textValue_; i++) {
 		textList_.push_back(xml_.getValue("Navi", "none", i));
 	}
+
 	defaultPos_.x = xml_.getValue("TextStopPosX", 0);
 	defaultPos_.y = xml_.getValue("TextStopPosY", 0);
 	barPos_.x = xml_.getValue("BarPositionX", 0);
