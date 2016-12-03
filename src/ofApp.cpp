@@ -1,40 +1,49 @@
 
 #include "ofApp.h"
+#include "scene/gameTitle.h"
+#include "scene/gameMain.h"
 
 
 void ofApp::setup() {
+  ofxJSONElement json;
+  json.open("game.json");
+
+  sceneMgr_ = ofxSceneManager::instance();
+  
+  // シーンを追加
+  sceneMgr_->addScene(new GameTitle(), TITLE);
+  sceneMgr_->addScene(new GameMain(),  GAME);
+  
+  // 指定したデフォルトのシーンへ遷移
+  sceneMgr_->goToScene(json["defaultScene"].asInt(), false, false);
+  
+  // 遷移のフェード時間を設定
+  sceneMgr_->setCurtainDropTime(json["fade"]["dropTime"].asFloat());
+  sceneMgr_->setCurtainRiseTime(json["fade"]["riseTime"].asFloat());
+  
+  acc_ = json["acceleration"].asFloat();
+  
   gui_.setup();
-  cam_.setPosition(0, 0, 300);
-  
-  p1_.setup(0);
-  p2_.setup(1);
-  
-  p1_.setOther(&p2_);
-  p2_.setOther(&p1_);
 }
 
 void ofApp::update() {
-  p1_.update();
-  p2_.update();
+  float dt = ofGetLastFrameTime() * acc_;
+  sceneMgr_->update(dt);
 }
 
 void ofApp::draw() {
-  cam_.begin();
-  // カメラの影響を受けるものを描画
-  p1_.draw();
-  p2_.draw();
-  
-  p1_.drawCollision();
-  p2_.drawCollision();
-  
-  cam_.end();
-  
-  // --
-  
+  sceneMgr_->draw();
+
   gui_.begin();
-  // カメラの影響を受けないuiなどの描画はここから
-  p1_.drawParam();
-  p2_.drawParam();
+  ImGui::Begin("Root");
+  ImGui::Text("%s", string("width  :" + ofToString(ofGetWidth())).c_str());
+  ImGui::Text("%s", string("height :" + ofToString(ofGetHeight())).c_str());
+  ImGui::Text("%s", string("FPS :" + ofToString(ofGetFrameRate() , 1)).c_str());
   
+  ImGui::SliderFloat("Acceleration", &acc_, 0, 5);
+  
+  if (ImGui::Button("scene change to GameTitle")) { sceneMgr_->goToScene(TITLE); }
+  if (ImGui::Button("scene change to GameMain"))  { sceneMgr_->goToScene(GAME);  }
+  ImGui::End();
   gui_.end();
 }

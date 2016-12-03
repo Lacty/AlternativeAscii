@@ -1,0 +1,8 @@
+{
+  "window" : {
+    "width" : 460,
+    "height" : 600,
+    "frameLimit" : 60,
+    "fullScreen" : 0
+  }
+}

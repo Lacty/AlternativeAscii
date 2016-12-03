@@ -1,4 +1,7 @@
-ofxGui
+ofxAnimatable
 ofxImGui
+ofxJSON
 ofxJoystick
+ofxSceneManager
+ofxScreenCurtain
 ofxXmlSettings
