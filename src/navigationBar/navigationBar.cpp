@@ -1,5 +1,5 @@
 
-#include "NavigationBar.h"
+#include "navigationBar.h"
 
 
 void NavigationBar::setup() {
