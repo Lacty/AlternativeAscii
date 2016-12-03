@@ -16,6 +16,11 @@ private:
 	vector<string> textList_;
   ofVec2f textPos_;
   ofVec2f defaultPos_;
+	int count_;
+	int waitTime_;
+	int textSwitch_;
+	int moveSwitch_;
+	float moveValue_;
 
   //‰æ‘œ
   string mainBarFilename_;
@@ -30,12 +35,6 @@ private:
   float fontScale_;
   float fontSize_;
 
-  //
-  int count_;
-  int waitTime_;
-  int textSwitch_;
-  int moveSwitch_;
-  float moveValue_;
 
   void loadFiles();
 	void saveXml();
@@ -53,7 +52,8 @@ private:
 public:
   void setup();
   void draw();
-  void drawGUI();
+  void drawGui();
+
 
   void setTexPos(ofVec2f& pos) { textPos_ = pos; }
   ofVec2f getTexPos() { return textPos_; }

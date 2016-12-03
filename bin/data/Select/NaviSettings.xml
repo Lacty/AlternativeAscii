@@ -1,0 +1,17 @@
+<group>
+    <Navi>Navigation1</Navi>
+    <Navi>Navigation2</Navi>
+    <MainBar>Select/images/MainBar.png</MainBar>
+    <SideBar>Select/images/SideBar.png</SideBar>
+    <Font>Select/msgothic.ttc</Font>
+    <FontSize>30</FontSize>
+    <FontScale>500.000000000</FontScale>
+    <TextWaitTime>1</TextWaitTime>
+    <TextMoveValue>15.000000000</TextMoveValue>
+    <TextStopPosX>450.000000000</TextStopPosX>
+    <TextStopPosY>20.000000000</TextStopPosY>
+    <BarPositionX>0.000000000</BarPositionX>
+    <BarPositionY>0.000000000</BarPositionY>
+    <BarSizeX>1.000000000</BarSizeX>
+    <BarSizeY>8.000000000</BarSizeY>
+</group>
