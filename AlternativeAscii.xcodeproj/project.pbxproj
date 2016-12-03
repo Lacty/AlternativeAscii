@@ -1028,7 +1028,7 @@
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
 			</dict>
-			<key>3033164B707B3BA9896C23D8</key>
+			<key>1369BAA229B26CA6C8F7718F</key>
 			<dict>
 				<key>explicitFileType</key>
 				<string>sourcecode.c.h</string>
@@ -1037,9 +1037,9 @@
 				<key>isa</key>
 				<string>PBXFileReference</string>
 				<key>name</key>
-				<string>Timer.h</string>
+				<string>timer.h</string>
 				<key>path</key>
-				<string>src/timeLimit/Timer.h</string>
+				<string>src/timeLimit/timer.h</string>
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
 			</dict>
@@ -1047,8 +1047,8 @@
 			<dict>
 				<key>children</key>
 				<array>
-					<string>CEC95876EB547A8CC43BFF35</string>
-					<string>3033164B707B3BA9896C23D8</string>
+					<string>F378D081F56988B2073BA24D</string>
+					<string>1369BAA229B26CA6C8F7718F</string>
 				</array>
 				<key>isa</key>
 				<string>PBXGroup</string>
@@ -1057,14 +1057,14 @@
 				<key>sourceTree</key>
 				<string>&lt;group&gt;</string>
 			</dict>
-			<key>F0F127184EBC4E23DDCE8F96</key>
+			<key>7B3EF53EDA89A41ECDE9ADF4</key>
 			<dict>
 				<key>fileRef</key>
-				<string>CEC95876EB547A8CC43BFF35</string>
+				<string>F378D081F56988B2073BA24D</string>
 				<key>isa</key>
 				<string>PBXBuildFile</string>
 			</dict>
-			<key>CEC95876EB547A8CC43BFF35</key>
+			<key>F378D081F56988B2073BA24D</key>
 			<dict>
 				<key>explicitFileType</key>
 				<string>sourcecode.cpp.cpp</string>
@@ -1073,9 +1073,9 @@
 				<key>isa</key>
 				<string>PBXFileReference</string>
 				<key>name</key>
-				<string>Timer.cpp</string>
+				<string>timer.cpp</string>
 				<key>path</key>
-				<string>src/timeLimit/Timer.cpp</string>
+				<string>src/timeLimit/timer.cpp</string>
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
 			</dict>
@@ -1284,7 +1284,7 @@
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
 			</dict>
-			<key>85A493503CB15E8FA1D00417</key>
+			<key>6ACEF39BDCA8103FBCCCD053</key>
 			<dict>
 				<key>explicitFileType</key>
 				<string>sourcecode.c.h</string>
@@ -1293,34 +1293,34 @@
 				<key>isa</key>
 				<string>PBXFileReference</string>
 				<key>name</key>
-				<string>NavigationBar.h</string>
+				<string>navigationBar.h</string>
 				<key>path</key>
-				<string>src/NavigationBar/NavigationBar.h</string>
+				<string>src/navigationBar/navigationBar.h</string>
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
 			</dict>
-			<key>21E1C76048DDB3E82B7CB6D9</key>
+			<key>A1228BAE968F1E1947403E51</key>
 			<dict>
 				<key>children</key>
 				<array>
-					<string>BDF806CB46F0E66C24944943</string>
-					<string>85A493503CB15E8FA1D00417</string>
+					<string>0F41D00E9C1DE965FC36ECAB</string>
+					<string>6ACEF39BDCA8103FBCCCD053</string>
 				</array>
 				<key>isa</key>
 				<string>PBXGroup</string>
 				<key>name</key>
-				<string>NavigationBar</string>
+				<string>navigationBar</string>
 				<key>sourceTree</key>
 				<string>&lt;group&gt;</string>
 			</dict>
-			<key>5B684500C2E3D6066AF04887</key>
+			<key>407A5CDA465EFDD1787AF511</key>
 			<dict>
 				<key>fileRef</key>
-				<string>BDF806CB46F0E66C24944943</string>
+				<string>0F41D00E9C1DE965FC36ECAB</string>
 				<key>isa</key>
 				<string>PBXBuildFile</string>
 			</dict>
-			<key>BDF806CB46F0E66C24944943</key>
+			<key>0F41D00E9C1DE965FC36ECAB</key>
 			<dict>
 				<key>explicitFileType</key>
 				<string>sourcecode.cpp.cpp</string>
@@ -1329,9 +1329,9 @@
 				<key>isa</key>
 				<string>PBXFileReference</string>
 				<key>name</key>
-				<string>NavigationBar.cpp</string>
+				<string>navigationBar.cpp</string>
 				<key>path</key>
-				<string>src/NavigationBar/NavigationBar.cpp</string>
+				<string>src/navigationBar/navigationBar.cpp</string>
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
 			</dict>
@@ -1372,7 +1372,7 @@
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
 			</dict>
-			<key>040ECFD9C323E41BB46B783A</key>
+			<key>ECD299D3818860C805C64777</key>
 			<dict>
 				<key>explicitFileType</key>
 				<string>sourcecode.c.h</string>
@@ -1381,9 +1381,9 @@
 				<key>isa</key>
 				<string>PBXFileReference</string>
 				<key>name</key>
-				<string>HealthBar.h</string>
+				<string>healthBar.h</string>
 				<key>path</key>
-				<string>src/healthBar/HealthBar.h</string>
+				<string>src/healthBar/healthBar.h</string>
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
 			</dict>
@@ -1391,8 +1391,8 @@
 			<dict>
 				<key>children</key>
 				<array>
-					<string>FD533433CFE69D3BF3177665</string>
-					<string>040ECFD9C323E41BB46B783A</string>
+					<string>B9DCA335E8E16FB12A12638A</string>
+					<string>ECD299D3818860C805C64777</string>
 				</array>
 				<key>isa</key>
 				<string>PBXGroup</string>
@@ -1401,14 +1401,14 @@
 				<key>sourceTree</key>
 				<string>&lt;group&gt;</string>
 			</dict>
-			<key>A7DF69D8839A1B8EFF8ACA03</key>
+			<key>489CCB3D95883DF854A4E223</key>
 			<dict>
 				<key>fileRef</key>
-				<string>FD533433CFE69D3BF3177665</string>
+				<string>B9DCA335E8E16FB12A12638A</string>
 				<key>isa</key>
 				<string>PBXBuildFile</string>
 			</dict>
-			<key>FD533433CFE69D3BF3177665</key>
+			<key>B9DCA335E8E16FB12A12638A</key>
 			<dict>
 				<key>explicitFileType</key>
 				<string>sourcecode.cpp.cpp</string>
@@ -1417,46 +1417,9 @@
 				<key>isa</key>
 				<string>PBXFileReference</string>
 				<key>name</key>
-				<string>HealthBar.cpp</string>
+				<string>healthBar.cpp</string>
 				<key>path</key>
-				<string>src/healthBar/HealthBar.cpp</string>
-				<key>sourceTree</key>
-				<string>SOURCE_ROOT</string>
-			</dict>
-			<key>CD9085105B64E15D045923B4</key>
-			<dict>
-				<key>explicitFileType</key>
-				<string>sourcecode.c.h</string>
-				<key>fileEncoding</key>
-				<string>30</string>
-				<key>isa</key>
-				<string>PBXFileReference</string>
-				<key>name</key>
-				<string>gui.h</string>
-				<key>path</key>
-				<string>src/gui.h</string>
-				<key>sourceTree</key>
-				<string>SOURCE_ROOT</string>
-			</dict>
-			<key>B99CE47754258F41D4580269</key>
-			<dict>
-				<key>fileRef</key>
-				<string>98896B3E0D9F0505CA7D6E1B</string>
-				<key>isa</key>
-				<string>PBXBuildFile</string>
-			</dict>
-			<key>98896B3E0D9F0505CA7D6E1B</key>
-			<dict>
-				<key>explicitFileType</key>
-				<string>sourcecode.cpp.cpp</string>
-				<key>fileEncoding</key>
-				<string>30</string>
-				<key>isa</key>
-				<string>PBXFileReference</string>
-				<key>name</key>
-				<string>gui.cpp</string>
-				<key>path</key>
-				<string>src/gui.cpp</string>
+				<string>src/healthBar/healthBar.cpp</string>
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
 			</dict>
@@ -1633,8 +1596,8 @@
 					<array>
 						<string>$(OF_CORE_HEADERS)</string>
 						<string>src</string>
-						<string>src/NavigationBar</string>
 						<string>src/healthBar</string>
+						<string>src/navigationBar</string>
 						<string>src/player</string>
 						<string>src/timeLimit</string>
 						<string>../../addons/ofxGui/src</string>
@@ -1703,8 +1666,8 @@
 					<array>
 						<string>$(OF_CORE_HEADERS)</string>
 						<string>src</string>
-						<string>src/NavigationBar</string>
 						<string>src/healthBar</string>
+						<string>src/navigationBar</string>
 						<string>src/player</string>
 						<string>src/timeLimit</string>
 						<string>../../addons/ofxGui/src</string>
@@ -1771,10 +1734,9 @@
 				<array>
 					<string>E4B69E200A3A1BDC003C02F2</string>
 					<string>E4B69E210A3A1BDC003C02F2</string>
-					<string>B99CE47754258F41D4580269</string>
-					<string>A7DF69D8839A1B8EFF8ACA03</string>
+					<string>489CCB3D95883DF854A4E223</string>
 					<string>BF4934AC9A8DAF70C1AB410D</string>
-					<string>5B684500C2E3D6066AF04887</string>
+					<string>407A5CDA465EFDD1787AF511</string>
 					<string>EBD17FC04E6CC2822823A87A</string>
 					<string>69EE3FF00AD004DF261D1756</string>
 					<string>592AED75AFCD8B9B1D02F2DE</string>
@@ -1782,7 +1744,7 @@
 					<string>17813EAD687F63E4597319D7</string>
 					<string>97969231CD7181B9A382EF4C</string>
 					<string>672CE4D3A75ECB3C1946900D</string>
-					<string>F0F127184EBC4E23DDCE8F96</string>
+					<string>7B3EF53EDA89A41ECDE9ADF4</string>
 					<string>FA0D4902FAA63D187EA61B31</string>
 					<string>92A50AF72101624C3A8E6446</string>
 					<string>3A47706C1DF9A0D4045568C0</string>
@@ -1888,8 +1850,8 @@
 					<array>
 						<string>$(OF_CORE_HEADERS)</string>
 						<string>src</string>
-						<string>src/NavigationBar</string>
 						<string>src/healthBar</string>
+						<string>src/navigationBar</string>
 						<string>src/player</string>
 						<string>src/timeLimit</string>
 						<string>../../addons/ofxGui/src</string>
@@ -1948,8 +1910,8 @@
 					<array>
 						<string>$(OF_CORE_HEADERS)</string>
 						<string>src</string>
-						<string>src/NavigationBar</string>
 						<string>src/healthBar</string>
+						<string>src/navigationBar</string>
 						<string>src/player</string>
 						<string>src/timeLimit</string>
 						<string>../../addons/ofxGui/src</string>
@@ -2005,12 +1967,10 @@
 					<string>E4B69E1D0A3A1BDC003C02F2</string>
 					<string>E4B69E1E0A3A1BDC003C02F2</string>
 					<string>E4B69E1F0A3A1BDC003C02F2</string>
-					<string>98896B3E0D9F0505CA7D6E1B</string>
-					<string>CD9085105B64E15D045923B4</string>
 					<string>3827A3E250153DBA091DF477</string>
 					<string>E15C832BB3890D55A12FC5AD</string>
 					<string>FF801D15CC70F7D6C8714010</string>
-					<string>21E1C76048DDB3E82B7CB6D9</string>
+					<string>A1228BAE968F1E1947403E51</string>
 					<string>B0A7F12708E37F20F6EAD4FF</string>
 					<string>D68656A7A93C5C693975989D</string>
 				</array>
