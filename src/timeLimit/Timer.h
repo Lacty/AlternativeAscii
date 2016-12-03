@@ -8,11 +8,11 @@
 
 class Timer {
 private:
-  float limit_;  // •\¦‚³‚ê‚éc‚èŠÔ
+  float limit_;  // è¡¨ç¤ºã•ã‚Œã‚‹æ®‹ã‚Šæ™‚é–“
   float currentTime_;
-  float startTime_; // Œv‘ªŠJn‚ÌŠÔ‚ğ•Û‘¶
+  float startTime_; // è¨ˆæ¸¬é–‹å§‹æ™‚ã®æ™‚é–“ã‚’ä¿å­˜
   float fontSize_;
-  ofTrueTypeFont font_; // •\¦‚·‚éÛ‚ÌƒtƒHƒ“ƒg‚ÆƒTƒCƒY‚ğ“ü‚ê‚é” 
+  ofTrueTypeFont font_; // è¡¨ç¤ºã™ã‚‹éš›ã®ãƒ•ã‚©ãƒ³ãƒˆã¨ã‚µã‚¤ã‚ºã‚’å…¥ã‚Œã‚‹ç®±
   ofxXmlSettings xml_;
 
   float fontScale_;

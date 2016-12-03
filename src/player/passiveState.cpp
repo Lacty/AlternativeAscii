@@ -1,4 +1,4 @@
-﻿
+
 #include "playerState.h"
 #include "player.h"
 
