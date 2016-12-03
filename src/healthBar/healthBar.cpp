@@ -7,12 +7,12 @@ void HealthBar::setBarScale(float x, float y) {
   scaleY_ = y;
 }
 
-// ‚P‚q–ˆ‚ÉŒÄ‚Ño‚µ‚Ä‰º‚³‚¢
+// ï¼‘ï¼²æ¯ã«å‘¼ã³å‡ºã—ã¦ä¸‹ã•ã„
 void HealthBar::setup(Player &player) {
   guiSetup();
-  loadParam(); // ƒfƒtƒHƒ‹ƒg‚Ìİ’è‚ğÅ‰‚É“Ç‚İ‚Ş
-  tempHealth_ = player.getMaxHP();  // ”äŠr—p‚g‚o‚ÉÅ‘å’l‚ğ‘ã“ü
-  currentScale_ = scaleX_; // ƒo[‚ÌŒ³‚Ì’·‚³‚ğƒ[ƒh‚µ‚Ä‘ã“ü
+  loadParam(); // ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®è¨­å®šã‚’æœ€åˆã«èª­ã¿è¾¼ã‚€
+  tempHealth_ = player.getMaxHP();  // æ¯”è¼ƒç”¨ï¼¨ï¼°ã«æœ€å¤§å€¤ã‚’ä»£å…¥
+  currentScale_ = scaleX_; // ãƒãƒ¼ã®å…ƒã®é•·ã•ã‚’ãƒ­ãƒ¼ãƒ‰ã—ã¦ä»£å…¥
   ofAddListener(ofEvents().update, this, &HealthBar::update);
 }
 
@@ -25,7 +25,7 @@ void HealthBar::update(ofEventArgs &args) {
 }
 
 void HealthBar::draw(Player &player) {
-  // ƒvƒŒƒCƒ„[”Ô†‚É‰‚¶‚Ä•\¦ˆÊ’u‚ğƒYƒ‰‚·
+  // ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ç•ªå·ã«å¿œã˜ã¦è¡¨ç¤ºä½ç½®ã‚’ã‚ºãƒ©ã™
   switch (player.getID()) {
   case 0:
     drawLeft();
@@ -43,7 +43,7 @@ void HealthBar::draw(Player &player) {
     updateRight(player);
     break;
 
-  default:  // —áŠO‚Ì”š‚ª“ü—Í‚³‚ê‚½ê‡‚Í‚P‚o‘¤‚ğ•\¦
+  default:  // ä¾‹å¤–ã®æ•°å­—ãŒå…¥åŠ›ã•ã‚ŒãŸå ´åˆã¯ï¼‘ï¼°å´ã‚’è¡¨ç¤º
     drawLeft();
     if (player.getHP() != tempHealth_) {
       setDamageScale(player);
@@ -65,14 +65,14 @@ void HealthBar::drawParam() {
   ImGui::End();
 }
 
-// 1P‚È‚ç
+// 1Pãªã‚‰
 void HealthBar::drawLeft() {
   ofDrawRectangle(0, 0,
     (ofGetWidth() / 2) * currentScale_,
     (ofGetHeight() / 2) * scaleY_);
 }
 
-// 2P‚È‚ç
+// 2Pãªã‚‰
 void HealthBar::drawRight() {
   ofDrawRectangle(ofGetWidth() - ((ofGetWidth() / 2) * currentScale_), 0,
     (ofGetWidth() / 2) * currentScale_,
@@ -81,7 +81,7 @@ void HealthBar::drawRight() {
 
 void HealthBar::guiSetup() {
   ImGui::GetIO().MouseDrawCursor = false;
-  xmlSetting(); // •Ï”:xml_ ‚ÌƒAƒNƒZƒX‚·‚éƒtƒ@ƒCƒ‹‚ğw’è
+  xmlSetting(); // å¤‰æ•°:xml_ ã®ã‚¢ã‚¯ã‚»ã‚¹ã™ã‚‹ãƒ•ã‚¡ã‚¤ãƒ«ã‚’æŒ‡å®š
 }
 
 void HealthBar::xmlSetting() {
@@ -100,39 +100,39 @@ void HealthBar::loadParam() {
     xml_.getValue("group:ScaleY", 0.0f));
 }
 
-// Œ¸­Œã‚Ì‚g‚oƒo[‚Ì’·‚³‚ğ‹‚ß‚é
+// æ¸›å°‘å¾Œã®ï¼¨ï¼°ãƒãƒ¼ã®é•·ã•ã‚’æ±‚ã‚ã‚‹
 float HealthBar::remnant(Player &player) {
-  float restHealth = (float)player.getHP() / (float)player.getMaxHP();  // Œ»İ‚g‚o‚ªÅ‘å‚g‚o‚Ì‰½“‚É‚È‚Á‚½‚©
-  float newBarScale = scaleX_ * restHealth;  // Œ³‚Ìƒo[‚Ì’·‚³‚©‚ç“¯‚¶“•ª‚¾‚¯’·‚³‚ğ’Z‚­‚·‚é
+  float restHealth = (float)player.getHP() / (float)player.getMaxHP();  // ç¾åœ¨ï¼¨ï¼°ãŒæœ€å¤§ï¼¨ï¼°ã®ä½•ï¼…ã«ãªã£ãŸã‹
+  float newBarScale = scaleX_ * restHealth;  // å…ƒã®ãƒãƒ¼ã®é•·ã•ã‹ã‚‰åŒã˜ï¼…åˆ†ã ã‘é•·ã•ã‚’çŸ­ãã™ã‚‹
   return newBarScale;
 }
 
 void HealthBar::setDamageScale(Player &player) {
-  float damageCurrent = currentScale_ - remnant(player); // ÔƒQ[ƒW‚Ì’·‚³(Œ»İ‚Ì’·‚³ - ”íƒ_ƒŒvZŒã‚Ì’·‚³)
-  currentScale_ = remnant(player); // ‚g‚oƒo[‚Ì’·‚³‚ğXV
+  float damageCurrent = currentScale_ - remnant(player); // èµ¤ã‚²ãƒ¼ã‚¸ã®é•·ã•(ç¾åœ¨ã®é•·ã• - è¢«ãƒ€ãƒ¡è¨ˆç®—å¾Œã®é•·ã•)
+  currentScale_ = remnant(player); // ï¼¨ï¼°ãƒãƒ¼ã®é•·ã•ã‚’æ›´æ–°
   damageScale_ = damageCurrent;
 }
 
-// ‚P‚o‚Ì‚g‚oŒ¸­
+// ï¼‘ï¼°ã®ï¼¨ï¼°æ¸›å°‘æ™‚
 void HealthBar::updateLeft(Player &player) {
-  // ƒ_ƒ[ƒW‚ÌÔ‚¢ƒo[‚Ì•\¦
+  // ãƒ€ãƒ¡ãƒ¼ã‚¸ã®èµ¤ã„ãƒãƒ¼ã®è¡¨ç¤º
   ofPushStyle();
   ofSetColor(255, 0, 0);
   ofDrawRectangle((ofGetWidth() / 2) * currentScale_, 0,
     (ofGetWidth() / 2) * damageScale_,
     (ofGetHeight() / 2) * scaleY_);
   ofPopStyle();
-  tempHealth_ = player.getHP();  // Œ»İ‚g‚o‚ÌXV
+  tempHealth_ = player.getHP();  // ç¾åœ¨ï¼¨ï¼°ã®æ›´æ–°
 }
 
-// ‚Q‚o‚Ì‚g‚oŒ¸­
+// ï¼’ï¼°ã®ï¼¨ï¼°æ¸›å°‘æ™‚
 void HealthBar::updateRight(Player &player) {
-  // ƒ_ƒ[ƒW‚ÌÔ‚¢ƒo[‚Ì•\¦
+  // ãƒ€ãƒ¡ãƒ¼ã‚¸ã®èµ¤ã„ãƒãƒ¼ã®è¡¨ç¤º
   ofPushStyle();
   ofSetColor(255, 0, 0);
   ofDrawRectangle(ofGetWidth() - ((ofGetWidth() / 2) * (currentScale_ + damageScale_)), 0,
     (ofGetWidth() / 2) * damageScale_,
     (ofGetHeight() / 2) * scaleY_);
   ofPopStyle();
-  tempHealth_ = player.getHP();  // Œ»İ‚g‚o‚ÌXV
+  tempHealth_ = player.getHP();  // ç¾åœ¨ï¼¨ï¼°ã®æ›´æ–°
 }

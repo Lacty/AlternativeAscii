@@ -11,7 +11,7 @@ class NavigationBar {
 private:
   ofxXmlSettings xml_;
 
-  //ƒeƒLƒXƒg
+  //ãƒ†ã‚­ã‚¹ãƒˆ
   ofTrueTypeFont font_;
 	vector<string> textList_;
   ofVec2f textPos_;
@@ -22,7 +22,7 @@ private:
 	int moveSwitch_;
 	float moveValue_;
 
-  //‰æ‘œ
+  //ç”»åƒ
   string mainBarFilename_;
   string sideBarFilename_;
   ofImage mainBarImage_;
@@ -30,7 +30,7 @@ private:
   ofVec2f barPos_;
   ofVec2f barSize_;
 
-  //ƒtƒHƒ“ƒg
+  //ãƒ•ã‚©ãƒ³ãƒˆ
   string fontFilename_;
   float fontScale_;
   float fontSize_;
