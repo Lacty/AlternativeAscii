@@ -9,21 +9,23 @@ void HealthBar::setBarScale(float x, float y) {
 
 // �P�q���ɌĂяo���ĉ�����
 void HealthBar::setup(Player &player) {
-  loadFile(); // �f�t�H���g�̐ݒ����ŏ��ɓǂݍ���
-  tempHealth = player.getMaxHP();  // ���r�p�g�o�ɍő��l������
-  currentScale = scaleX_; // �o�[�̌��̒��������[�h���đ���
+  guiSetup();
+  loadParam(); // �f�t�H���g�̐ݒ����ŏ��ɓǂݍ���
+  tempHealth_ = player.getMaxHP();  // ���r�p�g�o�ɍő��l������
+  currentScale_ = scaleX_; // �o�[�̌��̒��������[�h���đ���
   ofAddListener(ofEvents().update, this, &HealthBar::update);
 }
 
 void HealthBar::update(ofEventArgs &args) {
-  if (damageScale != 0) {
-    for (int i = 0; i < ofGetFrameRate()/4; i++) {
-      damageScale = damageScale - (damageScale / ofGetFrameRate()/4);
+  if (damageScale_ != 0) {
+    for (int i = 0; i < ofGetFrameRate() / 4; i++) {
+      damageScale_ = damageScale_ - (damageScale_ / ofGetFrameRate() / 4);
     }
   }
 }
 
 void HealthBar::draw(Player &player) {
+  drawParam();
   // �v���C���[�ԍ��ɉ����ĕ\���ʒu���Y����
   switch (player.getID()) {
   case 0:
@@ -52,6 +54,21 @@ void HealthBar::draw(Player &player) {
   }
 }
 
+void HealthBar::drawParam() {
+  ImGui::Begin("HealthBar_State");
+
+  ImGui::SetWindowSize(ofVec2f(200, 200));
+  ImGui::SliderFloat("Scale_X", &scaleX_, 0.0f, 1.0f);
+  if (scaleX_ != xml_.getValue("group:ScaleX", 0)) {
+    currentScale_ = scaleX_;
+  }
+  ImGui::SliderFloat("Scale_Y", &scaleY_, 0.0f, 1.0f);
+  if (ImGui::Button("Save")) { saveParam(); }
+  if (ImGui::Button("Load")) { loadParam(); }
+
+  ImGui::End();
+}
+
 // 1P�Ȃ�
 void HealthBar::drawLeft() {
   ofDrawRectangle(0, 0,
@@ -66,11 +83,25 @@ void HealthBar::drawRight() {
     (ofGetHeight() / 2) * scaleY_);
 }
 
-void HealthBar::loadFile() {
-  if (xml_.loadFile("Game/HealthBarSettings.xml")) {
-    setBarScale(xml_.getValue("group:ScaleX", 0.0),
-                xml_.getValue("group:ScaleY", 0.0));
-  }
+void HealthBar::guiSetup() {
+  ImGui::GetIO().MouseDrawCursor = false;
+  xmlSetting(); // �ϐ�:xml_ �̃A�N�Z�X�����t�@�C�����w��
+}
+
+void HealthBar::xmlSetting() {
+  xml_.loadFile("Game/HealthBarSettings.xml");
+  xml_.saveFile("Game/HealthBarSettings.xml");
+}
+
+void HealthBar::saveParam() {
+  xml_.setValue("group:ScaleX", scaleX_);
+  xml_.setValue("group:ScaleY", scaleY_);
+  xml_.save("Game/HealthBarSettings.xml");
+}
+
+void HealthBar::loadParam() {
+  setBarScale(xml_.getValue("group:ScaleX", 0.0f),
+    xml_.getValue("group:ScaleY", 0.0f));
 }
 
 // �������̂g�o�o�[�̒��������߂�

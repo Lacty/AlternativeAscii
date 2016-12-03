@@ -6,9 +6,9 @@
 
 class HealthBar {
 private:
-  float currentScale; // Œ»İ‚g‚oƒo[‚Ì’·‚³
-  float tempHealth; // ”í’e‘O‚Ì‚g‚o‚ğˆê•Û‘¶‚µ‚Ä‚¨‚­” 
-  float damageScale;  // ƒ_ƒ[ƒWƒo[‚Ì’·‚³‚ğˆê•Û‘¶‚µ‚Ä‚¨‚­” 
+  float currentScale; // ï¿½ï¿½ï¿½İ‚gï¿½oï¿½oï¿½[ï¿½Ì’ï¿½ï¿½ï¿½
+  float tempHealth; // ï¿½ï¿½ï¿½eï¿½Oï¿½Ì‚gï¿½oï¿½ï¿½ï¿½êï¿½Û‘ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½
+  float damageScale;  // ï¿½_ï¿½ï¿½ï¿½[ï¿½Wï¿½oï¿½[ï¿½Ì’ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½êï¿½Û‘ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½
   ofxXmlSettings xml_;
 
   float scaleX_;
@@ -22,6 +22,10 @@ private:
   void updateLeft(Player &player);
   void updateRight(Player &player);
   void setBarScale(float x, float y);
+  void guiSetup();
+  void xmlSetting();
+  void saveParam();
+  void loadParam();
 public:
   void setup(Player &player);
   void update(ofEventArgs &args);
