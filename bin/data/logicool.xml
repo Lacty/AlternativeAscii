@@ -1,0 +1,16 @@
+
+<!-- Logicool Controller -->
+<!-- ボタン名は 箱コン準拠 -->
+
+<Left>13</Left>
+<Right>11</Right>
+
+<!-- 未定 -->
+<Up>10</Up>
+<Down>12</Down>
+
+
+<X>2</X>
+<Y>3</Y>
+<A>0</A>
+<B>1</B>

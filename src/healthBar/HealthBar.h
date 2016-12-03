@@ -6,9 +6,9 @@
 
 class HealthBar {
 private:
-  float currentScale; // ï¿½ï¿½ï¿½İ‚gï¿½oï¿½oï¿½[ï¿½Ì’ï¿½ï¿½ï¿½
-  float tempHealth; // ï¿½ï¿½ï¿½eï¿½Oï¿½Ì‚gï¿½oï¿½ï¿½ï¿½êï¿½Û‘ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½
-  float damageScale;  // ï¿½_ï¿½ï¿½ï¿½[ï¿½Wï¿½oï¿½[ï¿½Ì’ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½êï¿½Û‘ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½
+  float currentScale_; // E½E½E½İ‚gE½oE½oE½[E½Ì’ï¿½E½E½
+  float tempHealth_; // E½E½E½eE½OE½Ì‚gE½oE½E½E½êï¿½Û‘ï¿½E½E½E½Ä‚ï¿½E½E½E½E½
+  float damageScale_;  // E½_E½E½E½[E½WE½oE½[E½Ì’ï¿½E½E½E½E½E½êï¿½Û‘ï¿½E½E½E½Ä‚ï¿½E½E½E½E½
   ofxXmlSettings xml_;
 
   float scaleX_;
