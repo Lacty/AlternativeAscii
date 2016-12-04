@@ -1,7 +1,7 @@
 
 #pragma once
 #include "ofMain.h"
-#include "ofxXmlSettings.h"
+#include "ofxJSONElement.h"
 
 
 class Input {

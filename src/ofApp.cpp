@@ -5,7 +5,7 @@
 
 
 void ofApp::setup() {
-  ofxJSONElement json;
+  ofxJSON json;
   json.open("game.json");
 
   sceneMgr_ = ofxSceneManager::instance();

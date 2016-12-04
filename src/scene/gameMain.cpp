@@ -1,11 +1,10 @@
 
-#include "ofxSceneManager.h"
 #include "gameMain.h"
 
 
 void GameMain::setup() {
   // gameMain.jsonから設定を読み込む
-  ofxJSONElement json;
+  ofxJSON json;
   json.open("game.json");
   string j_path = json["gameMainPath"].asString();
   json.open(j_path);
