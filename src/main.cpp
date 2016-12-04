@@ -1,18 +1,26 @@
 
 #include "ofMain.h"
 #include "ofApp.h"
-
 #include "ofxJSONElement.h"
+
+#include "input.h"
 
 
 int main( ){
-  ofxJSONElement json;
+  ofxJSON json;
   json.open("user.json");
-  int w = json["window"]["width"].asInt();
-  int h = json["window"]["height"].asInt();
-  int f = json["window"]["fullScreen"].asInt();
-  int fps = json["window"]["frameLimit"].asInt();
   
+  // jsonからウィンドウの初期値を読み込む
+  int w = json["Window"]["width"].asInt();
+  int h = json["Window"]["height"].asInt();
+  bool f = json["Window"]["fullScreen"].asBool();
+  int fps = json["Window"]["frameLimit"].asInt();
+  
+  // 設定されたボタン番号を読み込む
+  string path = json["Input"]["path"].asString();
+  Input::setup(path);
+  
+  // 読み込んだ初期値からウィンドウを作成
   ofSetupOpenGL(w, h, f ? OF_FULLSCREEN : OF_WINDOW);
   ofSetFrameRate(fps);
   
