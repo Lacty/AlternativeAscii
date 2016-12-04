@@ -2,10 +2,16 @@
 
 #pragma once
 #include "scene.h"
+#include "../player/player.h"
 
 
 class GameMain : public ofxScene {
 private:
+  ofCamera cam_;
+  ofxImGui gui_;
+  
+  static const int NUM_PLAYER = 2;
+  Player players_[NUM_PLAYER];
   
 public:
   void setup() override;

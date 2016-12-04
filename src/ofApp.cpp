@@ -32,9 +32,9 @@ void ofApp::update() {
 }
 
 void ofApp::draw() {
-  sceneMgr_->draw();
-
   gui_.begin();
+  sceneMgr_->draw();
+  
   ImGui::Begin("Root");
   ImGui::Text("%s", string("width  :" + ofToString(ofGetWidth())).c_str());
   ImGui::Text("%s", string("height :" + ofToString(ofGetHeight())).c_str());
