@@ -112,6 +112,9 @@
     <ClCompile Include="src\healthBar\healthBar.cpp">
       <Filter>src\healthBar</Filter>
     </ClCompile>
+    <ClCompile Include="src\player\jumpingAttackState.cpp">
+      <Filter>src\player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
