@@ -13,6 +13,6 @@
   "acceleration" : 1,
   
   // 各シーンのjsonのpath
-  "gameTitlePath" : "gameTitle.json",
-  "gameMainPath" : "gameMain.json"
+  "gameTitlePath" : "scene/gameTitle.json",
+  "gameMainPath"  : "scene/gameMain.json"
 }

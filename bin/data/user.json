@@ -1,8 +1,18 @@
 {
-  "window" : {
-    "width" : 460,
-    "height" : 600,
+  "Window" : {
+    // ウィンドウサイズの指定
+    "width" : 600,
+    "height" : 460,
+
+    // 最大フレームレートの指定
     "frameLimit" : 60,
-    "fullScreen" : 0
+
+    // フルスクリーンにするかどうか
+    "fullScreen" : true
+  },
+
+  // 入力デバイスのJSONのpath
+  "Input" : {
+    "path" : "device/elecom_jc_3312.json"
   }
 }
