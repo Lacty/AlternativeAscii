@@ -43,7 +43,6 @@ public:
 class JumpingState : public MovingState {
 protected:
   bool isJumping_;  // ジャンプ状態の判定
-  bool isAttack_; // ジャンプ中の攻撃回数を制御
 public:
   shared_ptr<PlayerState> handleInput(Player& player, ofxJoystick& input) override;
   void update(Player& player, ofxJoystick& input) override;
