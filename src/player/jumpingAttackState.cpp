@@ -16,11 +16,13 @@ shared_ptr<PlayerState> JumpingAttackState::handleInput(Player& player, ofxJoyst
   return nullptr;
 }
 
-void JumpingAttackState::update(Player& player, ofxJoystick& input) {}
+void JumpingAttackState::update(Player& player, ofxJoystick& input) {
+  JumpingState::update(player, input);
+}
 
 void JumpingAttackState::entry(Player& player) {
   start_ = ofGetElapsedTimef();
-  end_ = 0.5f;
+  end_ = 10.0f;
 
   // 注意 攻撃用テストコードなので要修正
   // 一度に発動できる攻撃が一つの場合にのみ有効
