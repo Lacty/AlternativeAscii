@@ -15,6 +15,9 @@ shared_ptr<PlayerState> MovingState::handleInput(Player& player, ofxJoystick& in
     // ジャンプ状態に繊維
     return make_shared<JumpingState>();
   }
+	if (input.isPressed(Input::X)) {
+		return make_shared<MovingAttackState>();
+	}
   
   return nullptr;
 }
