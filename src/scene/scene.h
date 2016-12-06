@@ -10,5 +10,8 @@ enum {
   TITLE = 1,
   GAME,
   RESULT,
-  TEST
+  
+  SCENE_P,
+  SCENE_WEM,
+  SCENE_YANAI
 };

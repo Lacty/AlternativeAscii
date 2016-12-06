@@ -33,6 +33,9 @@
 		94C3A35816CF6A0DE0CD3082 /* BaseEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0036AD77D503F4330B068775 /* BaseEngine.cpp */; };
 		97969231CD7181B9A382EF4C /* playerState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 494522029B931251EFA89955 /* playerState.cpp */; };
 		9DC1ED16CF964E5831619872 /* ofxImGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FC3E19B0232BFB26EE64165 /* ofxImGui.cpp */; };
+		ACE62F4D1DF6BD0E002A27A1 /* sceneP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACE62F4B1DF6BD0E002A27A1 /* sceneP.cpp */; };
+		ACE62F501DF6C050002A27A1 /* sceneWem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACE62F4E1DF6C050002A27A1 /* sceneWem.cpp */; };
+		ACE62F531DF6C166002A27A1 /* sceneYanai.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACE62F511DF6C166002A27A1 /* sceneYanai.cpp */; };
 		BF4934AC9A8DAF70C1AB410D /* input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E15C832BB3890D55A12FC5AD /* input.cpp */; };
 		CE441544D6CE368D7F1670A3 /* ofxScreenCurtain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F30A0E85AD0500C33048FECA /* ofxScreenCurtain.cpp */; };
 		E2A78E212B5A2DEE8DEFCDA2 /* gameMain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8C1A283F6DC3679756C77102 /* gameMain.cpp */; };
@@ -122,6 +125,12 @@
 		97E9772CB5B04FB62A872480 /* tinyxml.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = tinyxml.cpp; path = ../../addons/ofxXmlSettings/libs/tinyxml.cpp; sourceTree = SOURCE_ROOT; };
 		98B3774429636F0F36011537 /* gameTitle.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = gameTitle.h; path = src/scene/gameTitle.h; sourceTree = SOURCE_ROOT; };
 		A666F90C7C7214A2A0E8AC76 /* ofxScene.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxScene.h; path = ../../addons/ofxSceneManager/src/ofxScene.h; sourceTree = SOURCE_ROOT; };
+		ACE62F4B1DF6BD0E002A27A1 /* sceneP.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sceneP.cpp; sourceTree = "<group>"; };
+		ACE62F4C1DF6BD0E002A27A1 /* sceneP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sceneP.h; sourceTree = "<group>"; };
+		ACE62F4E1DF6C050002A27A1 /* sceneWem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sceneWem.cpp; sourceTree = "<group>"; };
+		ACE62F4F1DF6C050002A27A1 /* sceneWem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sceneWem.h; sourceTree = "<group>"; };
+		ACE62F511DF6C166002A27A1 /* sceneYanai.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sceneYanai.cpp; sourceTree = "<group>"; };
+		ACE62F521DF6C166002A27A1 /* sceneYanai.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sceneYanai.h; sourceTree = "<group>"; };
 		AF6C6110F0C12B3C45E9C5BE /* ofxAnimatableQueue.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxAnimatableQueue.h; path = ../../addons/ofxAnimatable/src/ofxAnimatableQueue.h; sourceTree = SOURCE_ROOT; };
 		B084B8C85AA0DE22E6210796 /* stb_textedit.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = stb_textedit.h; path = ../../addons/ofxImGui/libs/imgui/src/stb_textedit.h; sourceTree = SOURCE_ROOT; };
 		B3BC6675546E0BECCB775E73 /* ofxAnimatableOfPoint.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxAnimatableOfPoint.h; path = ../../addons/ofxAnimatable/src/ofxAnimatableOfPoint.h; sourceTree = SOURCE_ROOT; };
@@ -211,6 +220,9 @@
 		38210A9855D9757B736E753B /* scene */ = {
 			isa = PBXGroup;
 			children = (
+				ACE62F471DF6BCE5002A27A1 /* p */,
+				ACE62F481DF6BCE5002A27A1 /* wem */,
+				ACE62F491DF6BCE5002A27A1 /* yanai */,
 				8C1A283F6DC3679756C77102 /* gameMain.cpp */,
 				17BF8878CC8DCDC9407D86F8 /* gameMain.h */,
 				8A8D88DE09C4F08229BD984F /* gameTitle.cpp */,
@@ -374,6 +386,36 @@
 				6ACEF39BDCA8103FBCCCD053 /* navigationBar.h */,
 			);
 			name = navigationBar;
+			sourceTree = "<group>";
+		};
+		ACE62F471DF6BCE5002A27A1 /* p */ = {
+			isa = PBXGroup;
+			children = (
+				ACE62F4B1DF6BD0E002A27A1 /* sceneP.cpp */,
+				ACE62F4C1DF6BD0E002A27A1 /* sceneP.h */,
+			);
+			name = p;
+			path = scene/p;
+			sourceTree = "<group>";
+		};
+		ACE62F481DF6BCE5002A27A1 /* wem */ = {
+			isa = PBXGroup;
+			children = (
+				ACE62F4E1DF6C050002A27A1 /* sceneWem.cpp */,
+				ACE62F4F1DF6C050002A27A1 /* sceneWem.h */,
+			);
+			name = wem;
+			path = scene/wem;
+			sourceTree = "<group>";
+		};
+		ACE62F491DF6BCE5002A27A1 /* yanai */ = {
+			isa = PBXGroup;
+			children = (
+				ACE62F511DF6C166002A27A1 /* sceneYanai.cpp */,
+				ACE62F521DF6C166002A27A1 /* sceneYanai.h */,
+			);
+			name = yanai;
+			path = scene/yanai;
 			sourceTree = "<group>";
 		};
 		B0A7F12708E37F20F6EAD4FF /* player */ = {
@@ -609,6 +651,7 @@
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
 				489CCB3D95883DF854A4E223 /* healthBar.cpp in Sources */,
+				ACE62F4D1DF6BD0E002A27A1 /* sceneP.cpp in Sources */,
 				BF4934AC9A8DAF70C1AB410D /* input.cpp in Sources */,
 				407A5CDA465EFDD1787AF511 /* navigationBar.cpp in Sources */,
 				EBD17FC04E6CC2822823A87A /* attackingState.cpp in Sources */,
@@ -620,6 +663,7 @@
 				672CE4D3A75ECB3C1946900D /* standingState.cpp in Sources */,
 				E2A78E212B5A2DEE8DEFCDA2 /* gameMain.cpp in Sources */,
 				E7C0D5EF1488D1409AAA35FD /* gameTitle.cpp in Sources */,
+				ACE62F531DF6C166002A27A1 /* sceneYanai.cpp in Sources */,
 				7B3EF53EDA89A41ECDE9ADF4 /* timer.cpp in Sources */,
 				28508E0A54B8B8CAF6FC376D /* ofxAnimatable.cpp in Sources */,
 				E432EC975AE8560884FFB363 /* ofxAnimatableFloat.cpp in Sources */,
@@ -642,6 +686,7 @@
 				0C626D3D484EA5FB87A6AD23 /* ofxXmlSettings.cpp in Sources */,
 				28DC652211D4AF8CC023D568 /* tinyxml.cpp in Sources */,
 				F877D69532909AE487E0EF22 /* tinyxmlerror.cpp in Sources */,
+				ACE62F501DF6C050002A27A1 /* sceneWem.cpp in Sources */,
 				32E2318B89B6217AE6052155 /* tinyxmlparser.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

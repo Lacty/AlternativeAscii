@@ -14,5 +14,8 @@
   
   // 各シーンのjsonのpath
   "gameTitlePath" : "scene/gameTitle.json",
-  "gameMainPath"  : "scene/gameMain.json"
+  "gameMainPath"  : "scene/gameMain.json",
+  "scenePPath" : "scene/sceneP.json",
+  "sceneWemPath" : "scene/sceneWem.json",
+  "sceneYanaiPath" : "scene/sceneYanai.json"
 }

@@ -1,11 +1,11 @@
 
 
 #pragma once
-#include "scene.h"
-#include "../player/player.h"
+#include "../scene.h"
+#include "../../player/player.h"
 
 
-class GameMain : public ofxScene {
+class SceneWem : public ofxScene {
 private:
   ofCamera cam_;
   

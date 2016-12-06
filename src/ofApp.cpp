@@ -3,6 +3,11 @@
 #include "scene/gameTitle.h"
 #include "scene/gameMain.h"
 
+// test scenes
+#include "scene/p/sceneP.h"
+#include "scene/wem/sceneWem.h"
+#include "scene/yanai/sceneYanai.h"
+
 
 void ofApp::setup() {
   ofxJSON json;
@@ -13,6 +18,11 @@ void ofApp::setup() {
   // シーンを追加
   sceneMgr_->addScene(new GameTitle(), TITLE);
   sceneMgr_->addScene(new GameMain(),  GAME);
+  
+  // test scenes
+  sceneMgr_->addScene(new SceneP(),     SCENE_P);
+  sceneMgr_->addScene(new SceneWem(),   SCENE_WEM);
+  sceneMgr_->addScene(new SceneYanai(), SCENE_YANAI);
   
   // 指定したデフォルトのシーンへ遷移
   sceneMgr_->goToScene(json["defaultScene"].asInt(), false, false);
@@ -42,8 +52,11 @@ void ofApp::draw() {
   
   ImGui::SliderFloat("Acceleration", &acc_, 0, 5);
   
-  if (ImGui::Button("scene change to GameTitle")) { sceneMgr_->goToScene(TITLE); }
-  if (ImGui::Button("scene change to GameMain"))  { sceneMgr_->goToScene(GAME);  }
+  if (ImGui::Button("scene change to GameTitle"))  { sceneMgr_->goToScene(TITLE);       }
+  if (ImGui::Button("scene change to GameMain"))   { sceneMgr_->goToScene(GAME);        }
+  if (ImGui::Button("scene change to SceneP"))     { sceneMgr_->goToScene(SCENE_P);     }
+  if (ImGui::Button("scene change to SceneWem"))   { sceneMgr_->goToScene(SCENE_WEM);   }
+  if (ImGui::Button("scene change to SceneYanai")) { sceneMgr_->goToScene(SCENE_YANAI); }
   ImGui::End();
   gui_.end();
 }
