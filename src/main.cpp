@@ -7,7 +7,7 @@
 
 
 int main( ){
-  ofxJSON json;
+  ofxJSONElement json;
   json.open("user.json");
   
   // jsonからウィンドウの初期値を読み込む

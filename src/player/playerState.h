@@ -41,6 +41,8 @@ public:
 };
 
 class JumpingState : public MovingState {
+private:
+  bool isJumping_;  // ジャンプ状態の判定
 public:
   shared_ptr<PlayerState> handleInput(Player& player, ofxJoystick& input) override;
   void update(Player& player, ofxJoystick& input) override;
@@ -52,6 +54,19 @@ private:
   float start_;
   float end_;
   
+  bool finish();
+
+public:
+  shared_ptr<PlayerState> handleInput(Player& player, ofxJoystick& input) override;
+  void update(Player& player, ofxJoystick& input) override;
+  void entry(Player& player) override;
+};
+
+class JumpingAttackState : public JumpingState {
+private:
+  float start_;
+  float end_;
+
   bool finish();
 
 public:

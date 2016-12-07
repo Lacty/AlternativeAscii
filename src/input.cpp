@@ -12,7 +12,7 @@ int Input::A     = 0;
 int Input::B     = 0;
 
 void Input::setup(const string& path) {
-  ofxJSON json;
+  ofxJSONElement json;
   json.open(path);
   Left  = json["Left" ].asInt();
   Right = json["Right"].asInt();

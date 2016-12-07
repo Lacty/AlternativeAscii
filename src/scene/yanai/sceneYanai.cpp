@@ -4,7 +4,7 @@
 
 void SceneYanai::setup() {
   // sceneYanai.jsonから設定を読み込む
-  ofxJSON json;
+  ofxJSONElement json;
   json.open("game.json");
   string j_path = json["sceneYanaiPath"].asString();
   json.open(j_path);

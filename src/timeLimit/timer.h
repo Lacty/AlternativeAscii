@@ -45,3 +45,18 @@ public:
   bool isTimeup();
   void drawParam();
 };
+
+inline void Timer::setMaxTime(int maxTime) { maxTime_ = maxTime; }
+
+inline int Timer::getMaxTime() { return maxTime_; }
+
+inline void Timer::setLimit(float limit) { limit_ = limit; }
+inline int Timer::getLimit() { return limit_; }
+
+inline void Timer::setFontSize(int fontSize) { fontSize_ = fontSize; }
+inline int Timer::getFontSize() { return fontSize_; }
+
+inline void Timer::setFontScale(int fontScale) { fontScale_ = fontScale; }
+inline int Timer::getFontScale() { return fontScale_; }
+
+inline void Timer::reset() { startTime_ = currentTime_; }

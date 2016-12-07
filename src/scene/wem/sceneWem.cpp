@@ -4,7 +4,7 @@
 
 void SceneWem::setup() {
   // sceneWem.jsonから設定を読み込む
-  ofxJSON json;
+  ofxJSONElement json;
   json.open("game.json");
   string j_path = json["sceneWemPath"].asString();
   json.open(j_path);

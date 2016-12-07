@@ -4,7 +4,7 @@
 
 void SceneP::setup() {
   // sceneP.jsonから設定を読み込む
-  ofxJSON json;
+  ofxJSONElement json;
   json.open("game.json");
   string j_path = json["scenePPath"].asString();
   json.open(j_path);

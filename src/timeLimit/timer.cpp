@@ -2,20 +2,6 @@
 #include "Timer.h"
 
 
-void Timer::setMaxTime(int maxTime) { maxTime_ = maxTime; }
-int Timer::getMaxTime() { return maxTime_; }
-
-void Timer::setLimit(float limit) { limit_ = limit; }
-int Timer::getLimit() { return limit_; }
-
-void Timer::setFontSize(int fontSize) { fontSize_ = fontSize; }
-int Timer::getFontSize() { return fontSize_; }
-
-void Timer::setFontScale(int fontScale) { fontScale_ = fontScale; }
-int Timer::getFontScale() { return fontScale_; }
-
-void Timer::reset() { startTime_ = currentTime_; }
-
 void  Timer::setup() {
   guiSetup();
   fontSetup();
