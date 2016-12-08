@@ -62,15 +62,15 @@ public:
   void entry(Player& player) override;
 };
 
-class JumpingAttackState : public JumpingState {
+class MovingAttackState :public MovingState {
 private:
-  float start_;
-  float end_;
+	float start_;
+	float end_;
 
-  bool finish();
+	bool finish();
 
 public:
-  shared_ptr<PlayerState> handleInput(Player& player, ofxJoystick& input) override;
-  void update(Player& player, ofxJoystick& input) override;
-  void entry(Player& player) override;
+	shared_ptr<PlayerState> handleInput(Player& player, ofxJoystick& input) override;
+	void update(Player& player, ofxJoystick& input) override;
+	void entry(Player& player) override;
 };
