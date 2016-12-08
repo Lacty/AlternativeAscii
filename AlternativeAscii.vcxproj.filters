@@ -1,360 +1,279 @@
 <?xml version="1.0"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-	<ItemGroup>
-		<ClCompile Include="src\ofApp.cpp">
-			<Filter>src</Filter>
-		</ClCompile>
-		<ClCompile Include="src\main.cpp">
-			<Filter>src</Filter>
-		</ClCompile>
-		<ClCompile Include="src\healthBar\healthBar.cpp">
-			<Filter>src\healthBar</Filter>
-		</ClCompile>
-		<ClCompile Include="src\input.cpp">
-			<Filter>src</Filter>
-		</ClCompile>
-		<ClCompile Include="src\main.cpp">
-			<Filter>src</Filter>
-		</ClCompile>
-		<ClCompile Include="src\navigationBar\navigationBar.cpp">
-			<Filter>src\navigationBar</Filter>
-		</ClCompile>
-		<ClCompile Include="src\ofApp.cpp">
-			<Filter>src</Filter>
-		</ClCompile>
-		<ClCompile Include="src\player\attackingState.cpp">
-			<Filter>src\player</Filter>
-		</ClCompile>
-		<ClCompile Include="src\player\jumpingState.cpp">
-			<Filter>src\player</Filter>
-		</ClCompile>
-		<ClCompile Include="src\player\movingState.cpp">
-			<Filter>src\player</Filter>
-		</ClCompile>
-		<ClCompile Include="src\player\passiveState.cpp">
-			<Filter>src\player</Filter>
-		</ClCompile>
-		<ClCompile Include="src\player\player.cpp">
-			<Filter>src\player</Filter>
-		</ClCompile>
-		<ClCompile Include="src\player\playerState.cpp">
-			<Filter>src\player</Filter>
-		</ClCompile>
-		<ClCompile Include="src\player\standingState.cpp">
-			<Filter>src\player</Filter>
-		</ClCompile>
-		<ClCompile Include="src\scene\gameMain.cpp">
-			<Filter>src\scene</Filter>
-		</ClCompile>
-		<ClCompile Include="src\scene\gameTitle.cpp">
-			<Filter>src\scene</Filter>
-		</ClCompile>
-		<ClCompile Include="src\scene\p\sceneP.cpp">
-			<Filter>src\scene\p</Filter>
-		</ClCompile>
-		<ClCompile Include="src\scene\wem\sceneWem.cpp">
-			<Filter>src\scene\wem</Filter>
-		</ClCompile>
-		<ClCompile Include="src\scene\yanai\sceneYanai.cpp">
-			<Filter>src\scene\yanai</Filter>
-		</ClCompile>
-		<ClCompile Include="src\timeLimit\timer.cpp">
-			<Filter>src\timeLimit</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\addons\ofxAnimatable\src\ofxAnimatable.cpp">
-			<Filter>addons\ofxAnimatable\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\addons\ofxAnimatable\src\ofxAnimatableFloat.cpp">
-			<Filter>addons\ofxAnimatable\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\addons\ofxAnimatable\src\ofxAnimatableOfColor.cpp">
-			<Filter>addons\ofxAnimatable\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\addons\ofxAnimatable\src\ofxAnimatableOfPoint.cpp">
-			<Filter>addons\ofxAnimatable\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\addons\ofxAnimatable\src\ofxAnimatableQueue.cpp">
-			<Filter>addons\ofxAnimatable\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\addons\ofxImGui\src\BaseEngine.cpp">
-			<Filter>addons\ofxImGui\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\addons\ofxImGui\src\BaseTheme.cpp">
-			<Filter>addons\ofxImGui\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\addons\ofxImGui\src\EngineGLFW.cpp">
-			<Filter>addons\ofxImGui\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\addons\ofxImGui\src\EngineOpenGLES.cpp">
-			<Filter>addons\ofxImGui\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\addons\ofxImGui\src\ofxImGui.cpp">
-			<Filter>addons\ofxImGui\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\addons\ofxImGui\libs\imgui\src\imgui.cpp">
-			<Filter>addons\ofxImGui\libs\imgui\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\addons\ofxImGui\libs\imgui\src\imgui_demo.cpp">
-			<Filter>addons\ofxImGui\libs\imgui\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\addons\ofxImGui\libs\imgui\src\imgui_draw.cpp">
-			<Filter>addons\ofxImGui\libs\imgui\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\addons\ofxJoystick\src\ofxJoystick.cpp">
-			<Filter>addons\ofxJoystick\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\addons\ofxJSON\src\ofxJSONElement.cpp">
-			<Filter>addons\ofxJSON\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\addons\ofxJSON\libs\jsoncpp\src\jsoncpp.cpp">
-			<Filter>addons\ofxJSON\libs\jsoncpp\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\addons\ofxSceneManager\src\ofxSceneManager.cpp">
-			<Filter>addons\ofxSceneManager\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\addons\ofxScreenCurtain\src\ofxScreenCurtain.cpp">
-			<Filter>addons\ofxScreenCurtain\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\addons\ofxXmlSettings\src\ofxXmlSettings.cpp">
-			<Filter>addons\ofxXmlSettings\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\addons\ofxXmlSettings\libs\tinyxml.cpp">
-			<Filter>addons\ofxXmlSettings\libs</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\addons\ofxXmlSettings\libs\tinyxmlerror.cpp">
-			<Filter>addons\ofxXmlSettings\libs</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\addons\ofxXmlSettings\libs\tinyxmlparser.cpp">
-			<Filter>addons\ofxXmlSettings\libs</Filter>
-		</ClCompile>
-	</ItemGroup>
-	<ItemGroup>
-		<Filter Include="src">
-			<UniqueIdentifier>{d8376475-7454-4a24-b08a-aac121d3ad6f}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="src\healthBar">
-			<UniqueIdentifier>{0F78CD63-0C88-E9DF-2487-95F0}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="src\navigationBar">
-			<UniqueIdentifier>{1B619241-1B4F-1875-DC87-D209}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="src\player">
-			<UniqueIdentifier>{8B40E44D-58FD-3A86-EDC4-47C6}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="src\scene">
-			<UniqueIdentifier>{73142FC3-17CC-1CF8-54A8-DD1E}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="src\scene\p">
-			<UniqueIdentifier>{AC57F7D1-8926-419B-40CC-6F74}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="src\scene\wem">
-			<UniqueIdentifier>{F80FBC44-0C36-4186-FA75-CDAC}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="src\scene\yanai">
-			<UniqueIdentifier>{F4DEE03A-1AB2-F863-DAFD-8601}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="src\timeLimit">
-			<UniqueIdentifier>{FC9F87C1-3A94-D88A-E2D6-2596}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons">
-			<UniqueIdentifier>{71834F65-F3A9-211E-73B8-DC85}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxAnimatable">
-			<UniqueIdentifier>{76597DE6-6EC6-9B33-AE16-324A}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxAnimatable\src">
-			<UniqueIdentifier>{9A0AF1AC-D8D7-DC08-0B38-3CC3}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxImGui">
-			<UniqueIdentifier>{0CD6A942-69FF-3BAA-3AF1-ADD1}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxImGui\src">
-			<UniqueIdentifier>{18028A43-13D3-1DD5-471A-BE87}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxImGui\libs">
-			<UniqueIdentifier>{BE2F957E-7DA7-055C-DC70-3070}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxImGui\libs\imgui">
-			<UniqueIdentifier>{296AD70B-2F2E-1462-9E7C-6030}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxImGui\libs\imgui\src">
-			<UniqueIdentifier>{5962BF19-1468-EB82-01C0-2E72}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxJoystick">
-			<UniqueIdentifier>{CB10C8B6-4FF4-F0AA-05C1-D964}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxJoystick\src">
-			<UniqueIdentifier>{8B1D8D22-1B3C-A19E-36F8-46ED}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxJSON">
-			<UniqueIdentifier>{CF86E01B-D8D7-A112-88F3-5883}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxJSON\src">
-			<UniqueIdentifier>{CE83AFE9-FE4A-682E-D5C9-50B4}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxJSON\libs">
-			<UniqueIdentifier>{5302B3F8-ECDD-0465-334A-F39E}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxJSON\libs\jsoncpp">
-			<UniqueIdentifier>{87D6C548-39D9-FD9F-093E-9F4E}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxJSON\libs\jsoncpp\include">
-			<UniqueIdentifier>{0B6CA981-484E-6E8C-776C-7298}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxJSON\libs\jsoncpp\include\json">
-			<UniqueIdentifier>{5FF260B2-1497-3EFE-19D5-40DB}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxJSON\libs\jsoncpp\src">
-			<UniqueIdentifier>{6D569A5B-6719-AEFD-C08E-5CE5}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxSceneManager">
-			<UniqueIdentifier>{2E853C58-2842-A29B-0427-C449}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxSceneManager\src">
-			<UniqueIdentifier>{4AD0981E-D464-84DA-017B-F545}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxScreenCurtain">
-			<UniqueIdentifier>{FC5E5AB1-D175-ACF6-E7B4-4D95}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxScreenCurtain\src">
-			<UniqueIdentifier>{0BA7D3CA-41D0-6673-D170-4F8D}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxXmlSettings">
-			<UniqueIdentifier>{877F005D-13E6-0592-1D97-F2E3}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxXmlSettings\src">
-			<UniqueIdentifier>{CCB2AC63-49D2-977C-CFE8-AEAD}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxXmlSettings\libs">
-			<UniqueIdentifier>{687714A8-1662-FA1C-261F-50F0}</UniqueIdentifier>
-		</Filter>
-	</ItemGroup>
-	<ItemGroup>
-		<ClInclude Include="src\ofApp.h">
-			<Filter>src</Filter>
-		</ClInclude>
-		<ClInclude Include="src\healthBar\healthBar.h">
-			<Filter>src\healthBar</Filter>
-		</ClInclude>
-		<ClInclude Include="src\input.h">
-			<Filter>src</Filter>
-		</ClInclude>
-		<ClInclude Include="src\navigationBar\navigationBar.h">
-			<Filter>src\navigationBar</Filter>
-		</ClInclude>
-		<ClInclude Include="src\ofApp.h">
-			<Filter>src</Filter>
-		</ClInclude>
-		<ClInclude Include="src\player\player.h">
-			<Filter>src\player</Filter>
-		</ClInclude>
-		<ClInclude Include="src\player\playerState.h">
-			<Filter>src\player</Filter>
-		</ClInclude>
-		<ClInclude Include="src\scene\gameMain.h">
-			<Filter>src\scene</Filter>
-		</ClInclude>
-		<ClInclude Include="src\scene\gameTitle.h">
-			<Filter>src\scene</Filter>
-		</ClInclude>
-		<ClInclude Include="src\scene\p\sceneP.h">
-			<Filter>src\scene\p</Filter>
-		</ClInclude>
-		<ClInclude Include="src\scene\scene.h">
-			<Filter>src\scene</Filter>
-		</ClInclude>
-		<ClInclude Include="src\scene\wem\sceneWem.h">
-			<Filter>src\scene\wem</Filter>
-		</ClInclude>
-		<ClInclude Include="src\scene\yanai\sceneYanai.h">
-			<Filter>src\scene\yanai</Filter>
-		</ClInclude>
-		<ClInclude Include="src\timeLimit\timer.h">
-			<Filter>src\timeLimit</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxAnimatable\src\ofxAnimatable.h">
-			<Filter>addons\ofxAnimatable\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxAnimatable\src\ofxAnimatableFloat.h">
-			<Filter>addons\ofxAnimatable\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxAnimatable\src\ofxAnimatableOfColor.h">
-			<Filter>addons\ofxAnimatable\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxAnimatable\src\ofxAnimatableOfPoint.h">
-			<Filter>addons\ofxAnimatable\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxAnimatable\src\ofxAnimatableQueue.h">
-			<Filter>addons\ofxAnimatable\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxImGui\src\BaseEngine.h">
-			<Filter>addons\ofxImGui\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxImGui\src\BaseTheme.h">
-			<Filter>addons\ofxImGui\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxImGui\src\EngineGLFW.h">
-			<Filter>addons\ofxImGui\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxImGui\src\EngineOpenGLES.h">
-			<Filter>addons\ofxImGui\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxImGui\src\imconfig.h">
-			<Filter>addons\ofxImGui\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxImGui\src\ofxImGui.h">
-			<Filter>addons\ofxImGui\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxImGui\src\ThemeTest.h">
-			<Filter>addons\ofxImGui\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxImGui\libs\imgui\src\imgui.h">
-			<Filter>addons\ofxImGui\libs\imgui\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxImGui\libs\imgui\src\imgui_internal.h">
-			<Filter>addons\ofxImGui\libs\imgui\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxImGui\libs\imgui\src\stb_rect_pack.h">
-			<Filter>addons\ofxImGui\libs\imgui\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxImGui\libs\imgui\src\stb_textedit.h">
-			<Filter>addons\ofxImGui\libs\imgui\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxImGui\libs\imgui\src\stb_truetype.h">
-			<Filter>addons\ofxImGui\libs\imgui\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxJoystick\src\ofxJoystick.h">
-			<Filter>addons\ofxJoystick\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxJSON\src\ofxJSON.h">
-			<Filter>addons\ofxJSON\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxJSON\src\ofxJSONElement.h">
-			<Filter>addons\ofxJSON\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxJSON\libs\jsoncpp\include\json\json-forwards.h">
-			<Filter>addons\ofxJSON\libs\jsoncpp\include\json</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxJSON\libs\jsoncpp\include\json\json.h">
-			<Filter>addons\ofxJSON\libs\jsoncpp\include\json</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxSceneManager\src\ofxScene.h">
-			<Filter>addons\ofxSceneManager\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxSceneManager\src\ofxSceneManager.h">
-			<Filter>addons\ofxSceneManager\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxScreenCurtain\src\ofxScreenCurtain.h">
-			<Filter>addons\ofxScreenCurtain\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxXmlSettings\src\ofxXmlSettings.h">
-			<Filter>addons\ofxXmlSettings\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxXmlSettings\libs\tinyxml.h">
-			<Filter>addons\ofxXmlSettings\libs</Filter>
-		</ClInclude>
-	</ItemGroup>
-	<ItemGroup>
-		<ResourceCompile Include="icon.rc" />
-	</ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ofApp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\input.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NavigationBar\NavigationBar.cpp">
+      <Filter>src\NavigationBar</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ofApp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\player\attackingState.cpp">
+      <Filter>src\player</Filter>
+    </ClCompile>
+    <ClCompile Include="src\player\jumpingState.cpp">
+      <Filter>src\player</Filter>
+    </ClCompile>
+    <ClCompile Include="src\player\movingState.cpp">
+      <Filter>src\player</Filter>
+    </ClCompile>
+    <ClCompile Include="src\player\passiveState.cpp">
+      <Filter>src\player</Filter>
+    </ClCompile>
+    <ClCompile Include="src\player\player.cpp">
+      <Filter>src\player</Filter>
+    </ClCompile>
+    <ClCompile Include="src\player\playerState.cpp">
+      <Filter>src\player</Filter>
+    </ClCompile>
+    <ClCompile Include="src\player\standingState.cpp">
+      <Filter>src\player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\addons\ofxGui\src\ofxBaseGui.cpp">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\addons\ofxGui\src\ofxButton.cpp">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\addons\ofxGui\src\ofxGuiGroup.cpp">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\addons\ofxGui\src\ofxLabel.cpp">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\addons\ofxGui\src\ofxPanel.cpp">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\addons\ofxGui\src\ofxSlider.cpp">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\addons\ofxGui\src\ofxSliderGroup.cpp">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\addons\ofxGui\src\ofxToggle.cpp">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\addons\ofxImGui\src\BaseEngine.cpp">
+      <Filter>addons\ofxImGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\addons\ofxImGui\src\BaseTheme.cpp">
+      <Filter>addons\ofxImGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\addons\ofxImGui\src\EngineGLFW.cpp">
+      <Filter>addons\ofxImGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\addons\ofxImGui\src\EngineOpenGLES.cpp">
+      <Filter>addons\ofxImGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\addons\ofxImGui\src\ofxImGui.cpp">
+      <Filter>addons\ofxImGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\addons\ofxImGui\libs\imgui\src\imgui.cpp">
+      <Filter>addons\ofxImGui\libs\imgui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\addons\ofxImGui\libs\imgui\src\imgui_demo.cpp">
+      <Filter>addons\ofxImGui\libs\imgui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\addons\ofxImGui\libs\imgui\src\imgui_draw.cpp">
+      <Filter>addons\ofxImGui\libs\imgui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\addons\ofxJoystick\src\ofxJoystick.cpp">
+      <Filter>addons\ofxJoystick\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\addons\ofxXmlSettings\src\ofxXmlSettings.cpp">
+      <Filter>addons\ofxXmlSettings\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\addons\ofxXmlSettings\libs\tinyxml.cpp">
+      <Filter>addons\ofxXmlSettings\libs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\addons\ofxXmlSettings\libs\tinyxmlerror.cpp">
+      <Filter>addons\ofxXmlSettings\libs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\addons\ofxXmlSettings\libs\tinyxmlparser.cpp">
+      <Filter>addons\ofxXmlSettings\libs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\timeLimit\timer.cpp">
+      <Filter>src\timeLimit</Filter>
+    </ClCompile>
+    <ClCompile Include="src\healthBar\healthBar.cpp">
+      <Filter>src\healthBar</Filter>
+    </ClCompile>
+    <ClCompile Include="src\player\jumpingAttackState.cpp">
+      <Filter>src\player</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{d8376475-7454-4a24-b08a-aac121d3ad6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\healthBar">
+      <UniqueIdentifier>{0F78CD63-0C88-E9DF-2487-95F0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\NavigationBar">
+      <UniqueIdentifier>{E889EBC1-AE3B-D0F0-A3B9-264B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\player">
+      <UniqueIdentifier>{8B40E44D-58FD-3A86-EDC4-47C6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\timeLimit">
+      <UniqueIdentifier>{FC9F87C1-3A94-D88A-E2D6-2596}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons">
+      <UniqueIdentifier>{71834F65-F3A9-211E-73B8-DC85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxGui">
+      <UniqueIdentifier>{4F2A59AF-5F4E-704B-D067-EC13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxGui\src">
+      <UniqueIdentifier>{645E9533-4DCD-6179-1CDF-CB65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxImGui">
+      <UniqueIdentifier>{0CD6A942-69FF-3BAA-3AF1-ADD1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxImGui\src">
+      <UniqueIdentifier>{18028A43-13D3-1DD5-471A-BE87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxImGui\libs">
+      <UniqueIdentifier>{BE2F957E-7DA7-055C-DC70-3070}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxImGui\libs\imgui">
+      <UniqueIdentifier>{296AD70B-2F2E-1462-9E7C-6030}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxImGui\libs\imgui\src">
+      <UniqueIdentifier>{5962BF19-1468-EB82-01C0-2E72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxJoystick">
+      <UniqueIdentifier>{CB10C8B6-4FF4-F0AA-05C1-D964}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxJoystick\src">
+      <UniqueIdentifier>{8B1D8D22-1B3C-A19E-36F8-46ED}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxXmlSettings">
+      <UniqueIdentifier>{877F005D-13E6-0592-1D97-F2E3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxXmlSettings\src">
+      <UniqueIdentifier>{CCB2AC63-49D2-977C-CFE8-AEAD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxXmlSettings\libs">
+      <UniqueIdentifier>{687714A8-1662-FA1C-261F-50F0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ofApp.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gui.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\input.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NavigationBar\NavigationBar.h">
+      <Filter>src\NavigationBar</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ofApp.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\player\player.h">
+      <Filter>src\player</Filter>
+    </ClInclude>
+    <ClInclude Include="src\player\playerState.h">
+      <Filter>src\player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\addons\ofxGui\src\ofxBaseGui.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\addons\ofxGui\src\ofxButton.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\addons\ofxGui\src\ofxGui.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\addons\ofxGui\src\ofxGuiGroup.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\addons\ofxGui\src\ofxLabel.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\addons\ofxGui\src\ofxPanel.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\addons\ofxGui\src\ofxSlider.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\addons\ofxGui\src\ofxSliderGroup.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\addons\ofxGui\src\ofxToggle.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\addons\ofxImGui\src\BaseEngine.h">
+      <Filter>addons\ofxImGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\addons\ofxImGui\src\BaseTheme.h">
+      <Filter>addons\ofxImGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\addons\ofxImGui\src\EngineGLFW.h">
+      <Filter>addons\ofxImGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\addons\ofxImGui\src\EngineOpenGLES.h">
+      <Filter>addons\ofxImGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\addons\ofxImGui\src\imconfig.h">
+      <Filter>addons\ofxImGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\addons\ofxImGui\src\ofxImGui.h">
+      <Filter>addons\ofxImGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\addons\ofxImGui\src\ThemeTest.h">
+      <Filter>addons\ofxImGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\addons\ofxImGui\libs\imgui\src\imgui.h">
+      <Filter>addons\ofxImGui\libs\imgui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\addons\ofxImGui\libs\imgui\src\imgui_internal.h">
+      <Filter>addons\ofxImGui\libs\imgui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\addons\ofxImGui\libs\imgui\src\stb_rect_pack.h">
+      <Filter>addons\ofxImGui\libs\imgui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\addons\ofxImGui\libs\imgui\src\stb_textedit.h">
+      <Filter>addons\ofxImGui\libs\imgui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\addons\ofxImGui\libs\imgui\src\stb_truetype.h">
+      <Filter>addons\ofxImGui\libs\imgui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\addons\ofxJoystick\src\ofxJoystick.h">
+      <Filter>addons\ofxJoystick\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\addons\ofxXmlSettings\src\ofxXmlSettings.h">
+      <Filter>addons\ofxXmlSettings\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\addons\ofxXmlSettings\libs\tinyxml.h">
+      <Filter>addons\ofxXmlSettings\libs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\timeLimit\timer.h">
+      <Filter>src\timeLimit</Filter>
+    </ClInclude>
+    <ClInclude Include="src\healthBar\healthBar.h">
+      <Filter>src\healthBar</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="icon.rc" />
+  </ItemGroup>
 </Project>

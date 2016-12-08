@@ -41,7 +41,7 @@ public:
 };
 
 class JumpingState : public MovingState {
-private:
+protected:
   bool isJumping_;  // ジャンプ状態の判定
 public:
   shared_ptr<PlayerState> handleInput(Player& player, ofxJoystick& input) override;
