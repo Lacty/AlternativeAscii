@@ -1,7 +1,7 @@
 ofxAnimatable
 ofxImGui
-ofxJoystick
 ofxJSON
+ofxJoystick
 ofxSceneManager
 ofxScreenCurtain
 ofxXmlSettings
