@@ -40,6 +40,13 @@ public:
   void entry(Player& player) override;
 };
 
+class RunningState : public MovingState {
+public:
+	shared_ptr<PlayerState> handleInput(Player& player, ofxJoystick& input) override;
+	void update(Player& player, ofxJoystick& input) override;
+	void entry(Player& player) override;
+};
+
 class JumpingState : public MovingState {
 protected:
   bool isJumping_;  // ジャンプ状態の判定
@@ -81,6 +88,10 @@ private:
 	float end_;
 
 	bool finish();
+
+	int attackWay_;
+	const float attackPos_[2] = { -25,25 };
+	const ofVec2f attackAria_ = ofVec2f(20,10);
 
 public:
 	shared_ptr<PlayerState> handleInput(Player& player, ofxJoystick& input) override;
