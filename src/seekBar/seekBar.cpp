@@ -3,14 +3,17 @@
 
 
 void SeekBar::setup(const string& path) {
+  // jsonから設定を読み込む
   ofxJSON json;
   json.open(path);
   
+  // シークバーの高さ
   height_   = json["Root"]["height"].asInt();
+  // バーの横幅
   barWidth_ = json["Bar"]["width"].asInt();
   
   // -----------------------------------------------------------------
-  // Load Color //
+  // 色の読み込み //
   for (int i = 0; i < 3; i++) {
     rootColor_[i]   = json["Root"]["color"][i].asFloat();
     seekedColor_[i] = json["Seeked"]["color"][i].asFloat();
