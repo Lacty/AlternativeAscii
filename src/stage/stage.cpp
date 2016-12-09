@@ -15,6 +15,6 @@ void Stage::setup(const string &path) {
   
   Right  = json["Right"].asFloat();
   Left   = json["Left"].asFloat();
-  Bottom = json["Botton"].asFloat();
+  Bottom = json["Bottom"].asFloat();
   Top    = json["Top"].asFloat();
 }
