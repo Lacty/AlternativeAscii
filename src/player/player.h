@@ -27,7 +27,9 @@ private:
   ofVec2f jumpPow_;
   
   float speed_;
-  
+
+  bool isJumpingAttack_;
+
   bool showCol_;
   list<Collision> passiveCol_;
   list<Collision> attackCol_;
@@ -79,4 +81,11 @@ public:
   
   // tips. 状態遷移する際に先に状態を追加しておきたい場合使用する
   void addState(const shared_ptr<PlayerState>& state);
+
+  bool onFloor(); // ジャンプ判定(着地判定)
+  void setJumpingAttack(bool state);
+  bool getJumpingAttack();
 };
+
+inline void Player::setJumpingAttack(bool state) { isJumpingAttack_ = state; }
+inline bool Player::getJumpingAttack() { return isJumpingAttack_; }

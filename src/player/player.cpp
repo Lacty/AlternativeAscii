@@ -11,7 +11,8 @@ void Player::setup(int ID) {
   HP_ = maxHP_;
   jumpPow_.set(0, 10);
   speed_ = 100.0f;
-  
+  isJumpingAttack_ = false;
+
   // 当たり判定用判定を作成
   ofVec2f size(50, 50);
   passiveCol_.push_back({ofVec2f::zero(), size});
@@ -137,4 +138,12 @@ void Player::setVel(const ofVec2f& vel) { vel_ = vel; }
 
 void Player::addState(const shared_ptr<PlayerState>& state) {
   state_.push_back(state);
+}
+
+bool Player::onFloor() {
+  // ステージのステータスを用意するまでの仮の値
+  const int FLOOR = 0;
+
+  if (getPos().y < FLOOR) { return true; }
+  else { return false; }
 }
