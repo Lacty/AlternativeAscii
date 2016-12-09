@@ -21,7 +21,7 @@ void GameTitle::setup() {
 }
 
 void GameTitle::update(float deltaTime) {
-  if (joy_.isPressed(Input::X)) {
+  if (joy_.anyButton()) {
     getManager()->goToScene(GAME);
   }
 }
