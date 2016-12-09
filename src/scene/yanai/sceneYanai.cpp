@@ -9,6 +9,11 @@ void SceneYanai::setup() {
   string j_path = json["sceneYanaiPath"].asString();
   json.open(j_path);
   
+  string path = json["Stage"]["path"].asString();
+  Stage::setup(path);
+  
+  ofLog() << Stage::Left;
+  
   cam_.setPosition(0, 0, 300);
   
   for (int i = 0; i < NUM_PLAYER; i++) {

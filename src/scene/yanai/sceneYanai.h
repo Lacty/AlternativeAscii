@@ -4,6 +4,8 @@
 #include "../scene.h"
 #include "../../player/player.h"
 
+#include "../../stage/stage.h"
+
 
 class SceneYanai : public ofxScene {
 private:
