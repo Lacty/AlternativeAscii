@@ -37,6 +37,7 @@
 		94C3A35816CF6A0DE0CD3082 /* BaseEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0036AD77D503F4330B068775 /* BaseEngine.cpp */; };
 		97969231CD7181B9A382EF4C /* playerState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 494522029B931251EFA89955 /* playerState.cpp */; };
 		9DC1ED16CF964E5831619872 /* ofxImGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FC3E19B0232BFB26EE64165 /* ofxImGui.cpp */; };
+		ACE62F681DFAAA23002A27A1 /* seekBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACE62F661DFAAA23002A27A1 /* seekBar.cpp */; };
 		BF4934AC9A8DAF70C1AB410D /* input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E15C832BB3890D55A12FC5AD /* input.cpp */; };
 		CE441544D6CE368D7F1670A3 /* ofxScreenCurtain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F30A0E85AD0500C33048FECA /* ofxScreenCurtain.cpp */; };
 		E2A78E212B5A2DEE8DEFCDA2 /* gameMain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8C1A283F6DC3679756C77102 /* gameMain.cpp */; };
@@ -90,7 +91,7 @@
 		0D32D5D82265EC95AB696609 /* passiveState.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = passiveState.cpp; path = src/player/passiveState.cpp; sourceTree = SOURCE_ROOT; };
 		0F41D00E9C1DE965FC36ECAB /* navigationBar.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = navigationBar.cpp; path = src/navigationBar/navigationBar.cpp; sourceTree = SOURCE_ROOT; };
 		111B02F3CFDE8C77CC5238AE /* ofxSceneManager.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxSceneManager.cpp; path = ../../addons/ofxSceneManager/src/ofxSceneManager.cpp; sourceTree = SOURCE_ROOT; };
-		1369BAA229B26CA6C8F7718F /* timer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = timer.h; path = src/timeLimit/timer.h; sourceTree = SOURCE_ROOT; };
+		1369BAA229B26CA6C8F7718F /* timer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = timer.h; path = src/timeLimit/timer.h; sourceTree = SOURCE_ROOT; };
 		17BF8878CC8DCDC9407D86F8 /* gameMain.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = gameMain.h; path = src/scene/gameMain.h; sourceTree = SOURCE_ROOT; };
 		1ABCA16BEF1B784BC11B6396 /* ofxJSONElement.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxJSONElement.h; path = ../../addons/ofxJSON/src/ofxJSONElement.h; sourceTree = SOURCE_ROOT; };
 		1B92080582950E2B512F0387 /* ofxJSON.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxJSON.h; path = ../../addons/ofxJSON/src/ofxJSON.h; sourceTree = SOURCE_ROOT; };
@@ -104,7 +105,7 @@
 		463EEB2D7F2C446CAB0C00DF /* ThemeTest.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ThemeTest.h; path = ../../addons/ofxImGui/src/ThemeTest.h; sourceTree = SOURCE_ROOT; };
 		494522029B931251EFA89955 /* playerState.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = playerState.cpp; path = src/player/playerState.cpp; sourceTree = SOURCE_ROOT; };
 		4D417C50A1C963A150B69C0E /* stb_rect_pack.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = stb_rect_pack.h; path = ../../addons/ofxImGui/libs/imgui/src/stb_rect_pack.h; sourceTree = SOURCE_ROOT; };
-		4F38AEA41F437B19FC276B96 /* player.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = player.cpp; path = src/player/player.cpp; sourceTree = SOURCE_ROOT; };
+		4F38AEA41F437B19FC276B96 /* player.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = player.cpp; path = src/player/player.cpp; sourceTree = SOURCE_ROOT; };
 		5407F19529431F450711B886 /* json.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = json.h; path = ../../addons/ofxJSON/libs/jsoncpp/include/json/json.h; sourceTree = SOURCE_ROOT; };
 		572960DD09FAC11DCF63ED27 /* tinyxmlerror.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = tinyxmlerror.cpp; path = ../../addons/ofxXmlSettings/libs/tinyxmlerror.cpp; sourceTree = SOURCE_ROOT; };
 		60E40FC34E5714FD0FE4EE62 /* imgui_internal.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = imgui_internal.h; path = ../../addons/ofxImGui/libs/imgui/src/imgui_internal.h; sourceTree = SOURCE_ROOT; };
@@ -135,6 +136,8 @@
 		98B3774429636F0F36011537 /* gameTitle.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = gameTitle.h; path = src/scene/gameTitle.h; sourceTree = SOURCE_ROOT; };
 		9D3E08538F818ABB65274E34 /* sceneWem.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = sceneWem.cpp; path = src/scene/wem/sceneWem.cpp; sourceTree = SOURCE_ROOT; };
 		A666F90C7C7214A2A0E8AC76 /* ofxScene.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxScene.h; path = ../../addons/ofxSceneManager/src/ofxScene.h; sourceTree = SOURCE_ROOT; };
+		ACE62F661DFAAA23002A27A1 /* seekBar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = seekBar.cpp; sourceTree = "<group>"; };
+		ACE62F671DFAAA23002A27A1 /* seekBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = seekBar.h; sourceTree = "<group>"; };
 		AF6C6110F0C12B3C45E9C5BE /* ofxAnimatableQueue.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxAnimatableQueue.h; path = ../../addons/ofxAnimatable/src/ofxAnimatableQueue.h; sourceTree = SOURCE_ROOT; };
 		B084B8C85AA0DE22E6210796 /* stb_textedit.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = stb_textedit.h; path = ../../addons/ofxImGui/libs/imgui/src/stb_textedit.h; sourceTree = SOURCE_ROOT; };
 		B3BC6675546E0BECCB775E73 /* ofxAnimatableOfPoint.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxAnimatableOfPoint.h; path = ../../addons/ofxAnimatable/src/ofxAnimatableOfPoint.h; sourceTree = SOURCE_ROOT; };
@@ -413,6 +416,15 @@
 			name = navigationBar;
 			sourceTree = "<group>";
 		};
+		ACE62F651DFAAA0E002A27A1 /* seekBar */ = {
+			isa = PBXGroup;
+			children = (
+				ACE62F661DFAAA23002A27A1 /* seekBar.cpp */,
+				ACE62F671DFAAA23002A27A1 /* seekBar.h */,
+			);
+			path = seekBar;
+			sourceTree = "<group>";
+		};
 		B0A7F12708E37F20F6EAD4FF /* player */ = {
 			isa = PBXGroup;
 			children = (
@@ -542,6 +554,7 @@
 				3827A3E250153DBA091DF477 /* healthBar */,
 				E15C832BB3890D55A12FC5AD /* input.cpp */,
 				FF801D15CC70F7D6C8714010 /* input.h */,
+				ACE62F651DFAAA0E002A27A1 /* seekBar */,
 				A1228BAE968F1E1947403E51 /* navigationBar */,
 				B0A7F12708E37F20F6EAD4FF /* player */,
 				38210A9855D9757B736E753B /* scene */,
@@ -705,6 +718,7 @@
 				CE441544D6CE368D7F1670A3 /* ofxScreenCurtain.cpp in Sources */,
 				0C626D3D484EA5FB87A6AD23 /* ofxXmlSettings.cpp in Sources */,
 				28DC652211D4AF8CC023D568 /* tinyxml.cpp in Sources */,
+				ACE62F681DFAAA23002A27A1 /* seekBar.cpp in Sources */,
 				F877D69532909AE487E0EF22 /* tinyxmlerror.cpp in Sources */,
 				32E2318B89B6217AE6052155 /* tinyxmlparser.cpp in Sources */,
 			);
