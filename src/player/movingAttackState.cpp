@@ -1,4 +1,4 @@
-
+ï»¿
 #include "playerState.h"
 #include "player.h"
 
@@ -17,7 +17,7 @@ void MovingAttackState::entry(Player& player) {
 	if (player.getVel().x < 0) { attackWay_ = 0; }
 	else if (player.getVel().x > 0) { attackWay_ = 1; }
 
-	//‚»‚Ìê‚Å~‚Ü‚é‚æ‚¤‚É‚·‚é
+	//ãã®å ´ã§æ­¢ã¾ã‚‹ã‚ˆã†ã«ã™ã‚‹
 	player.setVel(ofVec2f(0, 0));
 
 	start_ = ofGetElapsedTimef();

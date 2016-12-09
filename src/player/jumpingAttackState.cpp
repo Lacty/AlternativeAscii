@@ -1,16 +1,16 @@
-
+ï»¿
 #include "playerState.h"
 #include "player.h"
 
 
 shared_ptr<PlayerState> JumpingAttackState::handleInput(Player& player, ofxJoystick& input) {
-  // UŒ‚ƒ‚[ƒVƒ‡ƒ“‚ªI‚í‚é‚©AƒWƒƒƒ“ƒvó‘Ô‚Å‚Í‚È‚­‚È‚Á‚½‚çI—¹
+  // æ”»æ’ƒãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³ãŒçµ‚ã‚ã‚‹ã‹ã€ã‚¸ãƒ£ãƒ³ãƒ—çŠ¶æ…‹ã§ã¯ãªããªã£ãŸã‚‰çµ‚äº†
   if (finish() || player.onFloor()) {
-    // ’ˆÓ UŒ‚—p”»’è‚ð‘S•”Á‚·
-    // Œã‘±‚·‚éUŒ‚‚É‘Î‰ž‚Å‚«‚È‚¢‚Ì‚Å—vC³
+    // æ³¨æ„ æ”»æ’ƒç”¨åˆ¤å®šã‚’å…¨éƒ¨æ¶ˆã™
+    // å¾Œç¶šã™ã‚‹æ”»æ’ƒã«å¯¾å¿œã§ããªã„ã®ã§è¦ä¿®æ­£
     player.getAttackCol().clear();
 
-    // UŒ‚ƒ‚[ƒVƒ‡ƒ“‚ªI‚í‚Á‚½‚ç‘O‚Ìó‘Ô‚É–ß‚·
+    // æ”»æ’ƒãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³ãŒçµ‚ã‚ã£ãŸã‚‰å‰ã®çŠ¶æ…‹ã«æˆ»ã™
     return PlayerState::finish;
   }
 
@@ -25,12 +25,12 @@ void JumpingAttackState::entry(Player& player) {
   start_ = ofGetElapsedTimef();
   end_ = 0.1f;
 
-  // ’ˆÓ UŒ‚—pƒeƒXƒgƒR[ƒh‚È‚Ì‚Å—vC³
-  // ˆê“x‚É”­“®‚Å‚«‚éUŒ‚‚ªˆê‚Â‚Ìê‡‚É‚Ì‚Ý—LŒø
+  // æ³¨æ„ æ”»æ’ƒç”¨ãƒ†ã‚¹ãƒˆã‚³ãƒ¼ãƒ‰ãªã®ã§è¦ä¿®æ­£
+  // ä¸€åº¦ã«ç™ºå‹•ã§ãã‚‹æ”»æ’ƒãŒä¸€ã¤ã®å ´åˆã«ã®ã¿æœ‰åŠ¹
   player.getAttackCol().push_back({ ofVec2f(30, 0), ofVec2f(20, 10) });
 }
 
 bool JumpingAttackState::finish() {
-  // UŒ‚ƒ‚[ƒVƒ‡ƒ“‚ðŠJŽn‚µ‚Ä‚©‚çend_ŽžŠÔŒo‚Á‚½‚©‚Ç‚¤‚©‚ð•Ô‚·
+  // æ”»æ’ƒãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³ã‚’é–‹å§‹ã—ã¦ã‹ã‚‰end_æ™‚é–“çµŒã£ãŸã‹ã©ã†ã‹ã‚’è¿”ã™
   return ofGetElapsedTimef() - start_ >= end_;
 }
