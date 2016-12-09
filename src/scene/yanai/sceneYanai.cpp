@@ -9,10 +9,17 @@ void SceneYanai::setup() {
   string j_path = json["sceneYanaiPath"].asString();
   json.open(j_path);
   
+  
+  // jsonからステージのサイズを取得
   string path = json["Stage"]["path"].asString();
   Stage::setup(path);
   
-  ofLog() << Stage::Left;
+  // ステージのサイズを出力
+  ofLog() << "Stage left   :" << Stage::Left;
+  ofLog() << "Stage right  :" << Stage::Right;
+  ofLog() << "Stage bottom :" << Stage::Bottom;
+  ofLog() << "Stage top    :" << Stage::Top;
+  
   
   cam_.setPosition(0, 0, 300);
   
