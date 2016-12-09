@@ -3,25 +3,24 @@
 #include "player.h"
 
 
-// 注意 ステージのパラーメータは別でちゃんと用意すること
-const int FLOOR = 0;
-
 shared_ptr<PlayerState> JumpingState::handleInput(Player& player, ofxJoystick& input) {
   // ジャンプ状態で攻撃ボタンが押されたら、ジャンプ攻撃状態に遷移
-  if (input.isPressed(Input::X)) {
+  if (input.isPressed(Input::X) && !player.getJumpingAttack()) {
+    player.setJumpingAttack(true);
     return make_shared<JumpingAttackState>();
   }
 
-  if (player.getPos().y < FLOOR) {
+  if (player.onFloor()) {
     // 着地していたら前の状態に繊維させる
     ofVec2f newLocation = player.getPos();
-    newLocation.y = FLOOR;
+    newLocation.y = 0;  // ステージの数値を決めるまでの仮の値
     player.setPos(newLocation);
 
     ofVec2f newVel = player.getVel();
     newVel.y = 0;
     player.setVel(newVel);
     isJumping_ = false;
+    player.setJumpingAttack(false);
 
     return PlayerState::finish;
   }
