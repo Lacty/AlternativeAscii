@@ -2,6 +2,8 @@
 #include "playerState.h"
 #include "player.h"
 
+#include "../stage/stage.h"
+
 
 shared_ptr<PlayerState> JumpingState::handleInput(Player& player, ofxJoystick& input) {
   // ジャンプ状態で攻撃ボタンが押されたら、ジャンプ攻撃状態に遷移
@@ -13,12 +15,13 @@ shared_ptr<PlayerState> JumpingState::handleInput(Player& player, ofxJoystick& i
   if (player.onFloor()) {
     // 着地していたら前の状態に繊維させる
     ofVec2f newLocation = player.getPos();
-    newLocation.y = 0;  // ステージの数値を決めるまでの仮の値
+    newLocation.y = Stage::Bottom;
     player.setPos(newLocation);
 
     ofVec2f newVel = player.getVel();
     newVel.y = 0;
     player.setVel(newVel);
+    
     isJumping_ = false;
     player.setJumpingAttack(false);
 

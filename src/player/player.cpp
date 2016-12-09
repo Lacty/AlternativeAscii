@@ -136,9 +136,6 @@ void Player::addState(const shared_ptr<PlayerState>& state) {
 }
 
 bool Player::onFloor() {
-  // ステージのステータスを用意するまでの仮の値
-  const int FLOOR = 0;
-
-  if (getPos().y < FLOOR) { return true; }
+  if (getPos().y < Stage::Bottom) { return true; }
   else { return false; }
 }

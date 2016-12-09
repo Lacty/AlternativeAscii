@@ -4,6 +4,7 @@
 #include "ofxJoystick.h"
 #include "ofxImGui.h"
 #include "playerState.h"
+#include "stage.h"
 
 
 struct Collision {
