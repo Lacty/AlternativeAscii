@@ -63,11 +63,7 @@ void Player::update() {
 }
 
 void Player::draw() {
-  // 暫定
-  ofSetColor(255, 255, 255);
-  ofDrawBox(pos_, 50, 50, 0);
-  
-  state_.back()->draw();
+  state_.back()->draw(*this);
 }
 
 void Player::drawCollision() {
