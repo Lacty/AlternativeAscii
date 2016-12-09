@@ -13,7 +13,7 @@ void  Timer::setup() {
 void Timer::update(ofEventArgs &args) {
   currentTime_ = ofGetElapsedTimef();
   limit_ = maxTime_ - (currentTime_ - startTime_);
-  ofLog() << ofGetElapsedTimef();
+  //ofLog() << ofGetElapsedTimef();
 }
 
 void Timer::draw() {
