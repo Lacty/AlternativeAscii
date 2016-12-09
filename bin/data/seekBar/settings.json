@@ -1,0 +1,16 @@
+
+// SeekBarの設定
+
+{
+  "Root" : {
+    "height" : 20,
+    "color" : [1, 1, 1]
+  },
+  "Seeked" : {
+    "color" : [0.2, 0.5, 1]
+  },
+  "Bar" : {
+    "width" : 10,
+    "color" : [0.8, 0.8, 0.8]    
+  }
+}
