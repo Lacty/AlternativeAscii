@@ -6,6 +6,9 @@
 
 #include "../../stage/stage.h"
 
+#include "../../timeLimit/timer.h"
+#include "../../seekBar/seekBar.h"
+
 
 class SceneYanai : public ofxScene {
 private:
@@ -13,6 +16,9 @@ private:
   
   static const int NUM_PLAYER = 2;
   Player players_[NUM_PLAYER];
+  
+  Timer timer_;
+  SeekBar seekBar_;
   
 public:
   void setup() override;

@@ -21,6 +21,10 @@ void SceneYanai::setup() {
   ofLog() << "Stage top    :" << Stage::Top;
   
   
+  timer_.setup();
+  seekBar_.setup("seekBar/settings.json");
+  
+  
   cam_.setPosition(0, 0, 300);
   
   for (int i = 0; i < NUM_PLAYER; i++) {
@@ -49,4 +53,9 @@ void SceneYanai::draw() {
   for (int i = 0; i < NUM_PLAYER; i++) {
     players_[i].drawParam();
   }
+  
+  timer_.draw();
+  seekBar_.draw(timer_.getMaxTime(), timer_.getLimit());
+  
+  seekBar_.drawParam();
 }
