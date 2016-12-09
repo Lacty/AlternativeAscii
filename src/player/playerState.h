@@ -13,6 +13,8 @@ public:
   virtual shared_ptr<PlayerState> handleInput(Player& player, ofxJoystick& input) { return nullptr; }
   
   virtual void update(Player& player, ofxJoystick& input) {};
+  virtual void draw(Player& player) {}
+  
   virtual void entry(Player& player) {};
   
   static shared_ptr<PlayerState> finish;

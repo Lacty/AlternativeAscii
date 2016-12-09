@@ -67,8 +67,7 @@ void Player::draw() {
   ofSetColor(255, 255, 255);
   ofDrawBox(pos_, 50, 50, 0);
   
-  // 状態にに合わせて描画を更新させるなら変更する
-  // state_.back()->draw();
+  state_.back()->draw();
 }
 
 void Player::drawCollision() {
