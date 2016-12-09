@@ -16,9 +16,15 @@ void GameTitle::setup() {
   
   // 表示するnaviの文字列を読み込む
   navi_ = json["Navi"]["string"].asString();
+  
+  joy_.setup(GLFW_JOYSTICK_1);
 }
 
-void GameTitle::update(float deltaTime) {}
+void GameTitle::update(float deltaTime) {
+  if (joy_.isPressed(Input::X)) {
+    getManager()->goToScene(GAME);
+  }
+}
 
 void GameTitle::draw() {
   // 文字列から描画時のサイズを算出
