@@ -27,7 +27,6 @@ private:
   void drawTimer();
 public:
   void setLimit(float time);
-  int getLimit();
 
   void setMaxTime(int maxTime);
   int getMaxTime();
@@ -51,7 +50,6 @@ inline void Timer::setMaxTime(int maxTime) { maxTime_ = maxTime; }
 inline int Timer::getMaxTime() { return maxTime_; }
 
 inline void Timer::setLimit(float limit) { limit_ = limit; }
-inline int Timer::getLimit() { return limit_; }
 
 inline void Timer::setFontSize(int fontSize) { fontSize_ = fontSize; }
 inline int Timer::getFontSize() { return fontSize_; }

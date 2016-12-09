@@ -12,8 +12,9 @@ void  Timer::setup() {
 
 void Timer::update(ofEventArgs &args) {
   currentTime_ = ofGetElapsedTimef();
-  limit_ = maxTime_ - (currentTime_ - startTime_);
-  ofLog() << ofGetElapsedTimef();
+  if (!isTimeup()) {
+    limit_ = maxTime_ - (currentTime_ - startTime_);
+  }
 }
 
 void Timer::draw() {
@@ -74,8 +75,7 @@ void Timer::drawTimer() {
   ofSetColor(255, 255, 0);
   string text;
   // 表示するtextの中身を残り時間で切り替える
-  if (!isTimeup()) { text = ofToString((int)limit_); }
-  else { text = ofToString(0); }
+  text = ofToString((int)limit_);
   float fontWidth = font_.stringWidth(text);
   float fontHeight = font_.stringHeight(text);
 
